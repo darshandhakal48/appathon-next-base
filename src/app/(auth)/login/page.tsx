@@ -1,49 +1,28 @@
 import CandidateLoginForm from "@/components/forms/auth/candidate-login";
 import Logo from "@/components/ui/logo";
-import Image from "next/image";
 import React from "react"; //
 
 const LoginPage = () => {
   return (
-    <div className="grid grid-cols-2 min-h-screen bg-bac">
+    <div className="flex flex-col lg:flex-row min-h-screen">
       {/* Left Side - Form Section */}
-      <div className="flex gap-20 flex-col items-center">
+      <div className="flex flex-1 gap-10 md:gap-20 flex-col py-8 md:py-5 items-center justify-center">
         <Logo />
 
         <CandidateLoginForm />
       </div>
 
       {/* Right Side - Hero Section */}
-      <div className="flex-1 bg-primary flex flex-col items-center justify-center p-8 relative overflow-hidden">
-        <div className="relative z-10 flex flex-col items-center justify-center h-full">
-          {/* Large "0" with image */}
-          <div className="relative mb-8">
-            <div className="text-[300px] font-bold text-white/20 leading-none select-none">
-              0
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white/30">
-                <Image
-                  src="/placeholder.svg?height=128&width=128"
-                  alt="Person"
-                  width={128}
-                  height={128}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+      <div className="flex-1 overflow-hidden p-6 bg-background-secondary">
+        {/*  */}
+        <div className="bg-primary relative p-8 rounded-[20px] min-h-80 h-full">
+          {/* ==== Bottom Text ==== */}
+          <div className="absolute w-full text-center bottom-5 md:bottom-12 lg:bottom-16 left-0">
+            <h3 className="text-lg md:text-2xl text-primary-foreground lg:text-3xl font-semibold">
+              Be Part of Appathon
+            </h3>
           </div>
-
-          {/* Text */}
-          <h2 className="text-2xl font-semibold text-white text-center">
-            Be Part of Appathon
-          </h2>
         </div>
-
-        {/* Background decorative elements */}
-        <div className="absolute top-10 right-10 w-20 h-20 rounded-full bg-white/10"></div>
-        <div className="absolute bottom-20 left-10 w-16 h-16 rounded-full bg-white/10"></div>
-        <div className="absolute top-1/3 left-20 w-12 h-12 rounded-full bg-white/10"></div>
       </div>
     </div>
   );
