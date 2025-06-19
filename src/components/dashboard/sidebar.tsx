@@ -68,7 +68,7 @@ export function DashboardSidebar({ children }: { children: React.ReactNode }) {
                     </div>
                 </SidebarBody>
             </Sidebar>
-            <div className="w-full bg-muted">
+            <div className="w-full bg-muted overflow-y-scroll no-scrollbar">
                 <div className="bg-background ">
                     <div className="flex justify-end px-4">
                         <div className=" flex items-center gap-[14px] px-2 py-4">
