@@ -1,9 +1,7 @@
-"use client";
 import React from "react";
-import { FileCheck } from "lucide-react";
 import Card from "@/components/dashboard/card";
 
-const AdminDashboard = () => {
+export default function CandidateDashboard() {
   return (
     <>
       {/* title */}
@@ -14,8 +12,7 @@ const AdminDashboard = () => {
       {/* main section */}
       <div className="p-6 h-full">
         {/* cards */}
-        <div className="flex justify-between flex-wrap gap-4 md:gap-6">
-          <Card />
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
           <Card />
           <Card />
           <Card />
@@ -25,6 +22,4 @@ const AdminDashboard = () => {
       </div>
     </>
   );
-};
-
-export default AdminDashboard;
+}
