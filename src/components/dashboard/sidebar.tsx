@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Logo, { AppathonLogoIcon } from "../ui/logo";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { SidebarLinkItem } from "@/lib/type";
+import Link from "next/link";
 
 export function DashboardSidebar({
     children,
@@ -23,7 +24,7 @@ export function DashboardSidebar({
     return (
         <div
             className={cn(
-                "mx-auto flex w-full h-screen flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 md:flex-row"
+                "mx-auto flex w-full min-h-screen flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 md:flex-row"
             )}
         >
             <Sidebar open={openSidebar} setOpen={setOpen}>
@@ -38,7 +39,7 @@ export function DashboardSidebar({
                     >
                         {openSidebar ? (
                             <>
-                                <div className=" flex justify-between items-center">
+                                <div className=" flex justify-between w-full items-center">
                                     <Logo className="h-5" />
                                     <LogoIcon
                                         handleClick={handleClick}
@@ -100,8 +101,8 @@ export const LogoIcon = ({
     open: boolean;
 }) => {
     return (
-        <a
-            href="#"
+        <Link
+            href=""
             className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
             onClick={handleClick}
         >
@@ -122,6 +123,6 @@ export const LogoIcon = ({
                     />
                 </>
             )}
-        </a>
+        </Link>
     );
 };
