@@ -37,10 +37,11 @@
     --color-primary-surface-foreground: var(--primary-surface-foreground);
     --color-primary-surface: var(--primary-surface);
 
-    --color-primary-sidebar : var(--sidebar-primary)
-    --color-primary-sidebar-foreground : var(--sidebar-primary-foreground)
+    --color-primary-sidebar: var(--sidebar-primary);
+    --color-primary-sidebar-foreground: var(--sidebar-primary-foreground);
 
-    
+    --color-success: var(--success);
+
     --color-popover-foreground: var(--popover-foreground);
     --color-popover: var(--popover);
     --color-card-foreground: var(--card-foreground);
@@ -65,9 +66,9 @@
     --primary-surface: #2844bd;
     --primary-surface-foreground: oklch(0.985 0 0);
 
-    --secondary: oklch(0.967 0.001 286.375);
+    --secondary: #374151;
     --secondary-foreground: oklch(0.21 0.006 285.885);
-    --muted: #F9FAFB;
+    --muted: #f9fafb;
     --muted-foreground: oklch(0.552 0.016 285.938);
     --accent: oklch(0.967 0.001 286.375);
     --accent-foreground: oklch(0.21 0.006 285.885);
@@ -89,6 +90,8 @@
     --sidebar-border: oklch(0.92 0.004 286.32);
     --sidebar-ring: oklch(0.705 0.015 286.067);
     --text-secondary-color: #2844bd;
+  --success: #10b981;
+
 }
 
 @layer base {
@@ -98,4 +101,15 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
