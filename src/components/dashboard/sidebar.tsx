@@ -4,10 +4,16 @@ import { Sidebar, SidebarBody, SidebarLink } from "../ui/sidebar";
 // import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import Logo, { AppathonLogoIcon } from "../ui/logo";
-import { dashboardSidebarLink } from "@/config/dashboard";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { SidebarLinkItem } from "@/lib/type";
 
-export function DashboardSidebar({ children }: { children: React.ReactNode }) {
+export function DashboardSidebar({
+    children,
+    links,
+}: {
+    children: React.ReactNode;
+    links: SidebarLinkItem[];
+}) {
     const [openSidebar, setOpen] = useState(false);
     const [hover, setHover] = useState(false);
 
@@ -61,14 +67,14 @@ export function DashboardSidebar({ children }: { children: React.ReactNode }) {
                             </div>
                         )}
                         <div className="mt-8 flex flex-col gap-2 ">
-                            {dashboardSidebarLink.map((link, idx) => (
+                            {links.map((link, idx) => (
                                 <SidebarLink key={idx} link={link} />
                             ))}
                         </div>
                     </div>
                 </SidebarBody>
             </Sidebar>
-            <div className="w-full bg-muted overflow-y-scroll no-scrollbar">
+            <div className="w-full bg-muted">
                 <div className="bg-background ">
                     <div className="flex justify-end px-4">
                         <div className=" flex items-center gap-[14px] px-2 py-4">

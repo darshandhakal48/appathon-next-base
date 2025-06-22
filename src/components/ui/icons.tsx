@@ -43,11 +43,9 @@ import {
 } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 
-
 export type Icon = LucideIcon;
 
 export const Icons = {
-
     add: Plus,
     arrowRight: ArrowRight,
     arrowUpRight: ArrowUpRight,

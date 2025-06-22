@@ -1,0 +1,33 @@
+STEP 1 :  
+    YOUR_ENTITY: "/your-entity",
+    YOUR_ENTITY_BY_ID: (id) => `/your-entity/${id}`,
+
+STEP 2:
+    export interface YourEntity {
+        id: number
+        createdAt: string
+        updatedAt: string
+    }
+
+STEP 3:
+    // Create lib/api/hooks/use-your-entity.ts
+    export const {
+        useList: useYourEntityList,
+        useGetById: useYourEntity,
+        useCreate: useCreateYourEntity,
+        useUpdate: useUpdateYourEntity,
+        useDelete: useDeleteYourEntity,
+    } = createCrudHooks<YourEntity>("your-entity", {
+        list: API_ENDPOINTS.YOUR_ENTITY,
+        getById: API_ENDPOINTS.YOUR_ENTITY_BY_ID,
+        create: API_ENDPOINTS.YOUR_ENTITY,
+        update: API_ENDPOINTS.YOUR_ENTITY_BY_ID,
+        delete: API_ENDPOINTS.YOUR_ENTITY_BY_ID,
+    })
+
+STEP 4:
+    // Import and use anywhere
+    import { useYourEntityList, useCreateYourEntity } from '@/lib/api/hooks/use-your-entity'
+
+    const { data, isLoading } = useYourEntityList()
+    const createMutation = useCreateYourEntity()

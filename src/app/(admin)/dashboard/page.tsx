@@ -6,39 +6,6 @@ import BasicLayoutCard from "@/components/shared/basicLayoutCard";
 import ActiveJobOpenings from "@/components/dashboard/activeJobOpenings";
 import RecentUserActivities from "@/components/dashboard/recentUserActivities";
 
-const hiringRounds = [
-    {
-        title: "Applied",
-        icon: "icon",
-        candidates: 4,
-    },
-    {
-        title: "Screening",
-        icon: "icon",
-        candidates: 4,
-    },
-    {
-        title: "Interviewing",
-        icon: "icon",
-        candidates: 4,
-    },
-    {
-        title: "Offered",
-        icon: "icon",
-        candidates: 4,
-    },
-    {
-        title: "Hired",
-        icon: "icon",
-        candidates: 4,
-    },
-    {
-        title: "Rejected",
-        icon: "icon",
-        candidates: 4,
-    },
-];
-
 const AdminDashboard = () => {
     return (
         <>
