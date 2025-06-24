@@ -13,7 +13,7 @@ const Logo = ({ className }: { className?: string }) => {
     />
   );
 };
-const AppathonLogoIcon = ({ className }: { className?: string }) => {
+const LogoIcon = ({ className }: { className?: string }) => {
   return (
     <Image
       src="/_static/brandings/logo-icon.svg"
@@ -26,4 +26,4 @@ const AppathonLogoIcon = ({ className }: { className?: string }) => {
 };
 
 export default Logo;
-export { AppathonLogoIcon };
+export { LogoIcon };
