@@ -16,7 +16,6 @@ export function DashboardSidebar({
     links: SidebarLinkItem[];
 }) {
     const [openSidebar, setOpen] = useState(false);
-    const [hover, setHover] = useState(false);
 
     const handleClick = () => {
         setOpen((prev) => !prev);
@@ -48,23 +47,13 @@ export function DashboardSidebar({
                                 </div>
                             </>
                         ) : (
-                            <div
-                                onMouseEnter={() => setHover(true)}
-                                onMouseLeave={() => setHover(false)}
-                                className="size-fit "
-                            >
-                                {hover ? (
-                                    <>
-                                        <LogoIcon
-                                            handleClick={handleClick}
-                                            open={openSidebar}
-                                        />
-                                    </>
-                                ) : (
-                                    <>
-                                        <AppathonLogoIcon />
-                                    </>
-                                )}
+                            <div className="size-fit relative group border-2 ">
+                                <AppathonLogoIcon className="group-hover:hidden" />
+                                <LogoIcon
+                                    handleClick={handleClick}
+                                    open={openSidebar}
+                                    className="group-hover:block absolute top-0 left-0"
+                                />
                             </div>
                         )}
                         <div className="mt-8 flex flex-col gap-2 ">
@@ -96,14 +85,19 @@ export function DashboardSidebar({
 export const LogoIcon = ({
     handleClick,
     open,
+    className,
 }: {
     handleClick: () => void;
     open: boolean;
+    className?: string;
 }) => {
     return (
         <Link
             href=""
-            className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
+            className={cn(
+                "relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black",
+                className
+            )}
             onClick={handleClick}
         >
             {open ? (

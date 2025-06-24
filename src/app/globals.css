@@ -40,6 +40,8 @@
     --color-primary-sidebar: var(--sidebar-primary);
     --color-primary-sidebar-foreground: var(--sidebar-primary-foreground);
 
+    --color-primary-border: var(--primary-border);
+
     --color-success: var(--success);
 
     --color-popover-foreground: var(--popover-foreground);
@@ -101,6 +103,7 @@
     --sidebar-ring: oklch(0.705 0.015 286.067);
     --text-secondary-color: #2844bd;
     --success: #10b981;
+    --primary-border: #1e40af;
 }
 
 @layer base {
