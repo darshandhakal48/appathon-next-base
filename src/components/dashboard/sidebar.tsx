@@ -15,8 +15,12 @@ export function DashboardSidebar({
   children: React.ReactNode;
   links: SidebarLinkItem[];
 }) {
+<<<<<<< HEAD
+    const [openSidebar, setOpen] = useState(false);
+=======
   const [openSidebar, setOpen] = useState(false);
   const [hover, setHover] = useState(false);
+>>>>>>> 3b8f1aa331048de056173f8e183983addd9f9652
 
   const handleClick = () => {
     setOpen((prev) => !prev);
@@ -32,6 +36,57 @@ export function DashboardSidebar({
           className="justify-between gap-10 border-r-2"
           style={{ backgroundColor: "var(--sidebar-primary)" }}
         >
+<<<<<<< HEAD
+            <Sidebar open={openSidebar} setOpen={setOpen}>
+                <SidebarBody
+                    className="justify-between gap-10 border-r-2"
+                    style={{ backgroundColor: "var(--sidebar-primary)" }}
+                >
+                    <div
+                        className={`flex flex-1 flex-col overflow-x-hidden ${
+                            !openSidebar ? "items-center" : "items-start"
+                        }  overflow-y-auto`}
+                    >
+                        {openSidebar ? (
+                            <>
+                                <div className=" flex justify-between w-full items-center">
+                                    <Logo className="h-5" />
+                                    <LogoIcon
+                                        handleClick={handleClick}
+                                        open={openSidebar}
+                                    />
+                                </div>
+                            </>
+                        ) : (
+                            <div className="size-fit relative group border-2 ">
+                                <AppathonLogoIcon className="group-hover:hidden" />
+                                <LogoIcon
+                                    handleClick={handleClick}
+                                    open={openSidebar}
+                                    className="group-hover:block absolute top-0 left-0"
+                                />
+                            </div>
+                        )}
+                        <div className="mt-8 flex flex-col gap-2 ">
+                            {links.map((link, idx) => (
+                                <SidebarLink key={idx} link={link} />
+                            ))}
+                        </div>
+                    </div>
+                </SidebarBody>
+            </Sidebar>
+            <div className="w-full bg-muted">
+                <div className="bg-background ">
+                    <div className="flex justify-end px-4">
+                        <div className=" flex items-center gap-[14px] px-2 py-4">
+                            <span className="h-[32px] w-[32px] rounded-full flex justify-center items-center bg-[#D5D5D5]">
+                                {" "}
+                                AP
+                            </span>
+                            <span>Andy Peterson</span>
+                        </div>
+                    </div>
+=======
           <div
             className={`flex flex-1 flex-col overflow-x-hidden ${
               !openSidebar ? "items-center" : "items-start"
@@ -45,6 +100,7 @@ export function DashboardSidebar({
                     handleClick={handleClick}
                     open={openSidebar}
                   />
+>>>>>>> 3b8f1aa331048de056173f8e183983addd9f9652
                 </div>
               </>
             ) : (
@@ -87,6 +143,45 @@ export function DashboardSidebar({
   );
 }
 
+<<<<<<< HEAD
+export const LogoIcon = ({
+    handleClick,
+    open,
+    className,
+}: {
+    handleClick: () => void;
+    open: boolean;
+    className?: string;
+}) => {
+    return (
+        <Link
+            href=""
+            className={cn(
+                "relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black",
+                className
+            )}
+            onClick={handleClick}
+        >
+            {open ? (
+                <>
+                    <PanelLeftClose
+                        height={20}
+                        width={20}
+                        className="text-sidebar-primary-foreground/0 hover:text-sidebar-primary-foreground/20"
+                    />
+                </>
+            ) : (
+                <>
+                    <PanelLeftOpen
+                        height={20}
+                        width={20}
+                        className="text-sidebar-primary-foreground/0 hover:text-sidebar-primary-foreground/20"
+                    />
+                </>
+            )}
+        </Link>
+    );
+=======
 export const SidebarToggleIcon = ({
   handleClick,
   open,
@@ -119,4 +214,5 @@ export const SidebarToggleIcon = ({
       )}
     </Link>
   );
+>>>>>>> 3b8f1aa331048de056173f8e183983addd9f9652
 };
