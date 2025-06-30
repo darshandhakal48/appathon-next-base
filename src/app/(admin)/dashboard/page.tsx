@@ -15,7 +15,7 @@ const AdminDashboard = () => {
             </div>
 
             {/* main section */}
-            <div className="p-6 space-y-4">
+            <div className="p-6 space-y-4 ">
                 {/* cards */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     <HiringStepsCard />

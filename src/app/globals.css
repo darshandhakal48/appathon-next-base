@@ -42,6 +42,10 @@
 
     --color-primary-border: var(--primary-border);
 
+    --color-secondary-border: var(--secondary-border);
+
+    --color-primary-surface-subtle: #3b82f6;
+
     --color-success: var(--success);
 
     --color-popover-foreground: var(--popover-foreground);
@@ -62,6 +66,8 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
+
+    --color-primary-border: var(--primary-border);
 }
 
 :root {
@@ -77,6 +83,8 @@
 
     --primary-surface: #2844bd;
     --primary-surface-foreground: oklch(0.985 0 0);
+
+    /* --primary-surface-subtle : #3B82F6 */
 
     --secondary: #374151;
     --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -104,6 +112,8 @@
     --text-secondary-color: #2844bd;
     --success: #10b981;
     --primary-border: #1e40af;
+
+    --secondary-border: #cbd5e1;
 }
 
 @layer base {
