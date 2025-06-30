@@ -7,7 +7,7 @@ function ScheduleInterview() {
         <>
             <div className="grid grid-cols-2 gap-4">
                 <SelectCandidate />
-                <button className=" gap-6 border-dashed border-2 text-primary-surface items-center border-primary-sub rounded-[10px] p-4  cursor-pointer text-center">
+                <button className=" gap-6 border-dashed border-2 text-primary-surface items-center border-primary-surface-subtle rounded-[10px] p-4  cursor-pointer text-center">
                     Select Job Posting
                 </button>
             </div>
