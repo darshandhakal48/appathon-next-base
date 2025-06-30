@@ -8,8 +8,10 @@ export default function CandidateDashboard() {
   return (
     <>
       {/* title */}
-      <div className="bg-background border-1 p-4 bg">
-        <span className="text-xl font-semibold">Dashboard</span>
+      <div className="h-16 px-6 flex items-center justify-start bg-white border-b border-background-secondary overflow-hidden ">
+        <p className="text-title text-xl text-nowrap font-semibold ">
+          Dashboard
+        </p>
       </div>
 
       {/* main section */}
