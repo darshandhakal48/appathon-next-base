@@ -1,7 +1,7 @@
 "use client";
 import BasicLayoutCard from "@/components/shared/basicLayoutCard";
 import { Button } from "@/components/ui/button";
-import InterviewCard from "./_component/interviewCard";
+import InterviewCard from "../../../components/dashboard/interviewCard";
 import { useState } from "react";
 import ScheduleInterview from "./_component/scheduleInterview";
 
