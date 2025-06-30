@@ -14,7 +14,7 @@ export const adminDashboardSidebarLink: SidebarLinkItem[] = [
   },
   {
     label: "Interviews",
-    href: "/interview",
+    href: "/interviews",
     icon: "interviews",
   },
   {
@@ -24,7 +24,7 @@ export const adminDashboardSidebarLink: SidebarLinkItem[] = [
   },
   {
     label: "Job Posting",
-    href: "/jobPosting",
+    href: "/jobposting",
     icon: "jobPosting",
   },
   {
@@ -34,7 +34,7 @@ export const adminDashboardSidebarLink: SidebarLinkItem[] = [
   },
   {
     label: "Candidates",
-    href: "/candidate",
+    href: "/candidates",
     icon: "candidates",
   },
   {

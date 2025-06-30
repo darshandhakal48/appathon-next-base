@@ -18,7 +18,6 @@ export function DashboardSidebar({
   links: SidebarLinkItem[];
 }) {
   const [openSidebar, setOpen] = useState(false);
-  const [hover, setHover] = useState(false);
 
   const handleClick = () => {
     setOpen((prev) => !prev);
