@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { fontSans, fontUrban } from "@/lib/fonts";
+import { fontSans, fontSecondary, fontUrban } from "@/lib/fonts";
 import AppProvider from "@/providers/app-provider";
 
 export const metadata: Metadata = {
@@ -21,7 +21,8 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
-          fontUrban.variable
+          fontUrban.variable,
+          fontSecondary.variable
         )}
       >
         <AppProvider>{children}</AppProvider>

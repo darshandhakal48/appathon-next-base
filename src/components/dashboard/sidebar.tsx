@@ -7,6 +7,8 @@ import Logo, { LogoIcon } from "../ui/logo";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { SidebarLinkItem } from "@/lib/type";
 import Link from "next/link";
+import { Avatar, AvatarFallback } from "../ui/avatar";
+import { ScrollArea } from "../ui/scroll-area";
 
 export function DashboardSidebar({
   children,
@@ -29,13 +31,13 @@ export function DashboardSidebar({
     >
       <Sidebar open={openSidebar} setOpen={setOpen}>
         <SidebarBody
-          className="justify-between gap-10 border-r-2"
+          className="justify-between h-screen bg-sidebar z-40 fixed gap-10 border-r-2"
           style={{ backgroundColor: "var(--sidebar-primary)" }}
         >
           <div
             className={`flex flex-1 flex-col overflow-x-hidden ${
               !openSidebar ? "items-center" : "items-start"
-            }  overflow-y-auto`}
+            }`}
           >
             {openSidebar ? (
               <>
@@ -69,19 +71,25 @@ export function DashboardSidebar({
           </div>
         </SidebarBody>
       </Sidebar>
-      <div className="w-full bg-muted">
-        <div className="bg-background ">
-          <div className="flex justify-end px-4">
-            <div className=" flex items-center gap-[14px] px-2 py-4">
-              <span className="h-[32px] w-[32px] rounded-full flex justify-center items-center bg-[#D5D5D5]">
-                {" "}
-                AP
-              </span>
-              <span>Andy Peterson</span>
+      <div
+        className={cn(
+          "w-full bg-muted pt-16 relative",
+          openSidebar ? "md:ml-[250px]" : "ml-[80px]"
+        )}
+      >
+        <div className="w-full fixed top-0 left-0 z-30 px-5 py-2.5 bg-white border-b border-background-secondary flex justify-end items-center ">
+          <div className="h-11 px-4 flex justify-start items-center ">
+            <div className="flex items-center gap-3.5">
+              <Avatar>
+                <AvatarFallback className="bg-[#D5D5D5]">AP</AvatarFallback>
+              </Avatar>
+              <div className=" text-title text-xs font-normal  leading-none">
+                Andy Peterson
+              </div>
             </div>
           </div>
         </div>
-        {children}
+        <ScrollArea>{children}</ScrollArea>
       </div>
     </div>
   );

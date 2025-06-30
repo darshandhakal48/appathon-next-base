@@ -72,22 +72,22 @@ export const candidateDashboardSidebarLink: SidebarLinkItem[] = [
   },
   {
     label: "Interviews",
-    href: "/interview",
+    href: "/candidate/interview",
     icon: "interviews",
   },
   {
     label: "Job Search",
-    href: "/jobSearch",
+    href: "/candidate/jobSearch",
     icon: "jobPosting",
   },
   {
     label: "Application Tracking",
-    href: "/applicationTracking",
+    href: "/candidate/applicationTracking",
     icon: "clients",
   },
   {
     label: "Messaging",
-    href: "/messaging",
+    href: "/candidate/messaging",
     icon: "messaging",
   },
 ];
