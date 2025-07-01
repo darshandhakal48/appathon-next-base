@@ -7,7 +7,6 @@ import Logo, { LogoIcon } from "../ui/logo";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { SidebarLinkItem } from "@/lib/type";
 import Link from "next/link";
-import { Avatar, AvatarFallback } from "../ui/avatar";
 import { ScrollArea } from "../ui/scroll-area";
 
 export function DashboardSidebar({
@@ -72,7 +71,7 @@ export function DashboardSidebar({
       </Sidebar>
       <div
         className={cn(
-          "w-full bg-muted relative",
+          "w-full bg-muted  relative",
           openSidebar ? "md:ml-[250px]" : "md:ml-[80px]"
         )}
       >
