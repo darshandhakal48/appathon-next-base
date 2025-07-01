@@ -82,6 +82,8 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --color-primary-border: var(--primary-border);
+
+  --color-grayscale-body: var(--grayscale-body);
 }
 
 :root {
@@ -128,6 +130,9 @@
   --primary-border: #1e40af;
 
   --secondary-border: #cbd5e1;
+
+  /* ---- TEXT ---- */
+  --grayscale-body: #374151;
 }
 
 @layer base {

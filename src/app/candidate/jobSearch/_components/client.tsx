@@ -5,9 +5,11 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import JobInfo from "./job-info";
+import { useRouter } from "next/navigation";
 
 const CandidateJobSearchClient = () => {
   const [selectedJob, setSelectedJob] = useState(false);
+  const router = useRouter();
 
   return (
     <div>

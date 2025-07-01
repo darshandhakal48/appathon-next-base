@@ -72,22 +72,10 @@ export function DashboardSidebar({
       </Sidebar>
       <div
         className={cn(
-          "w-full bg-muted pt-16 relative",
-          openSidebar ? "md:ml-[250px]" : "ml-[80px]"
+          "w-full bg-muted relative",
+          openSidebar ? "md:ml-[250px]" : "md:ml-[80px]"
         )}
       >
-        <div className="w-full fixed top-0 left-0 z-30 px-5 py-2.5 bg-white border-b border-background-secondary flex justify-end items-center ">
-          <div className="h-11 px-4 flex justify-start items-center ">
-            <div className="flex items-center gap-3.5">
-              <Avatar>
-                <AvatarFallback className="bg-[#D5D5D5]">AP</AvatarFallback>
-              </Avatar>
-              <div className=" text-title text-xs font-normal  leading-none">
-                Andy Peterson
-              </div>
-            </div>
-          </div>
-        </div>
         <ScrollArea>{children}</ScrollArea>
       </div>
     </div>
