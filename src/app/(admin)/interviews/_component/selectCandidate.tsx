@@ -1,7 +1,10 @@
+"use client";
 import { UserSearch, ChevronDown, Eye } from "lucide-react";
 import Image from "next/image";
 import profile from "@/../public/_static/profile-pic.jpg";
 import { useState } from "react";
+import { Popover, PopoverTrigger } from "@/components/ui/popover";
+import { PopoverContent } from "@radix-ui/react-popover";
 
 function SelectCandidate() {
     const [openDropdown, setOpenDropdown] = useState(false);
@@ -12,27 +15,27 @@ function SelectCandidate() {
     return (
         <>
             <div className="relative">
-                <button
-                    className="flex gap-6 items-center bg-primary-surface-subtle rounded-[10px] p-4 text-muted cursor-pointer"
-                    onClick={handleDropdown}
-                >
-                    <span className="flex items-center gap-2">
-                        <span>
-                            <UserSearch height={18} />
-                        </span>
-                        <span className="text-lg font-semibold">
-                            Select Candiadate
-                        </span>
-                    </span>
-                    <span>
-                        <ChevronDown height={18} />
-                    </span>
-                </button>
-
-                {/* dropdown */}
-                {openDropdown ? (
-                    <>
-                        <div className="absolute bg-white shadow-xl w-full flex flex-col rounded-[10px] p-2 top-full mt-2 gap-4 ">
+                <Popover>
+                    <PopoverTrigger asChild>
+                        <button
+                            className="flex gap-6 items-center bg-primary-surface-subtle rounded-[10px] p-4 text-muted cursor-pointer"
+                            onClick={handleDropdown}
+                        >
+                            <span className="flex items-center gap-2">
+                                <span>
+                                    <UserSearch height={18} />
+                                </span>
+                                <span className="text-lg font-semibold">
+                                    Select Candiadate
+                                </span>
+                            </span>
+                            <span>
+                                <ChevronDown height={18} />
+                            </span>
+                        </button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-[250px] mt-2   ">
+                        <div className=" bg-white shadow-xl w-full flex flex-col rounded-[10px] p-2  gap-4 ">
                             <div className="flex justify-between items-center p-1 shadow-sm rounded-full">
                                 <div className="flex items-center gap-2">
                                     <span className="h-10 w-10 ">
@@ -80,10 +83,11 @@ function SelectCandidate() {
                                 </span>
                             </div>
                         </div>
-                    </>
-                ) : (
-                    <></>
-                )}
+                    </PopoverContent>
+                </Popover>
+
+                {/* dropdown */}
+                {openDropdown ? <></> : <></>}
             </div>
         </>
     );

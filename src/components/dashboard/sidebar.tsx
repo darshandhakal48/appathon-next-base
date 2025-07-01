@@ -7,6 +7,7 @@ import Logo, { LogoIcon } from "../ui/logo";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { SidebarLinkItem } from "@/lib/type";
 import Link from "next/link";
+import { ScrollArea } from "../ui/scroll-area";
 
 export function DashboardSidebar({
     children,
@@ -28,13 +29,13 @@ export function DashboardSidebar({
         >
             <Sidebar open={openSidebar} setOpen={setOpen}>
                 <SidebarBody
-                    className="justify-between gap-10 border-r-2"
+                    className="justify-between h-screen bg-sidebar z-40 fixed gap-10 border-r-2"
                     style={{ backgroundColor: "var(--sidebar-primary)" }}
                 >
                     <div
-                        className={`flex flex-1 flex-col overflow-x-hidden  ${
+                        className={`flex flex-1 flex-col overflow-x-hidden ${
                             !openSidebar ? "items-center" : "items-start"
-                        }  overflow-y-auto`}
+                        }`}
                     >
                         {openSidebar ? (
                             <>
@@ -68,19 +69,13 @@ export function DashboardSidebar({
                     </div>
                 </SidebarBody>
             </Sidebar>
-            <div className="w-full bg-muted">
-                <div className="bg-background ">
-                    <div className="flex justify-end px-4">
-                        <div className=" flex items-center gap-[14px] px-2 py-4">
-                            <span className="h-[32px] w-[32px] rounded-full flex justify-center items-center bg-[#D5D5D5]">
-                                {" "}
-                                AP
-                            </span>
-                            <span>Andy Peterson</span>
-                        </div>
-                    </div>
-                </div>
-                {children}
+            <div
+                className={cn(
+                    "w-full bg-muted  relative",
+                    openSidebar ? "md:ml-[250px]" : "md:ml-[80px]"
+                )}
+            >
+                <ScrollArea>{children}</ScrollArea>
             </div>
         </div>
     );

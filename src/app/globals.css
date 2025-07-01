@@ -46,6 +46,9 @@
 
     --color-primary-surface-subtle: var(--primary-surface-subtle);
 
+    --color-subtitle: var(--subtitle);
+    --color-subtitle-foreground: var(--subtitle-foreground);
+
     --color-success: var(--success);
 
     --color-popover-foreground: var(--popover-foreground);
@@ -56,7 +59,9 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
+
     --color-title: var(--title);
+    --color-caption: #9ca3af;
 
     --color-popover-foreground: var(--popover-foreground);
     --color-popover: var(--popover);
@@ -68,6 +73,9 @@
     --radius-xl: calc(var(--radius) + 4px);
 
     --color-primary-border: var(--primary-border);
+    --color-secondary-border: var(--secondary-border);
+
+    --color-primary-surface-disabled: var(--primary-surface-disabled);
 }
 
 :root {
@@ -83,8 +91,7 @@
 
     --primary-surface: #2844bd;
     --primary-surface-foreground: oklch(0.985 0 0);
-
-    --primary-surface-subtle : #3B82F6
+    --primary-surface-subtle: #3b82f6;
 
     --secondary: #374151;
     --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -114,6 +121,8 @@
     --primary-border: #1e40af;
 
     --secondary-border: #cbd5e1;
+
+    --primary-surface-disabled: #d1d5db;
 }
 
 @layer base {
@@ -123,7 +132,6 @@
     body {
         @apply bg-background text-foreground;
     }
-    
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
