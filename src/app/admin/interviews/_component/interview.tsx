@@ -8,7 +8,7 @@ function Interview() {
     const router = useRouter();
 
     const handleNavigation = () => {
-        router.push("/interviews/createInterview");
+        router.push("/admin/interviews/createInterview");
     };
     return (
         <>
