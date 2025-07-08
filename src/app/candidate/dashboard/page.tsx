@@ -2,6 +2,7 @@ import ActiveJobOpenings from "@/components/dashboard/activeJobOpenings";
 import HiringStepsCard from "@/components/dashboard/hiringStepsCard";
 import RecentUserActivities from "@/components/dashboard/recentUserActivities";
 import BasicLayoutCard from "@/components/shared/basicLayoutCard";
+import { candidateDashboardCards } from "@/config/db";
 import React from "react";
 
 export default function CandidateDashboard() {
@@ -19,13 +20,10 @@ export default function CandidateDashboard() {
         {/* cards */}
         <div className="p-6">
           <p className="text-title font-normal">Your Application Overview</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <HiringStepsCard />
-            <HiringStepsCard />
-            <HiringStepsCard />
-            <HiringStepsCard />
-            <HiringStepsCard />
-            <HiringStepsCard />
+          <div className="self-stretch grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {candidateDashboardCards.map((card) => {
+              return <HiringStepsCard data={card} />;
+            })}
           </div>
         </div>
         <div className="grid grid-cols-1  md:grid-cols-2 gap-4  ">

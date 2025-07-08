@@ -1,4 +1,9 @@
-import { IconBookmark, IconShare, IconSparkles } from "@tabler/icons-react";
+import {
+  IconBookmark,
+  IconSend,
+  IconShare,
+  IconSparkles,
+} from "@tabler/icons-react";
 import {
   AlertTriangle,
   ArrowRight,
@@ -16,6 +21,8 @@ import {
   FileClock,
   FileKey,
   FileText,
+  FolderOpen,
+  Headset,
   HelpCircle,
   Home,
   Image,
@@ -75,6 +82,7 @@ export const Icons = {
   timeSheet: FileClock,
   payroll: LayoutDashboard,
   rolesAndPermissions: FileKey,
+  send: IconSend,
   ellipsis: MoreVertical,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
@@ -146,4 +154,6 @@ export const Icons = {
   ),
   user: User,
   warning: AlertTriangle,
+  headset: Headset,
+  folderOpen: FolderOpen,
 };
