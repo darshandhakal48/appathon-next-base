@@ -1,7 +1,12 @@
 import React from "react";
+import WorkforceTable from "./_component/workforceTable";
 
 function AdminWorkForce() {
-    return <div>AdminWorkForce</div>;
+    return (
+        <>
+            <WorkforceTable />
+        </>
+    );
 }
 
 export default AdminWorkForce;

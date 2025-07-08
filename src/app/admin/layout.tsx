@@ -5,13 +5,13 @@ import { adminDashboardSidebarLink } from "@/config/dashboard";
 import React from "react";
 
 function AdminLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <DashboardSidebar links={adminDashboardSidebarLink}>
-        {children}
-      </DashboardSidebar>
-    </>
-  );
+    return (
+        <>
+            <DashboardSidebar links={adminDashboardSidebarLink}>
+                {children}
+            </DashboardSidebar>
+        </>
+    );
 }
 
 export default AdminLayout;

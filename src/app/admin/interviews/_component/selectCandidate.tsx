@@ -2,25 +2,17 @@
 import { UserSearch, ChevronDown, Eye } from "lucide-react";
 import Image from "next/image";
 import profile from "@/../public/_static/profile-pic.jpg";
-import { useState } from "react";
 import { Popover, PopoverTrigger } from "@/components/ui/popover";
 import { PopoverContent } from "@radix-ui/react-popover";
+import { Button } from "@/components/ui/button";
 
 function SelectCandidate() {
-    const [openDropdown, setOpenDropdown] = useState(false);
-
-    const handleDropdown = () => {
-        setOpenDropdown((prev) => !prev);
-    };
     return (
         <>
             <div className="relative">
                 <Popover>
                     <PopoverTrigger asChild>
-                        <button
-                            className="flex gap-6 items-center bg-primary-surface-subtle rounded-[10px] p-4 text-muted cursor-pointer"
-                            onClick={handleDropdown}
-                        >
+                        <Button variant="customDefault" size="cd">
                             <span className="flex items-center gap-2">
                                 <span>
                                     <UserSearch height={18} />
@@ -32,7 +24,7 @@ function SelectCandidate() {
                             <span>
                                 <ChevronDown height={18} />
                             </span>
-                        </button>
+                        </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-[250px] mt-2   ">
                         <div className=" bg-white shadow-xl w-full flex flex-col rounded-[10px] p-2  gap-4 ">
@@ -85,9 +77,6 @@ function SelectCandidate() {
                         </div>
                     </PopoverContent>
                 </Popover>
-
-                {/* dropdown */}
-                {openDropdown ? <></> : <></>}
             </div>
         </>
     );
