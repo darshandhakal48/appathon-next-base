@@ -6,7 +6,7 @@ import MobileSidebar from "./_components/mobile-sidebar";
 export default async function MessagingPage() {
   return (
     <>
-      <DashboardPageHeader children="Messaging" />
+      <DashboardPageHeader title="Messaging" />
       <MobileSidebar>
         <div className="p-6 grid h-[calc(100vh-70px)] grid-cols-1 md:grid-cols-[0.35fr_1fr] gap-4">
           <div className="flex-col gap-6 hidden md:flex">

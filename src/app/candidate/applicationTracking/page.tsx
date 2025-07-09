@@ -9,7 +9,7 @@ import {
 export default function ApplicationTracking() {
   return (
     <div>
-      <DashboardPageHeader>Application Tracking</DashboardPageHeader>
+      <DashboardPageHeader title="Application Tracking" />
 
       <div className="self-stretch p-6 inline-flex flex-col justify-start items-start gap-4 overflow-hidden">
         <p className="h-12 py-6 text-title text-base font-normal  leading-normal">

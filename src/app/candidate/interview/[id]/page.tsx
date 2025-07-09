@@ -14,7 +14,7 @@ export default async function CandidateDashboardInterviewInfoPage(
 
   return (
     <>
-      <DashboardPageHeader children="Interview" />
+      <DashboardPageHeader title="Interview" />
       <InterviewInfo />
     </>
   );

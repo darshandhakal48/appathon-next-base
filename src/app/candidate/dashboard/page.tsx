@@ -21,8 +21,13 @@ export default function CandidateDashboard() {
         <div className="p-6">
           <p className="text-title font-normal">Your Application Overview</p>
           <div className="self-stretch grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {candidateDashboardCards.map((card) => {
-              return <HiringStepsCard data={card} />;
+            {candidateDashboardCards.map((card, i) => {
+              return (
+                <HiringStepsCard
+                  key={"candidate-dashboard-card-" + i}
+                  data={card}
+                />
+              );
             })}
           </div>
         </div>

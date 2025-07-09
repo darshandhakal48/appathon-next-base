@@ -5,7 +5,7 @@ import { Suspense } from "react";
 export default function CandidateDashboardInterview() {
   return (
     <>
-      <DashboardPageHeader children="Interview" />
+      <DashboardPageHeader title="Interview" />
       <Suspense>
         <CandidateInterviewClient />
       </Suspense>
