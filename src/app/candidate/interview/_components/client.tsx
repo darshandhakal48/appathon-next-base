@@ -1,6 +1,6 @@
 "use client";
-import InterviewCard from "@/components/dashboard/interviewCard";
-import BasicLayoutCard from "@/components/shared/basicLayoutCard";
+import InterviewCard from "@/components/dashboard/interview-card";
+import BasicLayoutCard from "@/components/shared/basic-layout-card";
 import { useRouter } from "next/navigation";
 import React from "react";
 

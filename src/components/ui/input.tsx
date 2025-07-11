@@ -21,22 +21,24 @@ function Input({
   return (
     <div
       className={cn(
-        "flex items-center border border-background-secondary bg-muted rounded-md gap-2 pl-5 pr-8",
+        "flex items-center border border-background-secondary bg-muted rounded-md gap-2",
         containerClassName
       )}
     >
-      {iconPosition === "left" && Tag && <Tag className="text-caption" />}
+      {iconPosition === "left" && Tag && <Tag className="text-caption ml-2" />}
       <input
         type={type}
         data-slot="input"
         className={cn(
-          "file:text-foreground placeholder:text-muted-foreground flex h-9 w-full min-w-0 rounded-md  bg-transparent p-0 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+          "file:text-foreground placeholder:text-muted-foreground flex h-9 w-full pl-5 pr-8 min-w-0 rounded-md  bg-transparent text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
           className
         )}
         {...props}
       />
-      {iconPosition === "right" && Tag && <Tag color={iconColor || "#333"} />}
+      {iconPosition === "right" && Tag && (
+        <Tag className="mr-3" color={iconColor || "#333"} />
+      )}
     </div>
   );
 }

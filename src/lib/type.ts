@@ -9,3 +9,18 @@ export type SidebarLinkItem = {
 };
 
 export type DashboardCard = { label: string; count: number; icon: IconName };
+export type UserActivity = { color: string; status: string; message: string };
+export type Job = {
+  id: string;
+  title: string;
+  company: string;
+  location: string;
+  type: string;
+  posted: string;
+  expires: string;
+  companyImage: string;
+};
+export interface Application extends Job {
+  status: string;
+  appliedDate: string;
+}

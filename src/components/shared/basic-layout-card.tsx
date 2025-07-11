@@ -6,7 +6,10 @@ interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {}
 function BasicLayoutCard(props: LayoutProps) {
   const { className, children, ...attr } = props;
   return (
-    <div className={cn("bg-background p-6 rounded-[6px] shadow-sm")} {...attr}>
+    <div
+      className={cn("bg-background p-6 rounded-[6px] shadow-sm", className)}
+      {...attr}
+    >
       {children}
     </div>
   );

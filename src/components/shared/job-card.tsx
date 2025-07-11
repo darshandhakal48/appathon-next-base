@@ -1,9 +1,16 @@
-import JobInfo from "@/app/candidate/jobSearch/_components/job-info";
+"use client";
+
+import { Skeleton } from "@/components/ui/skeleton";
+import { Job } from "@/lib/type";
 import { cn } from "@/lib/utils";
 import React from "react";
+import { Badge } from "../ui/badge";
+import Image from "next/image";
+import { IconMapPin } from "@tabler/icons-react";
+import { Card, CardContent } from "../ui/card";
 
 interface JobCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  job?: string;
+  job?: Job;
 }
 
 const JobCard = (props: JobCardProps) => {
@@ -12,55 +19,80 @@ const JobCard = (props: JobCardProps) => {
     <div
       {...attr}
       className={cn(
-        "px-6 py-4 bg-background rounded-md  outline-1 outline-offset-[-1px] outline-background-secondary inline-flex flex-col justify-start items-start gap-4 hover:bg-background-secondary hover:outline-gray-300 cursor-pointer transition-all",
+        "px-6 py-4 bg-background rounded-md  outline-1 outline-offset-[-1px] outline-background-secondary inline-flex flex-col justify-start items-start gap-4 hover:bg-background-secondary/30 hover:outline-background-secondary/70 cursor-pointer transition-all",
         className
       )}
     >
       <div className="self-stretch inline-flex justify-start items-start gap-2.5">
         <div className="inline-flex flex-col justify-start items-start">
           <div className="self-stretch justify-start text-primary-surface text-lg font-semibold leading-7">
-            Software Engineering
+            {job?.title}
           </div>
         </div>
       </div>
       <div className="self-stretch inline-flex justify-start items-center gap-8">
         <div className="flex justify-start items-center gap-2">
-          <div
-            data-size="lg"
-            data-type="avatar image"
-            className="w-10 h-10 relative"
-          >
-            <img
-              className="w-10 h-10 left-0 top-0 absolute rounded-full"
-              src="https://placehold.co/40x40"
-            />
-          </div>
+          <Image
+            alt="placeholder"
+            width={40}
+            height={40}
+            className="soze-10 rounded-full"
+            src="/_static/40x40.svg"
+          />
+
           <div className="justify-center text-gray-700 text-sm font-normal font leading-tight">
-            Rays IT Solutions
+            {job?.company}
           </div>
         </div>
         <div className="flex justify-start items-center gap-2">
-          <div className="w-4 h-4 relative overflow-hidden">
-            <div className="w-3 h-3.5 left-[2px] top-[0.67px] absolute bg-Greyscale-Text-Subtitle" />
-            <div className="w-1.5 h-1.5 left-[5.33px] top-[4px] absolute bg-Greyscale-Text-Subtitle" />
-          </div>
-          <div className="justify-center text-foreground text-sm font-normal   leading-tight">
-            TX 4340, USA (Full Time)
+          <IconMapPin className="size-4 text-foreground" />
+          <div className="justify-center text-foreground text-sm font-normal leading-tight">
+            {job?.location}
           </div>
         </div>
       </div>
       <div className="self-stretch inline-flex justify-start items-center gap-8">
         <div className="justify-start text-caption text-[10px] font-normal   leading-none">
-          3 weeks ago
+          {job?.posted}
         </div>
-        <div className="px-2 py-1 bg-warning rounded-3xl flex justify-center items-center gap-1">
-          <div className="justify-start text-negative text-[10px] font-normal   leading-none">
-            Expires in 4 days
-          </div>
-        </div>
+        <Badge variant="warning">{job?.expires}</Badge>
       </div>
     </div>
   );
 };
+
+export function JobCardSkeleton() {
+  return (
+    <Card>
+      <CardContent className="p-4">
+        <div className="space-y-3">
+          {/* Job Title */}
+          <Skeleton className="h-5 w-48" />
+
+          {/* Company Info */}
+          <div className="flex items-center space-x-3">
+            <Skeleton className="h-8 w-8 rounded-full" />
+            <div className="space-y-1">
+              <Skeleton className="h-4 w-32" />
+              <div className="flex items-center space-x-2">
+                <Skeleton className="h-3 w-3" />
+                <Skeleton className="h-3 w-24" />
+              </div>
+            </div>
+          </div>
+
+          {/* Tags and Button */}
+          <div className="flex items-center justify-between">
+            <div className="flex space-x-2">
+              <Skeleton className="h-6 w-16 rounded-full" />
+              <Skeleton className="h-6 w-20 rounded-full" />
+            </div>
+            <Skeleton className="h-8 w-20" />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default JobCard;
