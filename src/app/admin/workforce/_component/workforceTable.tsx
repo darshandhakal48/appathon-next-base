@@ -84,8 +84,10 @@ const ParticipantsTable = () => {
                     <TableCell className="font-medium flex items-center gap-2">
                         <span className="h-10 w-10 ">
                             <Image
-                                src={profile}
+                                src={`/_static/profile-pic.jpg`}
                                 alt="Candidate profile picture"
+                                width={899}
+                                height={1300}
                                 className="h-full w-full rounded-full object-fit"
                             />
                         </span>
