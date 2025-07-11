@@ -1,4 +1,4 @@
-import DashboardPageHeader from "@/components/dashboard/pageHeader";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 import CandidateInterviewClient from "./_components/client";
 import { Suspense } from "react";
 

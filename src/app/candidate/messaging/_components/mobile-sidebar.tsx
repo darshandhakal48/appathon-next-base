@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import MessagingProfileCard from "@/components/dashboard/messaging-profile-card";
 import { IconMenu2 } from "@tabler/icons-react";
+import { candidateUserProfiles } from "@/config/db";
 
 export default function MobileSidebar({
   children,
@@ -41,7 +42,7 @@ export default function MobileSidebar({
         >
           <div className={`flex flex-1 flex-col overflow-x-hidden`}>
             <div className="mt-8 flex flex-col gap-2 ">
-              <MessagingProfileCard />
+              <MessagingProfileCard user={candidateUserProfiles[0]} />
             </div>
           </div>
         </SidebarBody>

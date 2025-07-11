@@ -1,4 +1,4 @@
-import DashboardPageHeader from "@/components/dashboard/pageHeader";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 import InterviewInfo from "../../../../components/dashboard/interview-info";
 
 interface PageProps {

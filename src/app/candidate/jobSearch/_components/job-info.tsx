@@ -1,34 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
+import { Job } from "@/lib/type";
 import { cn } from "@/lib/utils";
 import { IconFileText } from "@tabler/icons-react";
+import Image from "next/image";
 
 interface JobInfoProps extends React.HTMLAttributes<HTMLDivElement> {
-  job?: string;
+  job?: Job;
 }
 
 export default function JobInfo(props: JobInfoProps) {
-  const { className, ...attr } = props;
+  const { className, job, ...attr } = props;
   return (
     <div {...attr} className={cn("bg-background rounded", className)}>
-      {/* ---- SPACER ---- */}
       <div className="h-4 p-2.5" />
 
       <div className="px-6 py-2 flex flex-col self-stretch justify-center items-start gap-4">
         <div className="inline-flex self-stretch justify-between items-center">
           <div className="inline-flex flex-col justify-start items-start gap-2.5">
-            {/* ---- COMPANY LOGO ---- */}
             <div className="inline-flex justify-start items-center gap-2">
-              <div
-                data-size="lg"
-                data-type="avatar image"
-                className="w-10 h-10 relative"
-              >
-                <img
-                  className="w-10 h-10 left-0 top-0 absolute rounded-full"
-                  src="https://placehold.co/40x40"
-                />
-              </div>
+              <Image
+                alt="placeholder"
+                width={40}
+                height={40}
+                className="soze-10 rounded-full"
+                src="/_static/40x40.svg"
+              />
+
               <div className="justify-center text-gray-700 text-sm font-normal font-['Inter'] leading-tight">
                 Rays IT Solutions
               </div>
@@ -50,16 +48,16 @@ export default function JobInfo(props: JobInfoProps) {
         </div>
         <div className="self-stretch inline-flex justify-start items-center gap-1">
           <div className="justify-start text-Greyscale-Text-Title text-2xl font-semibold leading-loose">
-            Software Engineering
+            {job?.title}
           </div>
         </div>
         <div className="self-stretch inline-flex justify-start items-center gap-4">
           <div className="justify-start text-caption text-[10px] font-normal leading-none">
-            3 weeks ago
+            {job?.posted}
           </div>
           <div className="px-2 py-1 bg-warning rounded-3xl flex justify-center items-center gap-1">
             <div className="justify-start text-warning-foreground text-[10px] font-normal leading-none">
-              Expires in 4 days
+              {job?.expires}
             </div>
           </div>
         </div>
