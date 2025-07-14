@@ -1,16 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Loader2 } from "lucide-react";
+import { AlertCircleIcon, Loader2 } from "lucide-react";
 import { LoginFormData, loginSchema } from "../../../schema/auth-form-schema";
 import { Icons } from "@/components/ui/icons";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import { loginWithEmailAndPass } from "@/actions/login";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { IconX } from "@tabler/icons-react";
 
 export default function CandidateLoginForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -33,21 +36,18 @@ export default function CandidateLoginForm() {
     try {
       setIsLoading(true);
 
-      // Simulate API call - replace with your actual authentication logic
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const loginPromise = loginWithEmailAndPass(data);
 
-      console.log("Login attempt:", { email: data.email });
+      toast.promise(loginPromise, {
+        error: (err) => err.message || "Login Failed, Try Again!",
+        success: (res) => res.message,
+        loading: "Authorizing....",
+      });
 
-      // Example success handling
-      router.push("/dashboard");
-
-      // Example error handling
-      // if (error.status === 401) {
-      //   setError("root", { message: "Invalid email or password" })
-      // }
-    } catch (error) {
+      await loginPromise;
+    } catch (error: any) {
       setError("root", {
-        message: "Something went wrong. Please try again.",
+        message: error?.message || "Login Failed. Please try again.",
       });
     } finally {
       setIsLoading(false);
@@ -61,7 +61,22 @@ export default function CandidateLoginForm() {
         className="text-center flex gap-6 flex-col"
       >
         <h2 className="text-xl font-semibold text-gray-900">Login</h2>
-
+        {errors.root && errors.root?.message?.length > 0 && (
+          <Alert variant="destructive" className="text-left relative">
+            <AlertCircleIcon />
+            <AlertTitle>{errors.root.message}</AlertTitle>
+            <div className="absolute right-0 top-0 z-5 px-1 grid place-content-center h-full">
+              <Button
+                size="icon"
+                variant="ghost"
+                onClick={() => setError("root", { message: "" })}
+                className="p-1 hover:bg-red-100"
+              >
+                <IconX className="size-3" />
+              </Button>
+            </div>
+          </Alert>
+        )}
         <div className="space-y-2 ">
           <Label htmlFor="email" className="text-sm font-medium text-gray-700">
             Email
@@ -117,12 +132,6 @@ export default function CandidateLoginForm() {
           </a>
         </div>
 
-        {errors.root && (
-          <div className="p-3 text-sm text-left text-red-600 bg-red-50 border border-red-200 rounded-md">
-            {errors.root.message}
-          </div>
-        )}
-
         <Button
           type="submit"
           className="w-full bg-primary-surface hover:bg-primary-surface/90 text-white"
@@ -153,16 +162,17 @@ export default function CandidateLoginForm() {
         <div className="relative flex justify-center text-xs uppercase">
           <span className="bg-white px-2 text-gray-500">Or continue with</span>
         </div>
-
-        <Button
-          size="icon"
-          variant="ghost"
-          className="rounded-full w-fit mx-auto"
-          disabled={isLoading}
-          type="button"
-        >
-          <Icons.google />
-        </Button>
+        <div className="w-full mx-auto flex items-center justify-center">
+          <Button
+            size="icon"
+            variant="ghost"
+            className="rounded-full w-fit p-2"
+            disabled={isLoading}
+            type="button"
+          >
+            <Icons.google />
+          </Button>
+        </div>
       </div>
     </div>
   );

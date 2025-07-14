@@ -102,7 +102,6 @@ export default function ApplicationTrackingClient() {
                   Timeline Progress
                 </p>
                 <Timeline steps={steps} />
-                {/* --------- TIMELINE ---------  */}
               </div>
               <Spacer />
               <div className="self-stretch bg-background rounded-md shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col  overflow-hidden">

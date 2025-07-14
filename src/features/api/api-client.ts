@@ -2,9 +2,7 @@ import type { ApiResponse } from "./type";
 
 // API Configuration
 const API_CONFIG = {
-  baseUrl:
-    process.env.NEXT_PUBLIC_API_BASE_URL ||
-    "https://jsonplaceholder.typicode.com",
+  baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001",
   timeout: 10000,
   retries: 3,
   retryDelay: 1000,

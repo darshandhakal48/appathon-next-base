@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen grid place-content-center">
-      <Button>DEMO YELLOW BUTTON</Button>
+    <div>
+      <h1>Landing's Page Design</h1>
     </div>
   );
 }
