@@ -4,7 +4,6 @@ import { ArrowLeft } from "lucide-react";
 import { workForceProfileInfo } from "@/config/db";
 import OverViewAndTimelineBtn from "@/components/dashboard/overview-timeline-btn";
 import WorkforceActiveJobOpenings from "./workforceActiveJobOpenings";
-import ActiveJobOpenings from "@/components/dashboard/activeJobOpenings";
 
 function EmployeeDetails() {
     return (

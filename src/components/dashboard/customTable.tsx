@@ -14,9 +14,9 @@ export type Column = {
     label: string;
 };
 
-type RowData = Record<string, string>;
+export type RowData = Record<string, string>;
 
-type CustomTableProps<T> = {
+export type CustomTableProps<T> = {
     columns: Column[];
     data: T[];
 };

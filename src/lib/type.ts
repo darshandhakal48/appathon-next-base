@@ -1,3 +1,4 @@
+import { JobFormType } from "@/components/forms/schema";
 import { Icons } from "@/components/ui/icons";
 
 export type IconName = keyof typeof Icons;
@@ -34,4 +35,24 @@ export interface WorkForceProfileInfoProps {
     location: string;
     email: string;
     number: string;
+}
+
+export interface JobCardProps {
+    id: number;
+    role: string;
+    startDate: string;
+    endDate: string;
+    logo: string;
+    companyName: string;
+    status: string;
+    updatedBy: string;
+    location: string;
+    expiresIn: string;
+    type: string;
+}
+
+export interface ConfirmJobDetailsProps {
+    jobDetails: JobFormType;
+
+    setStep: React.Dispatch<React.SetStateAction<1 | 2 | 3>>;
 }

@@ -2,11 +2,11 @@
 import React from "react";
 // import { FileCheck } from "lucide-react";
 import HiringStepsCard from "@/components/dashboard/hiringStepsCard";
-import BasicLayoutCard from "@/components/shared/basicLayoutCard";
-import ActiveJobOpenings from "@/components/dashboard/activeJobOpenings";
-import RecentUserActivities from "@/components/dashboard/recentUserActivities";
+import BasicLayoutCard from "@/components/shared/basic-layout-card";
+import ActiveJobOpenings from "@/components/dashboard/active-job-openings";
+import RecentUserActivities from "@/components/dashboard/recent-user-activities";
 import DashboardPageHeader from "@/components/dashboard/pageHeader";
-import { adminDashbaordCards } from "@/config/db";
+import { adminDashbaordCards, DashboardUserActivity } from "@/config/db";
 
 const AdminDashboard = () => {
     return (
@@ -32,7 +32,10 @@ const AdminDashboard = () => {
                         <ActiveJobOpenings />
                     </BasicLayoutCard>
                     <BasicLayoutCard>
-                        <RecentUserActivities type="admin" />
+                        <RecentUserActivities
+                            data={DashboardUserActivity}
+                            type="admin"
+                        />
                     </BasicLayoutCard>
                 </div>
             </div>

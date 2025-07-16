@@ -89,6 +89,10 @@
 
   --color-warning:#FB923C;
   --color-warning-foreground:#F9FAFB;
+
+  --color-success-surface-lighter : var(--success-surface-lighter);
+
+  --color-grayscale-border-lighter : var(--grayscale-border-lighter);
 }
 
 :root {
@@ -145,6 +149,10 @@
 
     --surface-default: #e5e7eb;
     --warning: #fb923c;
+
+    --success-surface-lighter : #059669;
+
+    --grayscale-border-lighter : #F3F4F6;
 }
 
 @layer base {
@@ -165,4 +173,15 @@
 .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
