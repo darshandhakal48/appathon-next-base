@@ -11,11 +11,12 @@ import {
   candidateJobs,
   candidateUserActivity,
 } from "@/config/db";
+import { Job } from "@/lib/type";
 import { IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
-export default function CandidateDashboardClient() {
+export default function CandidateDashboardClient({ jobs }: { jobs: Job[] }) {
   return (
     <div className="p-6 space-y-4">
       {/* cards */}
@@ -39,7 +40,7 @@ export default function CandidateDashboardClient() {
         <BasicLayoutCard className="space-y-5">
           <p>Top Job picks for you</p>
           <div className="grid grid-cols-1 gap-4">
-            {candidateJobs.map((job, i) => (
+            {jobs.map((job, i) => (
               <JobCard job={job} key={"candidate-dashboard-job-" + i} />
             ))}
           </div>

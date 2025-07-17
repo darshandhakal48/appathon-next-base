@@ -1,5 +1,6 @@
 import { JobFormType } from "@/components/forms/schema";
 import { Icons } from "@/components/ui/icons";
+import { z } from "zod";
 
 export type IconName = keyof typeof Icons;
 
