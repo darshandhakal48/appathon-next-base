@@ -33,6 +33,7 @@ const activeJobsOpening = [
         "Job ID": "se34334",
         "Job Title": "Data Engineering",
         "No. of Positions": 1,
+        
     },
 ];
 

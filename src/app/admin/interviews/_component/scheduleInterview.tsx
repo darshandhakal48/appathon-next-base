@@ -11,7 +11,7 @@ import {
 import { SelectItem } from "@radix-ui/react-select";
 import Image from "next/image";
 import { Eye } from "lucide-react";
-import profile from "@/../public/_static/profile-pic.jpg";
+
 import { Button } from "@/components/ui/button";
 
 function ScheduleInterview() {
@@ -19,9 +19,10 @@ function ScheduleInterview() {
         <>
             <div className="grid grid-cols-2 gap-4">
                 <SelectCandidate />
-                <button className=" gap-6 border-dashed border-2 text-primary-surface items-center border-primary-surface-subtle rounded-[10px] p-4  cursor-pointer text-center">
+
+                <Button variant="dotted" className="h-full w-full">
                     Select Job Posting
-                </button>
+                </Button>
             </div>
 
             {/* interview details form */}
@@ -58,10 +59,7 @@ function ScheduleInterview() {
                         <Label className="text-sm text-primary-sidebar-foreground font-normal ">
                             Interviewers
                         </Label>
-                        {/* <Input
-                            type="text"
-                            className=" border-secondary-border focus:border-primary-border focus-visible:ring-0"
-                        /> */}
+
                         <Select>
                             <SelectTrigger className="w-full cursor-pointer">
                                 <SelectValue
@@ -71,20 +69,22 @@ function ScheduleInterview() {
                             <SelectContent>
                                 <SelectGroup>
                                     <SelectItem
-                                        value="Sakura Chan"
+                                        value="khabib"
                                         className="rounded-full"
                                     >
                                         <div className="flex justify-between items-center p-1 shadow-sm rounded-full">
                                             <div className="flex items-center gap-2">
                                                 <span className="h-10 w-10 ">
                                                     <Image
-                                                        src={profile}
+                                                        src="/_static/profile-pic.jpg"
                                                         alt="Candidate profile picture"
+                                                        width={899}
+                                                        height={1300}
                                                         className="h-full w-full rounded-full object-fit"
                                                     />
                                                 </span>
                                                 <span className="text-sm">
-                                                    Sakura Chan
+                                                    khabib
                                                 </span>
                                             </div>
                                             <span>
@@ -93,20 +93,22 @@ function ScheduleInterview() {
                                         </div>
                                     </SelectItem>
                                     <SelectItem
-                                        value="Sakura Chan"
+                                        value="Islam Makhichev"
                                         className="rounded-full"
                                     >
                                         <div className="flex justify-between items-center p-1 shadow-sm rounded-full">
                                             <div className="flex items-center gap-2">
                                                 <span className="h-10 w-10 ">
                                                     <Image
-                                                        src={profile}
+                                                        src="/_static/profile-pic.jpg"
                                                         alt="Candidate profile picture"
+                                                        width={899}
+                                                        height={1300}
                                                         className="h-full w-full rounded-full object-fit"
                                                     />
                                                 </span>
                                                 <span className="text-sm">
-                                                    Sakura Chan
+                                                    Islam Makhichev
                                                 </span>
                                             </div>
                                             <span>

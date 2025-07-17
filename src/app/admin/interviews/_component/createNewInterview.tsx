@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import ScheduleInterview from "./scheduleInterview";
 import { useRouter } from "next/navigation";
+import DashboardPageHeader from "@/components/dashboard/pageHeader";
 
 function CreateNewInterview() {
     const router = useRouter();
@@ -13,7 +14,7 @@ function CreateNewInterview() {
     return (
         <>
             {/* title */}
-            <div className="bg-background border-1 p-4 bg flex justify-between items-center">
+            <DashboardPageHeader>
                 <div
                     className="flex items-center gap-2.5 cursor-pointer"
                     onClick={handleNavigation}
@@ -34,8 +35,9 @@ function CreateNewInterview() {
                         Cancel
                     </Button>
                 </div>
-            </div>
+            </DashboardPageHeader>
 
+            {/* main body */}
             <div className="my-10 flex justify-center items-center  ">
                 <div className="grid grid-cols-1 gap-5 ">
                     <ScheduleInterview />
