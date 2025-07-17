@@ -57,3 +57,17 @@ export interface ConfirmJobDetailsProps {
 
     setStep: React.Dispatch<React.SetStateAction<1 | 2 | 3>>;
 }
+
+export interface CurrencyProps {
+    code: string;
+    sign: string;
+}
+
+export interface FormFieldsProps {
+    icon: IconName;
+    iconLabel: string;
+}
+export interface PersonalInformationProps {
+    label: string;
+    formFields: FormFieldsProps[];
+}

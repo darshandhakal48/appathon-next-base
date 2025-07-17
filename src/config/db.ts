@@ -1,12 +1,15 @@
 import {
     Application,
+    CurrencyProps,
     DashboardCard,
     Job,
     JobCardProps,
+    PersonalInformationProps,
     UserActivity,
     WorkForceProfileInfoProps,
 } from "@/lib/type";
 import { id } from "zod/v4/locales";
+import { LucideProps } from "lucide-react";
 
 // ========== CANDIDATE - DASHBOARD ========== //
 export const candidateDashboardCards: DashboardCard[] = [
@@ -321,7 +324,7 @@ export const jobTypes: string[] = [
 ];
 // export const workForceTableColumn =
 
-export const currency = [
+export const currency: CurrencyProps[] = [
     { code: "USD", sign: "$" }, // US Dollar
     { code: "EUR", sign: "€" }, // Euro
     { code: "GBP", sign: "£" }, // British Pound
@@ -355,4 +358,240 @@ export const skills: string[] = [
     "Graphics Design",
     "Data Entry",
     "Content Writer",
+];
+
+export const personalInformation: PersonalInformationProps[] = [
+    {
+        label: "First Name",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+    {
+        label: "Middle Name",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+    {
+        label: "Last Name",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+    {
+        label: "Email",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+    {
+        label: "Contact Number",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+    {
+        label: "Resume",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+];
+export const addressInformation: PersonalInformationProps[] = [
+    {
+        label: "Street",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+    {
+        label: "State",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+    {
+        label: "City",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+    {
+        label: "Postal Code",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
+    {
+        label: "Country",
+        formFields: [
+            {
+                icon: "FileInput",
+                iconLabel: "Input Field",
+            },
+            {
+                icon: "CircleChevronDown",
+                iconLabel: "Dropdown",
+            },
+            {
+                icon: "Paperclip",
+                iconLabel: "Attachment",
+            },
+            {
+                icon: "ListPlus",
+                iconLabel: "Multiple Choices",
+            },
+        ],
+    },
 ];

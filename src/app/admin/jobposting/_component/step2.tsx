@@ -1,68 +1,59 @@
-import { FileInput, GripVertical } from "lucide-react";
+import { addressInformation, personalInformation } from "@/config/db";
+import { Plus } from "lucide-react";
 import React from "react";
+import InputBox from "./inputBox";
+import { PersonalInformationProps } from "@/lib/type";
 
 function Step2() {
     return (
-        <div className="">
+        <div className="space-y-10">
+            <Information
+                title="Personal Information"
+                allInput={personalInformation}
+            />
+            <Information
+                title="Address Information"
+                allInput={addressInformation}
+            />
+        </div>
+    );
+}
+
+export function Information({
+    title,
+    allInput,
+}: {
+    title: string;
+    allInput: PersonalInformationProps[];
+}) {
+    return (
+        <>
             <div className="flex flex-col max-w-[80%] mx-auto gap-6 rounded-">
                 <span className="text-lg font-semibold text-sidebar-primary-foreground">
-                    Personal Information
+                    {title}
                 </span>
                 <div className="flex flex-col gap-6">
                     {/* ============== */}
-                    <div className="flex justify-between items-center p-4 bg-background">
-                        <div className="flex items-center text-base gap-4">
-                            <span className="text-caption">
-                                <GripVertical />
-                            </span>
-                            <span className="text-grayscale-body">
-                                First Name
-                            </span>
-                        </div>
-                        <div className="border-[1px] border-background-secondary flex items-center gap-2.5 text-foreground py-1 px-4">
-                            <span>
-                                <FileInput />
-                            </span>
-                            <span>Input Field</span>
-                        </div>
-                    </div>
+                    {allInput.map((info) => (
+                        <>
+                            <InputBox {...info} key={info.label} />
+                        </>
+                    ))}
+
                     {/* ============== */}
-                    <div className="flex justify-between items-center p-4 bg-background">
-                        <div className="flex items-center text-base gap-4">
-                            <span className="text-caption">
-                                <GripVertical />
-                            </span>
-                            <span className="text-grayscale-body">
-                                First Name
-                            </span>
-                        </div>
-                        <div className="border-[1px] border-background-secondary flex items-center gap-2.5 text-foreground py-1 px-4">
-                            <span>
-                                <FileInput />
-                            </span>
-                            <span>Input Field</span>
-                        </div>
-                    </div>
-                    {/* ============== */}
-                    <div className="flex justify-between items-center p-4 bg-background">
-                        <div className="flex items-center text-base gap-4">
-                            <span className="text-caption">
-                                <GripVertical />
-                            </span>
-                            <span className="text-grayscale-body">
-                                First Name
-                            </span>
-                        </div>
-                        <div className="border-[1px] border-background-secondary flex items-center gap-2.5 text-foreground py-1 px-4">
-                            <span>
-                                <FileInput />
-                            </span>
-                            <span>Input Field</span>
-                        </div>
+                </div>
+
+                {/* Add new item */}
+                <div className="flex justify-between items-center p-4 bg-background">
+                    <div className="flex items-center text-base gap-4 cursor-pointer text-primary-surface">
+                        <span>
+                            <Plus />
+                        </span>
+                        <span>Add Item</span>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
