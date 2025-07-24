@@ -8,6 +8,7 @@ import {
     TableBody,
 } from "../ui/table";
 import Image from "next/image";
+// import { Input } from "../ui/input";
 
 export type Column = {
     key: string;
@@ -31,7 +32,10 @@ function CustomTable<T extends RowData>({
                 <TableHeader>
                     <TableRow>
                         {columns.map((title) => (
-                            <TableHead key={title.key as string}>
+                            <TableHead
+                                key={title.key as string}
+                                className="font-bold text-sm"
+                            >
                                 {title.label}
                             </TableHead>
                         ))}
@@ -63,9 +67,20 @@ function CustomTable<T extends RowData>({
                                 }
                                 return (
                                     <>
-                                        <TableCell key={col.key as string}>
-                                            {value}
-                                        </TableCell>
+                                        {value === "checkbox" ? (
+                                            <>
+                                                <TableCell className="">
+                                                    <input
+                                                        type="checkbox"
+                                                        className="h-4 w-4 inline-block"
+                                                    />
+                                                </TableCell>
+                                            </>
+                                        ) : (
+                                            <TableCell key={col.key as string}>
+                                                {value}
+                                            </TableCell>
+                                        )}
                                     </>
                                 );
                             })}

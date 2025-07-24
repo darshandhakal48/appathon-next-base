@@ -1,15 +1,24 @@
 import React from "react";
 
 function Demo() {
-  return (
-    <div className="h-[200vh] bg-red-100">
-      <h1 className="flex w-full items-center bg-red-100 p-10 text-xl text-blue-100">
-        Hello World
-      </h1>
-      <h6 className="text-blue-500">Hello World </h6>
-      <h3></h3>
-    </div>
-  );
+    const modal = useGlobalModal();
+
+    const openModal = () => {
+        modal.custom({
+            content: (
+                <>
+                    <h1>This is a modal demo</h1>
+                    <Button onClick={() => modal.closeAll()}>Close Me</Button>
+                </>
+            ),
+        });
+    };
+
+    return (
+        <div className="h-[200vh] bg-surface-default">
+            <Button onClick={openModal}>Open Modal</Button>
+        </div>
+    );
 }
 
 export default Demo;

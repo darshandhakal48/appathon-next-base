@@ -15,10 +15,10 @@ function InputBox(info: PersonalInformationProps) {
         <div className="flex justify-between items-center p-4 bg-background">
             <div className="flex items-center text-base gap-4">
                 <span className="text-caption">{/* <GripVertical /> */}</span>
-                <span className="text-grayscale-body">{info.label}</span>
+                <span className="text-grayscale-text-body">{info.label}</span>
             </div>
             <Select defaultValue="Input Field">
-                <SelectTrigger className="min-w-3xs shadow-none">
+                <SelectTrigger className="min-w-3xs shadow-none cursor-pointer">
                     <SelectValue />
                 </SelectTrigger>
                 <SelectContent>

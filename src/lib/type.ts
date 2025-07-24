@@ -71,3 +71,5 @@ export interface PersonalInformationProps {
     label: string;
     formFields: FormFieldsProps[];
 }
+
+export type DefaultModalSizes = "sm" | "md" | "lg" | "xl" | "full";
