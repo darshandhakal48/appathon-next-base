@@ -32,7 +32,15 @@ const LoginPage = () => {
             width={934}
             height={1064}
             alt="appathon branding"
-            className="absolute top-0 left-0 size-full! z-10 object-cover"
+            className="absolute top-0 left-0 max-w-[934px] max-h-[1064px] size-full! z-10 object-cover"
+          />
+
+          <Image
+            src="/_static/brandings/hero-vector.png"
+            width={934}
+            height={1317}
+            alt="appathon branding"
+            className="absolute top-0 left-0 size-full! z-20 object-cover"
           />
 
           <div className="absolute z-20 w-full text-center bottom-5 md:bottom-12 lg:bottom-16 left-0">

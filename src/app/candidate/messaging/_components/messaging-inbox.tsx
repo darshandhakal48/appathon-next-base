@@ -3,9 +3,9 @@ import { Input } from "@/components/ui/input";
 export default function MessagingInbox() {
   return (
     <>
-      <div className="p-6 h-full bg-white rounded-md outline outline-offset-[-1px] outline-[#E5E7EB] inline-flex flex-col justify-between items-start">
+      <div className="p-6 h-full bg-grayscale-surface-white rounded-md outline outline-offset-[-1px] outline-[#E5E7EB] inline-flex flex-col justify-between items-start">
         <div className="self-stretch flex flex-col justify-start items-start gap-10">
-          <div className="self-stretch bg-white rounded-md inline-flex justify-between items-center">
+          <div className="self-stretch bg-grayscale-surface-white rounded-md inline-flex justify-between items-center">
             <div className="flex justify-start items-center gap-4">
               <div
                 data-size="lg"
@@ -23,11 +23,11 @@ export default function MessagingInbox() {
                 </div>
               </div>
             </div>
-            <div className="justify-start text-caption text-[10px] font-normal leading-none">
+            <div className="justify-start text-grayscale-text-caption text-[10px] font-normal leading-none">
               3 weeks ago
             </div>
           </div>
-          <div className="self-stretch justify-start text-title text-sm font-normal leading-normal">
+          <div className="self-stretch justify-start text-grayscale-text-title text-sm font-normal leading-normal">
             Subject: Thank You for Your Application
             <br /> Hi [Candidate's Name],
             <br />

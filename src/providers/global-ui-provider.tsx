@@ -184,7 +184,7 @@ function ModalContent({
       <div
         className={cn(
           `
-        relative bg-background border rounded-lg shadow-lg p-6 m-4 w-full animate-in fade-in-0 zoom-in-95 duration-200`,
+        relative bg-grayscale-surface-white border rounded-lg shadow-lg p-6 m-4 w-full animate-in fade-in-0 zoom-in-95 duration-200`,
           config.size
             ? isDefaultSize(config.size)
               ? sizeClasses[config.size]
@@ -227,7 +227,9 @@ function AlertContent({
         <h2 className="text-lg font-semibold">{config.title || "Alert"}</h2>
       </div>
       {config.description && (
-        <p className="text-muted-foreground">{config.description}</p>
+        <p className="text-grayscale-text-negative-foreground">
+          {config.description}
+        </p>
       )}
       {config.content}
       <div className="flex justify-end">
@@ -270,13 +272,15 @@ function ConfirmationContent({
         </h2>
       </div>
       {config.description && (
-        <p className="text-muted-foreground">{config.description}</p>
+        <p className="text-grayscale-text-negative-foreground">
+          {config.description}
+        </p>
       )}
       {config.content}
       <div className="flex justify-end space-x-2">
         <button
           onClick={onCancel}
-          className="px-4 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
+          className="px-4 py-2 border border-input bg-grayscale-surface-white hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
         >
           {config.cancelText}
         </button>
@@ -311,14 +315,16 @@ function DefaultContent({
         {config.closable !== false && (
           <button
             onClick={onClose}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-grayscale-text-negative-foreground hover:text-foreground transition-colors"
           >
             ✕
           </button>
         )}
       </div>
       {config.description && (
-        <p className="text-muted-foreground">{config.description}</p>
+        <p className="text-grayscale-text-negative-foreground">
+          {config.description}
+        </p>
       )}
       {config.content}
     </div>

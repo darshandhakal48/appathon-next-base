@@ -60,8 +60,10 @@ export default function CandidateLoginForm() {
         onSubmit={handleSubmit(onSubmit)}
         className="text-center flex gap-6 flex-col"
       >
-        <h2 className="text-xl font-semibold text-gray-900">Login</h2>
-        {errors.root && errors.root?.message?.length > 0 && (
+        <h2 className="text-xl md:text-2xl font-semibold text-grayscale-text-grayscale-text-title">
+          Login
+        </h2>
+        {errors.root && errors.root?.message && (
           <Alert variant="destructive" className="text-left relative">
             <AlertCircleIcon />
             <AlertTitle>{errors.root.message}</AlertTitle>
@@ -78,7 +80,10 @@ export default function CandidateLoginForm() {
           </Alert>
         )}
         <div className="space-y-2 ">
-          <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+          <Label
+            htmlFor="email"
+            className="text-sm font-normal text-grayscale-text-grayscale-text-title"
+          >
             Email
           </Label>
           <Input
@@ -103,7 +108,7 @@ export default function CandidateLoginForm() {
         <div className="space-y-2">
           <Label
             htmlFor="password"
-            className="text-sm font-medium text-gray-700"
+            className="text-sm font-normal text-grayscale-text-grayscale-text-title"
           >
             Password
           </Label>
@@ -127,14 +132,17 @@ export default function CandidateLoginForm() {
         </div>
 
         <div className="text-right">
-          <a href="#" className="text-sm text-primary-surface hover:underline">
+          <a
+            href="#"
+            className="text-sm text-primary-text-label-1 hover:underline"
+          >
             Forgot Password?
           </a>
         </div>
 
         <Button
           type="submit"
-          className="w-full bg-primary-surface hover:bg-primary-surface/90 text-white"
+          className="w-full bg-primary-surface-default hover:bg-primary-surface-default/90 text-grayscale-text-negative"
           disabled={isLoading}
         >
           {isLoading ? (
@@ -148,7 +156,7 @@ export default function CandidateLoginForm() {
         </Button>
       </form>
 
-      <div className="text-center text-sm text-primary-surface">
+      <div className="text-center text-sm text-primary-text-label-1">
         Don't have an account?{" "}
         <a href="#" className="hover:underline">
           Create account
@@ -156,11 +164,13 @@ export default function CandidateLoginForm() {
       </div>
 
       <div className="flex items-center">
-        <span className="w-full border-t border-gray-300" />
+        <span className="w-full border-t border-grayscale-border-lighter" />
       </div>
       <div className="space-y-2">
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-white px-2 text-gray-500">Or continue with</span>
+          <span className="bg-grayscale-surface-white px-2 text-grayscale-text-caption">
+            Or continue with
+          </span>
         </div>
         <div className="w-full mx-auto flex items-center justify-center">
           <Button

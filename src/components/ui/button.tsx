@@ -10,26 +10,26 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary-surface text-primary-surface-foreground shadow-xs hover:bg-primary-surface/90",
+          "bg-primary-surface-default text-grayscale-text-negative shadow-xs hover:bg-primary-surface-default/90",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+          "border bg-grayscale-surface-white shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         secondary:
           "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost:
-          "hover:bg-background-secondary hover:text-background-secondary-foreground dark:hover:bg-accent/50",
+          "hover:bg-grayscale-surface-default hover:text-grayscale-text-negative-secondary-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         dotted:
-          "gap-6 border-dashed border-2 text-primary-surface items-center border-primary-surface-subtle rounded-[10px] p-4  cursor-pointer text-center",
+          "gap-6 border-dashed border-2 text-primary-surface-default items-center border-primary-surface-subtle rounded-[10px] p-4  cursor-pointer text-center",
         customDefault:
-          "flex gap-6 items-center bg-primary-surface-subtle rounded-[10px]  text-muted cursor-pointer",
+          "flex gap-6 items-center bg-primary-surface-subtle rounded-[10px]  text-grayscale-text-negative cursor-pointer",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
         sm: "h-8  gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10  px-6 has-[>svg]:px-4",
-        icon: "size-9",
+        icon: "size-9 grid place-content-center",
         cd: "p-4",
       },
     },

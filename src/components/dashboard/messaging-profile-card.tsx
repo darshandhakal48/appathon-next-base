@@ -13,7 +13,7 @@ export default function MessagingProfileCard(props: ProfileProps) {
     <div
       {...attr}
       className={cn(
-        "max-w-[340px] w-full p-6 bg-background rounded-md outline-1 outline-offset-[-1px] outline-[#E5E7EB] inline-flex justify-between items-end",
+        "max-w-[340px] w-full p-6 bg-grayscale-surface-white rounded-md outline-1 outline-offset-[-1px] outline-[#E5E7EB] inline-flex justify-between items-end",
         className
       )}
     >
@@ -29,12 +29,12 @@ export default function MessagingProfileCard(props: ProfileProps) {
           <div className="justify-center text-gray-700 text-base font-normal leading-normal">
             {name}
           </div>
-          <div className="justify-center text-subtitle text-sm font-normal font-sans-secondary leading-tight">
+          <div className="justify-center text-grayscale-text-subtitle text-sm font-normal font-sans-secondary leading-tight">
             {recentMessage}
           </div>
         </div>
       </div>
-      <div className="justify-start text-caption text-[10px] font-normal leading-none">
+      <div className="justify-start text-grayscale-text-caption text-[10px] font-normal leading-none">
         {time}
       </div>
     </div>

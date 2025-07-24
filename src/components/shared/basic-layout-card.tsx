@@ -7,7 +7,10 @@ function BasicLayoutCard(props: LayoutProps) {
   const { className, children, ...attr } = props;
   return (
     <div
-      className={cn("bg-background p-6 rounded-[6px] shadow-sm", className)}
+      className={cn(
+        "bg-grayscale-surface-white p-6 rounded-[6px] shadow-sm",
+        className
+      )}
       {...attr}
     >
       {children}

@@ -12,11 +12,11 @@ const DashboardPageHeader = (props: HeaderProps) => {
     <div
       {...attr}
       className={cn(
-        "px-6 py-4 bg-white border-b border-background-secondary gap-8 overflow-hidden flex flex-wrap items-center gap-y-2 gap-x-8 justify-between w-full",
+        "px-6 py-4 bg-grayscale-surface-white border-b border-grayscale-border-default gap-8 overflow-hidden flex flex-wrap items-center gap-y-2 gap-x-8 justify-between w-full",
         className
       )}
     >
-      <p className="text-title text-xl text-nowrap font-semibold leading-7">
+      <p className="text-grayscale-text-title text-xl text-nowrap font-semibold leading-7">
         {title}
       </p>
       {children}
