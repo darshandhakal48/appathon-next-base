@@ -14,7 +14,7 @@ function Interview() {
   };
   return (
     <>
-      {/* <div className="bg-background border-1 p-4 bg flex justify-between items-center"></div> */}
+      {/* <div className="bg-grayscale-surface-white border-1 p-4 bg flex justify-between items-center"></div> */}
       <DashboardPageHeader>
         <>
           <span className="text-xl font-semibold">Interviews</span>
@@ -28,7 +28,7 @@ function Interview() {
         </>
       </DashboardPageHeader>
 
-      <div className="p-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+      <div className="p-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-grayscale-surface-subtle ">
         <BasicLayoutCard>
           <Link href={`/admin/interviews/123`} className="cursor-pointer">
             <InterviewCard status="success" />

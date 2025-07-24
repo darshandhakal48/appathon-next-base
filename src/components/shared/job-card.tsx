@@ -19,13 +19,13 @@ const JobCard = (props: JobCardProps) => {
     <div
       {...attr}
       className={cn(
-        "px-6 py-4 bg-background rounded-md  outline-1 outline-offset-[-1px] outline-background-secondary inline-flex flex-col justify-start items-start gap-4 hover:bg-background-secondary/30 hover:outline-background-secondary/70 cursor-pointer transition-all",
+        "px-6 py-4 bg-grayscale-surface-white rounded-md  outline-1 outline-offset-[-1px] outline-background-secondary inline-flex flex-col justify-start items-start gap-4 hover:bg-grayscale-surface-default/30 hover:outline-background-secondary/70 cursor-pointer transition-all",
         className
       )}
     >
       <div className="self-stretch inline-flex justify-start items-start gap-2.5">
         <div className="inline-flex flex-col justify-start items-start">
-          <div className="self-stretch justify-start text-primary-surface text-lg font-semibold leading-7">
+          <div className="self-stretch justify-start text-primary-surface-default text-lg font-semibold leading-7">
             {job?.title}
           </div>
         </div>
@@ -52,7 +52,7 @@ const JobCard = (props: JobCardProps) => {
         </div>
       </div>
       <div className="self-stretch inline-flex justify-start items-center gap-8">
-        <div className="justify-start text-caption text-[10px] font-normal   leading-none">
+        <div className="justify-start text-grayscale-text-caption text-[10px] font-normal   leading-none">
           {job?.posted}
         </div>
         <Badge variant="warning">{job?.expires}</Badge>

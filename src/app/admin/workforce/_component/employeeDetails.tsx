@@ -6,34 +6,34 @@ import OverViewAndTimelineBtn from "@/components/dashboard/overview-timeline-btn
 import WorkforceActiveJobOpenings from "./workforceActiveJobOpenings";
 
 function EmployeeDetails() {
-    return (
-        <div className="p-4">
-            <div className="bg-background rounded-sm p-4 space-y-8">
-                {/* back button */}
-                <Button
-                    variant="ghost"
-                    className="text-primary-border hover:bg-background"
-                >
-                    <span>
-                        <ArrowLeft />
-                    </span>
-                    Back
-                </Button>
+  return (
+    <div className="p-4">
+      <div className="bg-grayscale-surface-white rounded-sm p-4 space-y-8">
+        {/* back button */}
+        <Button
+          variant="ghost"
+          className="text-primary-text-label-1 hover:bg-grayscale-surface-white"
+        >
+          <span>
+            <ArrowLeft />
+          </span>
+          Back
+        </Button>
 
-                {/* employee details */}
-                <div className="">
-                    <ProfileInfo profile={workForceProfileInfo} />
-                </div>
-
-                <OverViewAndTimelineBtn />
-
-                <div className="mt-8 ">
-                    <WorkforceActiveJobOpenings />
-                    {/* <ActiveJobOpenings /> */}
-                </div>
-            </div>
+        {/* employee details */}
+        <div className="">
+          <ProfileInfo profile={workForceProfileInfo} />
         </div>
-    );
+
+        <OverViewAndTimelineBtn />
+
+        <div className="mt-8 ">
+          <WorkforceActiveJobOpenings />
+          {/* <ActiveJobOpenings /> */}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default EmployeeDetails;

@@ -145,7 +145,7 @@ export const MobileSidebar = ({
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-full inset-0 bg-white dark:bg-neutral-900 p-10 z-[100] flex flex-col justify-between",
+                "fixed h-full w-full inset-0 bg-grayscale-surface-white dark:bg-neutral-900 p-10 z-[100] flex flex-col justify-between",
                 className
               )}
             >
@@ -183,10 +183,10 @@ export const SidebarLink = ({
     <Link
       href={link.href}
       className={cn(
-        "flex items-center justify-start gap-2  group/sidebar py-2 hover:bg-primary-surface/15 hover:text-primary-surface rounded-[6px] ",
+        "flex items-center justify-start gap-2  group/sidebar py-2 hover:bg-primary-surface-default/15 hover:text-primary-surface-default rounded-[6px] ",
         className,
         !open ? "p-[12px]" : "pl-[16px] pr-[16px]",
-        pathname.includes(link.href) ? "bg-primary-surface/15 " : ""
+        pathname.includes(link.href) ? "bg-primary-surface-default/15 " : ""
       )}
       {...props}
       onMouseEnter={() => {
@@ -200,9 +200,9 @@ export const SidebarLink = ({
         className={cn(
           "text-sidebar-primary-foreground ",
           pathname.includes(link.href)
-            ? "text-primary-surface "
+            ? "text-primary-surface-default "
             : hover
-            ? "text-primary-surface"
+            ? "text-primary-surface-default"
             : "text-foreground"
         )}
         height={20}
@@ -223,9 +223,9 @@ export const SidebarLink = ({
         className={cn(
           " dark:text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0 text-sidebar-primary-foreground font-normal",
           pathname.includes(link.href)
-            ? "text-primary-surface "
+            ? "text-primary-surface-default "
             : hover
-            ? "text-primary-surface"
+            ? "text-primary-surface-default"
             : "text-foreground"
         )}
       >

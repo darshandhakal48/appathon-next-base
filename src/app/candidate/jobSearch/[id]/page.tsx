@@ -33,7 +33,8 @@ const CandidateJobSearchClient = () => {
               href="/candidate/jobSearch"
               className={buttonVariants({
                 variant: "ghost",
-                className: "text-primary-surface hover:text-primary-text-label",
+                className:
+                  "text-primary-surface-default hover:text-primary-text-label",
               })}
             >
               Show All <IconArrowRight />
@@ -52,9 +53,9 @@ const CandidateJobSearchClient = () => {
 
 const Header = () => {
   return (
-    <div className="h-16 px-6 py-2 bg-white border-b border-background-secondary gap-8 overflow-hidden grid grid-cols-2">
+    <div className="h-16 px-6 py-2 bg-grayscale-surface-white border-b border-grayscale-border-default gap-8 overflow-hidden grid grid-cols-2">
       <div className="flex items-center gap-x-8">
-        <p className="text-title text-xl text-nowrap font-semibold leading-7">
+        <p className="text-grayscale-text-title text-xl text-nowrap font-semibold leading-7">
           Top Job Picks
         </p>
         <Input

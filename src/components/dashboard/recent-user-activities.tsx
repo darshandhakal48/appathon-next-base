@@ -15,11 +15,13 @@ function RecentUserActivityCard({
 }) {
   return (
     <div className="border-1 rounded-[8px] p-4 space-y-2 h-fit">
-      <div className="bg-muted rounded-3xl inline-flex items-center p-2 gap-2">
+      <div className="bg-grayscale-surface-subtle rounded-3xl inline-flex items-center p-2 gap-2">
         <div
           className={cn(
             "size-2.5 rounded-full",
-            data.color === "success" ? "bg-success" : "bg-warning"
+            data.color === "success"
+              ? "bg-success-surface-subtle"
+              : "bg-warning-surface-subtle"
           )}
         ></div>
         <span className="text-sm text-secondary">{data.status}</span>
@@ -56,7 +58,9 @@ function RecentUserActivities({
       <div className="flex justify-between">
         <span className="text-base">Recent User Activities</span>
         {type === "admin" && (
-          <span className="text-base text-primary-surface">View All Jobs</span>
+          <span className="text-base text-primary-surface-default">
+            View All Jobs
+          </span>
         )}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-content-start">
@@ -71,7 +75,8 @@ function RecentUserActivities({
             href="/candidate/jobSearch"
             className={buttonVariants({
               variant: "ghost",
-              className: "text-primary-surface hover:text-primary-text-label",
+              className:
+                "text-primary-surface-default hover:text-primary-text-label",
             })}
           >
             Show All <IconArrowRight />

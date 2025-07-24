@@ -10,7 +10,7 @@ export default function MarketingLayout({
   return (
     <>
       <MarketingNavbar />
-      <main className="overflow-x-hidden">{children}</main>
+      <main className="overflow-x-hidden mb-40 px-4">{children}</main>
       <MarketingFooter />
     </>
   );

@@ -17,7 +17,7 @@ export default function Timeline({ steps, className, ...attr }: TimelineProps) {
       {/* <div className="absolute top-0 z-10 w-full flex items-center justify-around px-8 text-center">
         {steps.map((step, index) => (
           <p
-            className="text-[10px] text-caption text-center"
+            className="text-[10px] text-grayscale-text-caption text-center"
             key={"timeline-caption-" + index}
           >
             {step.label}
@@ -35,8 +35,8 @@ export default function Timeline({ steps, className, ...attr }: TimelineProps) {
             <div
               className={`size-8 rounded-full border-2 grid place-content-center ${
                 step.status === "completed"
-                  ? "bg-success border-success"
-                  : "text-primary-surface-disabled bg-warning-foreground border-muted"
+                  ? "bg-success-surface-subtle border-success"
+                  : "text-grayscale-surface-disabled bg-warning-surface-subtle-foreground border-muted"
               }`}
             >
               <IconCheck
@@ -50,8 +50,8 @@ export default function Timeline({ steps, className, ...attr }: TimelineProps) {
             <div
               className={`mt-4 text-sm ${
                 step.status === "completed"
-                  ? "text-grayscale-body font-medium"
-                  : "text-gray-400"
+                  ? "text-grayscale-text-body font-medium"
+                  : "text-grayscale-text-caption"
               }`}
             >
               {step.label}

@@ -47,7 +47,7 @@ export default function MobileSidebar({
           </div>
         </SidebarBody>
       </Sidebar>
-      <div className={cn("w-full bg-muted  relative")}>
+      <div className={cn("w-full bg-grayscale-surface-subtle  relative")}>
         <ScrollArea>{children}</ScrollArea>
       </div>
     </div>
@@ -64,7 +64,7 @@ export const SidebarToggleIcon = ({
   return (
     <Link
       href=""
-      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
+      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-grayscale-text-title"
       onClick={handleClick}
     >
       {open ? (

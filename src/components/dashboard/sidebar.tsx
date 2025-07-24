@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../ui/sidebar";
-// import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import Logo, { LogoIcon } from "../ui/logo";
+import Logo from "../ui/logo";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { SidebarLinkItem } from "@/lib/type";
 import Link from "next/link";
@@ -40,7 +39,7 @@ export function DashboardSidebar({
             {openSidebar ? (
               <>
                 <div className=" flex justify-between w-full items-center">
-                  <Logo className="h-5" />
+                  <Logo className="h-5" href />
                   <SidebarToggleIcon
                     handleClick={handleClick}
                     open={openSidebar}
@@ -57,7 +56,7 @@ export function DashboardSidebar({
                 </div>
 
                 <div className="block group-hover:hidden">
-                  <LogoIcon />
+                  <Logo type="icon" href />
                 </div>
               </div>
             )}
@@ -71,7 +70,7 @@ export function DashboardSidebar({
       </Sidebar>
       <div
         className={cn(
-          "w-full bg-muted  relative",
+          "w-full bg-grayscale-surface-subtle  relative",
           openSidebar ? "md:ml-[250px]" : "md:ml-[80px]"
         )}
       >
@@ -91,7 +90,7 @@ export const SidebarToggleIcon = ({
   return (
     <Link
       href=""
-      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
+      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-grayscale-text-title"
       onClick={handleClick}
     >
       {open ? (

@@ -1,25 +1,13 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { useGlobalModal } from "@/hooks/use-global-ui";
 import React from "react";
 
 function Demo() {
-  const modal = useGlobalModal();
-
-  const openModal = () => {
-    modal.custom({
-      content: (
-        <>
-          <h1>This is a modal demo</h1>
-          <Button onClick={() => modal.closeAll()}>Close Me</Button>
-        </>
-      ),
-    });
-  };
-
   return (
     <div className="h-[200vh] bg-red-100">
-      <Button onClick={openModal}>Open Modal</Button>
+      <h1 className="flex w-full items-center bg-red-100 p-10 text-xl text-blue-100">
+        Hello World
+      </h1>
+      <h6 className="text-blue-500">Hello World </h6>
+      <h3></h3>
     </div>
   );
 }
@@ -358,7 +346,7 @@ export default Demo;
 //                   <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
 //                     {category.category}
 //                   </h2>
-//                   <p className="text-muted-foreground">
+//                   <p className="text-grayscale-text-negative-foreground">
 //                     {category.examples.length} examples available
 //                   </p>
 //                 </div>
@@ -368,7 +356,7 @@ export default Demo;
 //                 {category.examples.map((example, exampleIndex) => (
 //                   <Card
 //                     key={exampleIndex}
-//                     className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md hover:scale-[1.02] bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
+//                     className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md hover:scale-[1.02] bg-grayscale-surface-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
 //                   >
 //                     <CardHeader className="pb-3">
 //                       <div className="flex items-center justify-between">
@@ -414,7 +402,7 @@ export default Demo;
 //               <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
 //                 Size Variations
 //               </h2>
-//               <p className="text-muted-foreground">
+//               <p className="text-grayscale-text-negative-foreground">
 //                 Different modal sizes for various content types
 //               </p>
 //             </div>
@@ -457,7 +445,7 @@ export default Demo;
 //                   <h3 className="font-semibold text-sm mb-1">
 //                     {sizeOption.label}
 //                   </h3>
-//                   <p className="text-xs text-muted-foreground mb-3">
+//                   <p className="text-xs text-grayscale-text-negative-foreground mb-3">
 //                     {sizeOption.description}
 //                   </p>
 //                   <Button
@@ -472,7 +460,7 @@ export default Demo;
 //                           <div className="space-y-4">
 //                             <p>This is a {sizeOption.size} sized modal.</p>
 //                             <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-//                               <p className="text-sm text-muted-foreground">
+//                               <p className="text-sm text-grayscale-text-negative-foreground">
 //                                 Perfect for{" "}
 //                                 {sizeOption.description.toLowerCase()}
 //                               </p>
@@ -492,7 +480,7 @@ export default Demo;
 
 //         {/* Footer */}
 //         <div className="mt-16 text-center py-8 border-t">
-//           <p className="text-muted-foreground mb-4">
+//           <p className="text-grayscale-text-negative-foreground mb-4">
 //             This showcase demonstrates the flexibility and power of our global
 //             UI system.
 //           </p>
@@ -700,7 +688,7 @@ export default Demo;
 //         <div className="flex items-center justify-between">
 //           <div className="space-y-0.5">
 //             <Label>Email Notifications</Label>
-//             <p className="text-sm text-muted-foreground">
+//             <p className="text-sm text-grayscale-text-negative-foreground">
 //               Receive email updates
 //             </p>
 //           </div>
@@ -788,8 +776,8 @@ export default Demo;
 //             className="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-lg flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
 //           >
 //             <div className="text-center">
-//               <ImageIcon className="w-8 h-8 mx-auto mb-2 text-muted-foreground" />
-//               <span className="text-xs text-muted-foreground">
+//               <ImageIcon className="w-8 h-8 mx-auto mb-2 text-grayscale-text-negative-foreground" />
+//               <span className="text-xs text-grayscale-text-negative-foreground">
 //                 {image.title}
 //               </span>
 //             </div>
@@ -812,9 +800,9 @@ export default Demo;
 //   return (
 //     <div className="space-y-4">
 //       <div className="border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg p-8 text-center">
-//         <Upload className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
+//         <Upload className="w-12 h-12 mx-auto mb-4 text-grayscale-text-negative-foreground" />
 //         <h3 className="text-lg font-semibold mb-2">Upload Files</h3>
-//         <p className="text-muted-foreground mb-4">
+//         <p className="text-grayscale-text-negative-foreground mb-4">
 //           Drag and drop files here or click to browse
 //         </p>
 //         <Button>Choose Files</Button>
@@ -825,7 +813,7 @@ export default Demo;
 //             <FileText className="w-5 h-5 text-blue-500" />
 //             <div>
 //               <p className="font-medium">document.pdf</p>
-//               <p className="text-sm text-muted-foreground">2.4 MB</p>
+//               <p className="text-sm text-grayscale-text-negative-foreground">2.4 MB</p>
 //             </div>
 //           </div>
 //           <Badge variant="secondary">Uploaded</Badge>
@@ -840,7 +828,7 @@ export default Demo;
 //     <div className="space-y-4">
 //       <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg flex items-center justify-center">
 //         <div className="text-center text-white">
-//           <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+//           <div className="w-16 h-16 bg-grayscale-surface-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
 //             <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1"></div>
 //           </div>
 //           <h3 className="text-lg font-semibold">Sample Video</h3>
@@ -850,7 +838,7 @@ export default Demo;
 //       <div className="flex justify-between items-center">
 //         <div>
 //           <h4 className="font-semibold">Introduction to Modal System</h4>
-//           <p className="text-sm text-muted-foreground">Duration: 5:32</p>
+//           <p className="text-sm text-grayscale-text-negative-foreground">Duration: 5:32</p>
 //         </div>
 //         <Button size="sm">
 //           <Download className="w-4 h-4 mr-2" />
@@ -870,7 +858,7 @@ export default Demo;
 //         </div>
 //         <div>
 //           <h3 className="text-xl font-semibold">John Doe</h3>
-//           <p className="text-muted-foreground">john.doe@example.com</p>
+//           <p className="text-grayscale-text-negative-foreground">john.doe@example.com</p>
 //           <Badge variant="secondary" className="mt-1">
 //             Administrator
 //           </Badge>
@@ -884,15 +872,15 @@ export default Demo;
 //           <h4 className="font-semibold mb-3">Personal Information</h4>
 //           <div className="space-y-2 text-sm">
 //             <div className="flex justify-between">
-//               <span className="text-muted-foreground">Department:</span>
+//               <span className="text-grayscale-text-negative-foreground">Department:</span>
 //               <span>Engineering</span>
 //             </div>
 //             <div className="flex justify-between">
-//               <span className="text-muted-foreground">Location:</span>
+//               <span className="text-grayscale-text-negative-foreground">Location:</span>
 //               <span>San Francisco, CA</span>
 //             </div>
 //             <div className="flex justify-between">
-//               <span className="text-muted-foreground">Joined:</span>
+//               <span className="text-grayscale-text-negative-foreground">Joined:</span>
 //               <span>January 2023</span>
 //             </div>
 //           </div>
@@ -902,15 +890,15 @@ export default Demo;
 //           <h4 className="font-semibold mb-3">Activity</h4>
 //           <div className="space-y-2 text-sm">
 //             <div className="flex justify-between">
-//               <span className="text-muted-foreground">Last Login:</span>
+//               <span className="text-grayscale-text-negative-foreground">Last Login:</span>
 //               <span>2 hours ago</span>
 //             </div>
 //             <div className="flex justify-between">
-//               <span className="text-muted-foreground">Projects:</span>
+//               <span className="text-grayscale-text-negative-foreground">Projects:</span>
 //               <span>12 active</span>
 //             </div>
 //             <div className="flex justify-between">
-//               <span className="text-muted-foreground">Status:</span>
+//               <span className="text-grayscale-text-negative-foreground">Status:</span>
 //               <Badge
 //                 variant="outline"
 //                 className="text-green-600 border-green-600"
@@ -996,15 +984,15 @@ export default Demo;
 //       <div className="grid grid-cols-3 gap-4">
 //         <div className="text-center p-4 bg-blue-50 dark:bg-blue-950 rounded-lg">
 //           <div className="text-2xl font-bold text-blue-600">1,234</div>
-//           <div className="text-sm text-muted-foreground">Total Users</div>
+//           <div className="text-sm text-grayscale-text-negative-foreground">Total Users</div>
 //         </div>
 //         <div className="text-center p-4 bg-green-50 dark:bg-green-950 rounded-lg">
 //           <div className="text-2xl font-bold text-green-600">89%</div>
-//           <div className="text-sm text-muted-foreground">Success Rate</div>
+//           <div className="text-sm text-grayscale-text-negative-foreground">Success Rate</div>
 //         </div>
 //         <div className="text-center p-4 bg-purple-50 dark:bg-purple-950 rounded-lg">
 //           <div className="text-2xl font-bold text-purple-600">$12.5K</div>
-//           <div className="text-sm text-muted-foreground">Revenue</div>
+//           <div className="text-sm text-grayscale-text-negative-foreground">Revenue</div>
 //         </div>
 //       </div>
 
@@ -1045,7 +1033,7 @@ export default Demo;
 //                 />
 //                 <span className="text-sm">{activity.action}</span>
 //               </div>
-//               <span className="text-xs text-muted-foreground">
+//               <span className="text-xs text-grayscale-text-negative-foreground">
 //                 {activity.time}
 //               </span>
 //             </div>
@@ -1082,7 +1070,7 @@ export default Demo;
 //     <div className="space-y-4">
 //       <div className="text-center">
 //         <h3 className="font-semibold mb-2">Processing Request</h3>
-//         <p className="text-muted-foreground text-sm">
+//         <p className="text-grayscale-text-negative-foreground text-sm">
 //           Please wait while we process your request...
 //         </p>
 //       </div>
@@ -1096,7 +1084,7 @@ export default Demo;
 //       </div>
 
 //       <div className="text-center">
-//         <p className="text-sm text-muted-foreground">
+//         <p className="text-sm text-grayscale-text-negative-foreground">
 //           {progress < 30
 //             ? "Initializing..."
 //             : progress < 60
@@ -1172,7 +1160,7 @@ export default Demo;
 //     <div className="space-y-4">
 //       <div className="grid grid-cols-7 gap-1 text-center text-sm">
 //         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-//           <div key={day} className="p-2 font-semibold text-muted-foreground">
+//           <div key={day} className="p-2 font-semibold text-grayscale-text-negative-foreground">
 //             {day}
 //           </div>
 //         ))}
@@ -1186,7 +1174,7 @@ export default Demo;
 //               key={i}
 //               className={`p-2 rounded-lg text-sm hover:bg-slate-100 dark:hover:bg-slate-800 ${
 //                 !isCurrentMonth
-//                   ? "text-muted-foreground"
+//                   ? "text-grayscale-text-negative-foreground"
 //                   : isToday
 //                   ? "bg-blue-500 text-white"
 //                   : ""

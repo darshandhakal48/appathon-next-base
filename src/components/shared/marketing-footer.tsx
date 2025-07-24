@@ -1,81 +1,120 @@
-import Image from "next/image";
-import { Button } from "../ui/button";
 import Logo from "../ui/logo";
-import { FaFacebookF } from "react-icons/fa";
+import { Button } from "../ui/button";
 import { Icons } from "../ui/icons";
+import MaxWidthWrapper from "./max-width-wrapper";
+import { Typography } from "./typography";
+
+const footerLinks = [
+  {
+    title: "Company",
+    links: [
+      "About Us",
+      "Features",
+      "Pricing",
+      "Resources",
+      "Blog",
+      "Careers",
+      "Start for Free",
+      "Live Training",
+      "ROI Calculator",
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      "Contact Us",
+      "Integrations",
+      "Documentation",
+      "OpenAPI Integration",
+      "Affiliate Program",
+      "Security",
+      "Changelog",
+      "Non-Profits",
+    ],
+  },
+];
+
+const socialIcons = [
+  { icon: Icons.facebook, name: "Facebook" },
+  { icon: Icons.instagram, name: "Instagram" },
+  { icon: Icons.youtube, name: "YouTube" },
+  { icon: Icons.xTwitter, name: "Twitter" },
+];
+
+function FooterLinkSection({
+  title,
+  links,
+}: {
+  title: string;
+  links: string[];
+}) {
+  return (
+    <div className="text-sm leading-6 text-grayscale-text-caption">
+      <h4 className="font-medium mb-2">{title}</h4>
+      <ul>
+        {links.map((link) => (
+          <li key={link} className="mb-1">
+            {link}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function SocialMedia() {
+  return (
+    <div className="flex items-center gap-4">
+      {socialIcons.map(({ icon: Icon, name }) => (
+        <Button
+          size="icon"
+          key={name}
+          className="size-10 bg-[#666DF233] hover:bg-[#666DF211]"
+        >
+          <Icon
+            aria-label={name}
+            className="text-grayscale-text-caption hover:text-blue-500 size-6"
+          />
+        </Button>
+      ))}
+    </div>
+  );
+}
 
 export default function MarketingFooter() {
   return (
-    <div className="p-16 bg-gray-950 flex flex-col items-center gap-12">
-      <div className="flex justify-between items-center">
-        <div className="flex flex-col justify-start items-start gap-10">
-          <div className="flex flex-col justify-start items-start gap-6">
-            <Logo />
-            <p className="max-w-80 justify-start text-caption text-base font-normal leading-tight">
-              Appathon is an AI Recruitment Software enabling human resources
-              departments and recruitment agencies to source and hire in the
-              most effective way.
-            </p>
-          </div>
-          <Button>Try Appathon for FREE!</Button>
-          <div className="inline-flex justify-start items-center">
-            <Button variant="ghost" className="hover:bg-transparent">
+    <footer className="bg-gray-950 text-white py-16 px-8">
+      <MaxWidthWrapper className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="flex flex-col gap-6 max-w-sm">
+          <Logo href />
+          <Typography color="caption" type="sm">
+            Appathon is an AI Recruitment Software enabling human resources
+            departments and recruitment agencies to source and hire in the most
+            effective way.
+          </Typography>
+          <Button className="w-fit">Try Appathon for FREE!</Button>
+          <div className="flex items-center gap-3">
+            <span className="text-sm text-grayscale-text-caption">
               Follow Us
-            </Button>
-            <div className="flex justify-start items-start gap-4 overflow-hidden">
-              <Icons.facebook className="" />
-              <Icons.instagram className="" />
-              <Icons.youtube className="" />
-              <Icons.xTwitter className="" />
-            </div>
+            </span>
+            <SocialMedia />
           </div>
         </div>
-        <div className="justify-start text-Greyscale-Text-Caption text-sm font-normal font-['Roboto'] leading-10">
-          About Us
-          <br />
-          Features
-          <br />
-          Pricing
-          <br />
-          Resources
-          <br />
-          Blog
-          <br />
-          Careers
-          <br />
-          Start for Free
-          <br />
-          Live Training
-          <br />
-          ROI Calculator
+
+        <div className="grid grid-cols-2">
+          {footerLinks.map((section) => (
+            <FooterLinkSection
+              key={section.title}
+              title={section.title}
+              links={section.links}
+            />
+          ))}
         </div>
-        <div className="justify-start text-Greyscale-Text-Caption text-sm font-normal font-['Roboto'] leading-10">
-          Contact Us
-          <br />
-          Integrations
-          <br />
-          Documentation
-          <br />
-          OpenAPI Integration (Indicates the availability of an API for
-          developers)  <br />
-          Affiliate Program
-          <br />
-          Security
-          <br />
-          Changelog (A record of updates and changes)
-          <br />
-          Non-Profits (Potentially indicating special offers or programs for
-          non-profit organizations)
-        </div>
+      </MaxWidthWrapper>
+
+      <div className="mt-12 text-center text-xs text-grayscale-text-body">
+        <p>&copy; 2025 Appathon.ai &middot; All Rights Reserved.</p>
       </div>
-      <div className="inline-flex justify-start items-start gap-4">
-        <div className="justify-start text-zinc-400 text-xs font-normal font-['Mona_Sans'] leading-none">
-          @2025 Appathon.ai
-        </div>
-        <div className="justify-start text-zinc-400 text-xs font-normal font-['Mona_Sans'] leading-none">
-          All Rights Reserved.
-        </div>
-      </div>
-    </div>
+    </footer>
   );
 }

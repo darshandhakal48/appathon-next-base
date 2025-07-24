@@ -15,7 +15,7 @@ export default function ApplicationCard(props: ApplicationCardProps) {
   return (
     <div
       className={cn(
-        "self-stretch px-6 py-4 bg-background rounded-md outline-2 outline-offset-[-1px] outline-border flex flex-col justify-start items-start gap-4",
+        "self-stretch px-6 py-4 bg-grayscale-surface-white rounded-md outline-2 outline-offset-[-1px] outline-border flex flex-col justify-start items-start gap-4",
         className
       )}
       {...attr}
@@ -32,11 +32,11 @@ export default function ApplicationCard(props: ApplicationCardProps) {
           </p>
         </div>
         <Button variant="ghost" size="icon">
-          <IconDotsVertical className="text-caption size-5" />
+          <IconDotsVertical className="text-grayscale-text-caption size-5" />
         </Button>
       </div>
 
-      <p className="text-primary-surface text-lg font-semibold  leading-7">
+      <p className="text-primary-surface-default text-lg font-semibold  leading-7">
         {application.title}
       </p>
       <div className="self-stretch inline-flex justify-start items-center gap-8">
@@ -60,7 +60,7 @@ export default function ApplicationCard(props: ApplicationCardProps) {
         </div>
       </div>
       <div className="self-stretch inline-flex justify-start items-center gap-8">
-        <div className="px-4 py-2 bg-muted rounded-[999px] flex justify-start items-center gap-6 overflow-hidden">
+        <div className="px-4 py-2 bg-grayscale-surface-subtle rounded-[999px] flex justify-start items-center gap-6 overflow-hidden">
           <div className="flex justify-start items-center gap-2">
             <Calendar className="size-3" />
             <p className="justify-center text-foreground text-xs font-normal leading-none">
@@ -70,10 +70,10 @@ export default function ApplicationCard(props: ApplicationCardProps) {
         </div>
       </div>
       <div className="inline-flex justify-start items-center gap-2">
-        <p className=" text-caption text-[10px] font-normal leading-none">
+        <p className=" text-grayscale-text-caption text-[10px] font-normal leading-none">
           Last Updated
         </p>
-        <p className="px-2 py-1 bg-muted rounded flex justify-center items-center gap-2.5 text-caption text-[10px] font-normal leading-none">
+        <p className="px-2 py-1 bg-grayscale-surface-subtle rounded flex justify-center items-center gap-2.5 text-grayscale-text-caption text-[10px] font-normal leading-none">
           {application.appliedDate}
         </p>
       </div>

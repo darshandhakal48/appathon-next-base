@@ -1,9 +1,16 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const Logo = ({ className }: { className?: string }) => {
-  return (
+const LogoImage = ({
+  type,
+  className,
+}: {
+  type: "icon" | "default";
+  className?: string;
+}) => {
+  return type === "default" ? (
     <Image
       src="/_static/brandings/logo.svg"
       alt="appathon"
@@ -11,10 +18,7 @@ const Logo = ({ className }: { className?: string }) => {
       height={27}
       className={cn("w-[121px] h-[27px]", className)}
     />
-  );
-};
-const LogoIcon = ({ className }: { className?: string }) => {
-  return (
+  ) : (
     <Image
       src="/_static/brandings/logo-icon.svg"
       alt="appathon"
@@ -25,5 +29,22 @@ const LogoIcon = ({ className }: { className?: string }) => {
   );
 };
 
+const Logo = ({
+  className,
+  type = "default",
+  href = false,
+}: {
+  className?: string;
+  href?: boolean | string;
+  type?: "icon" | "default";
+}) => {
+  return href ? (
+    <Link href={typeof href === "boolean" ? "/" : href}>
+      <LogoImage className={className} type={type} />
+    </Link>
+  ) : (
+    <LogoImage className={className} type={type} />
+  );
+};
+
 export default Logo;
-export { LogoIcon };

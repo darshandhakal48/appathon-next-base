@@ -62,7 +62,7 @@ export function UserList() {
       <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold">Users</h1>
-          <p className="text-muted-foreground">
+          <p className="text-grayscale-text-negative-foreground">
             Manage and view user information from the backend API
           </p>
         </div>
@@ -78,7 +78,7 @@ export function UserList() {
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-grayscale-text-negative-foreground" />
         <Input
           placeholder="Search users by name, email, or username..."
           value={searchQuery}
@@ -94,7 +94,9 @@ export function UserList() {
       {(state.loading || isPending) && (
         <div className="flex items-center justify-center py-8">
           <LoadingSpinner size="lg" />
-          <span className="ml-2 text-muted-foreground">Loading users...</span>
+          <span className="ml-2 text-grayscale-text-negative-foreground">
+            Loading users...
+          </span>
         </div>
       )}
 
@@ -121,7 +123,7 @@ export function UserList() {
       {/* Users Grid */}
       {!state.loading && !isPending && state.data && (
         <>
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-grayscale-text-negative-foreground">
             {state.data.length} user{state.data.length !== 1 ? "s" : ""} found
             {state.lastFetched && (
               <span className="ml-2">
@@ -147,7 +149,7 @@ export function UserList() {
                         <CardTitle className="text-lg">
                           {displayUser.displayName}
                         </CardTitle>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-grayscale-text-negative-foreground">
                           @{user.username}
                         </p>
                       </div>
@@ -155,24 +157,24 @@ export function UserList() {
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <div className="flex items-center space-x-2 text-sm">
-                      <Mail className="h-4 w-4 text-muted-foreground" />
+                      <Mail className="h-4 w-4 text-grayscale-text-negative-foreground" />
                       <span className="truncate">{user.email}</span>
                     </div>
                     <div className="flex items-center space-x-2 text-sm">
-                      <Phone className="h-4 w-4 text-muted-foreground" />
+                      <Phone className="h-4 w-4 text-grayscale-text-negative-foreground" />
                       <span>{user.phone}</span>
                     </div>
                     {user.website && (
                       <div className="flex items-center space-x-2 text-sm">
-                        <Globe className="h-4 w-4 text-muted-foreground" />
+                        <Globe className="h-4 w-4 text-grayscale-text-negative-foreground" />
                         <span className="truncate">{user.website}</span>
                       </div>
                     )}
                     <div className="pt-2 border-t">
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-grayscale-text-negative-foreground">
                         {displayUser.fullAddress}
                       </p>
-                      <p className="text-xs text-muted-foreground mt-1">
+                      <p className="text-xs text-grayscale-text-negative-foreground mt-1">
                         {user.company.name}
                       </p>
                     </div>
@@ -188,9 +190,9 @@ export function UserList() {
       {!state.loading && !isPending && state.data?.length === 0 && (
         <Card>
           <CardContent className="pt-6 text-center">
-            <UserIcon className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+            <UserIcon className="h-12 w-12 text-grayscale-text-negative-foreground mx-auto mb-4" />
             <h3 className="text-lg font-medium mb-2">No users found</h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-grayscale-text-negative-foreground mb-4">
               {searchQuery
                 ? "Try adjusting your search query."
                 : "No users available at the moment."}
