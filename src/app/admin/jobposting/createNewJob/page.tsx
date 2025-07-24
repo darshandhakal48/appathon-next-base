@@ -8,9 +8,7 @@ import { Form } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { JobFormSchema, JobFormType } from "@/components/forms/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import JobAddressInfoForm from "@/components/forms/job-address-info-form";
-import JobPostInfoForm from "@/components/forms/job-post-info-form";
-import JobDescription from "../_component/jobDescription";
+
 import { useGlobalModal } from "@/hooks/use-global-ui";
 import ConfirmJobDetails from "../_component/confirmJobDetails";
 import { useRouter } from "next/navigation";
