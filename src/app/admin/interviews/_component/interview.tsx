@@ -4,7 +4,7 @@ import BasicLayoutCard from "@/components/shared/basic-layout-card";
 import InterviewCard from "@/components/dashboard/interview-card";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import DashboardPageHeader from "@/components/dashboard/pageHeader";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 
 function Interview() {
   const router = useRouter();
@@ -15,17 +15,13 @@ function Interview() {
   return (
     <>
       {/* <div className="bg-grayscale-surface-white border-1 p-4 bg flex justify-between items-center"></div> */}
-      <DashboardPageHeader>
-        <>
-          <span className="text-xl font-semibold">Interviews</span>
-
-          <div className="space-x-1 gap-2.5">
-            <Button variant="outline">Drafts</Button>
-            <Button variant="default" onClick={handleNavigation}>
-              Schedule New Interview
-            </Button>
-          </div>
-        </>
+      <DashboardPageHeader title="Interviews">
+        <div className="space-x-1 gap-2.5">
+          <Button variant="outline">Drafts</Button>
+          <Button variant="default" onClick={handleNavigation}>
+            Schedule New Interview
+          </Button>
+        </div>
       </DashboardPageHeader>
 
       <div className="p-6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-grayscale-surface-subtle ">

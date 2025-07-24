@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import InterviewInfo from "@/components/dashboard/interview-info";
 import { useRouter } from "next/navigation";
-import DashboardPageHeader from "@/components/dashboard/pageHeader";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 
 function CandidateOnlineInterview() {
   const router = useRouter();
@@ -14,8 +14,7 @@ function CandidateOnlineInterview() {
   };
   return (
     <>
-      <DashboardPageHeader>
-        <span className="text-xl font-semibold">Interviews</span>
+      <DashboardPageHeader title="Interviews">
         <div className="space-x-1 gap-2.5">
           <Button variant="outline">Drafts</Button>
           <Button variant="default" onClick={handleNavigation}>

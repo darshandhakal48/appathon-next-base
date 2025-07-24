@@ -595,3 +595,70 @@ export const addressInformation: PersonalInformationProps[] = [
         ],
     },
 ];
+
+export const professionalInformationColumn = [
+    { key: "title", label: "" },
+    { key: "mandatory", label: "Mandatory" },
+    { key: "optional", label: "Optional" },
+    { key: "disabled", label: "Disables" },
+];
+
+export const professionalInformationData = [
+    {
+        title: "Resume",
+        mandatory: "checkbox",
+        optional: "checkbox",
+        disabled: "checkbox",
+    },
+    {
+        title: "Work Experience",
+        mandatory: "checkbox",
+        optional: "checkbox",
+        disabled: "checkbox",
+    },
+    {
+        title: "Education Details",
+        mandatory: "checkbox",
+        optional: "checkbox",
+        disabled: "checkbox",
+    },
+    {
+        title: "Notice Period",
+        mandatory: "checkbox",
+        optional: "checkbox",
+        disabled: "checkbox",
+    },
+];
+export const jobBoardColumn = [
+    { key: "jobBoardName", label: "Job Board Name" },
+    { key: "type", label: "Type" },
+    { key: "status", label: "Status" },
+    { key: "action", label: "Action" },
+];
+
+export const jobBoardData = [
+    {
+        jobBoardName: "Resume",
+        type: "free",
+        status: "Published",
+        action: "Publish",
+    },
+    {
+        jobBoardName: "Work Experience",
+        type: "free",
+        status: "Published",
+        action: "Unpublish",
+    },
+    {
+        jobBoardName: "Education Details",
+        type: "free",
+        status: "Published",
+        action: "Publish",
+    },
+    {
+        jobBoardName: "Notice Period",
+        type: "free",
+        status: "Published",
+        action: "Unpublish",
+    },
+];

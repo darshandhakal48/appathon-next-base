@@ -16,9 +16,11 @@ const DashboardPageHeader = (props: HeaderProps) => {
         className
       )}
     >
-      <p className="text-grayscale-text-title text-xl text-nowrap font-semibold leading-7">
-        {title}
-      </p>
+      {title && (
+        <p className="text-grayscale-text-title text-xl text-nowrap font-semibold leading-7">
+          {title}
+        </p>
+      )}
       {children}
     </div>
   );
