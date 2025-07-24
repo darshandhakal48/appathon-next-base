@@ -5,7 +5,7 @@ import HiringStepsCard from "@/components/dashboard/hiringStepsCard";
 import BasicLayoutCard from "@/components/shared/basic-layout-card";
 import ActiveJobOpenings from "@/components/dashboard/active-job-openings";
 import RecentUserActivities from "@/components/dashboard/recent-user-activities";
-import DashboardPageHeader from "@/components/dashboard/pageHeader";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 import { adminDashbaordCards, DashboardUserActivity } from "@/config/db";
 
 const AdminDashboard = () => {
@@ -13,7 +13,7 @@ const AdminDashboard = () => {
     <>
       {/* title */}
 
-      <DashboardPageHeader>Dashboard</DashboardPageHeader>
+      <DashboardPageHeader title="Dashboard" />
 
       {/* main section */}
       <div className="p-6 space-y-4 bg-grayscale-surface-subtle ">

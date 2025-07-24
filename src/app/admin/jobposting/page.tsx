@@ -1,5 +1,5 @@
 "use client";
-import DashboardPageHeader from "@/components/dashboard/pageHeader";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -26,6 +26,7 @@ function AdminJobPostingHeader() {
         router.push(`/admin/jobposting/createNewJob`);
     };
 
+<<<<<<< Updated upstream
     return (
         <>
             <DashboardPageHeader>
@@ -41,6 +42,21 @@ function AdminJobPostingHeader() {
             </DashboardPageHeader>
         </>
     );
+=======
+  return (
+    <>
+      <DashboardPageHeader title="Job Posting">
+        <div
+          className="space-x-1  gap-2 flex items-center text-primary-text-label-1 cursor-pointer"
+          onClick={handleNavigation}
+        >
+          <Plus height={20} />
+          <span>Create New Job Posting</span>
+        </div>
+      </DashboardPageHeader>
+    </>
+  );
+>>>>>>> Stashed changes
 }
 
 export default AdminJobPosting;

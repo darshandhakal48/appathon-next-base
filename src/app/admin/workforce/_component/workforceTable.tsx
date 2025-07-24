@@ -11,7 +11,7 @@ import {
 import Image from "next/image";
 import profile from "@/../public/_static/profile-pic.jpg";
 import { useRouter } from "next/navigation";
-import DashboardPageHeader from "@/components/dashboard/pageHeader";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 
 function WorkforceTable() {
     return (
@@ -33,6 +33,7 @@ function WorkforceHeader() {
         router.push(`/admin/workforce/addEmployee`);
     };
 
+<<<<<<< Updated upstream
     return (
         <>
             <DashboardPageHeader>
@@ -48,6 +49,21 @@ function WorkforceHeader() {
             </DashboardPageHeader>
         </>
     );
+=======
+  return (
+    <>
+      <DashboardPageHeader title="Workforce">
+        <div
+          className="space-x-1 gap-2 flex items-center text-primary-text-label-1 cursor-pointer"
+          onClick={handleNavigation}
+        >
+          <Plus height={20} />
+          <span>Add New Player</span>
+        </div>
+      </DashboardPageHeader>
+    </>
+  );
+>>>>>>> Stashed changes
 }
 
 const ParticipantsTable = () => {

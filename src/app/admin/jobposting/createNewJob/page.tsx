@@ -1,6 +1,6 @@
 "use client";
 
-import DashboardPageHeader from "@/components/dashboard/pageHeader";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 import Steps from "../_component/steps";
@@ -98,6 +98,7 @@ function CreateNewJob() {
 }
 
 function NewJobHeader({ handleBack }: { handleBack: () => void }) {
+<<<<<<< Updated upstream
     return (
         <>
             <DashboardPageHeader>
@@ -128,5 +129,35 @@ function NewJobHeader({ handleBack }: { handleBack: () => void }) {
             </DashboardPageHeader>
         </>
     );
+=======
+  return (
+    <>
+      <DashboardPageHeader title="">
+        <div className="flex items-center gap-6 ">
+          <span className="font-semibold text-xl text-grayscale-text-caption">
+            Create New job
+          </span>
+          <span className="font-semibold text-xl text-grayscale-text-caption">
+            /
+          </span>
+          <span className="font-semibold text-xl">Add Application Form</span>
+        </div>
+        <div className=" flex items-center gap-2.5">
+          <Button
+            variant="outline"
+            className="border-primary-surface-default text-primary-surface-default"
+            type="button"
+            onClick={handleBack}
+          >
+            Back
+          </Button>
+          <Button variant="default" type="submit">
+            Proceed
+          </Button>
+        </div>
+      </DashboardPageHeader>
+    </>
+  );
+>>>>>>> Stashed changes
 }
 export default CreateNewJob;
