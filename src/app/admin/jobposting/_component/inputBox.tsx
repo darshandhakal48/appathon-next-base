@@ -12,7 +12,7 @@ import { Icons } from "@/components/ui/icons";
 function InputBox(info: PersonalInformationProps) {
     // const Tag= Icons[info.]
     return (
-        <div className="flex justify-between items-center p-4 bg-background">
+        <div className="flex justify-between items-center p-4 bg-grayscale-surface-white">
             <div className="flex items-center text-base gap-4">
                 <span className="text-caption">{/* <GripVertical /> */}</span>
                 <span className="text-grayscale-text-body">{info.label}</span>

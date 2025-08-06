@@ -4,7 +4,7 @@ import React from "react";
 
 function Step3() {
     return (
-        <div className="p-4 bg-background space-y-4">
+        <div className="p-4 bg-grayscale-surface-white space-y-4">
             <p className="text-lg font-semibold text-sidebar-primary-foreground">
                 Manage Job Board
             </p>

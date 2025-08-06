@@ -1,7 +1,12 @@
 import React from "react";
+import Messaging from "./_component/messaging";
 
 function AdminMessaging() {
-    return <div>AdminMessaging</div>;
+    return (
+        <>
+            <Messaging />
+        </>
+    );
 }
 
 export default AdminMessaging;

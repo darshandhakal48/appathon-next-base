@@ -29,7 +29,7 @@ function Step2() {
                 />
 
                 {/* Professional Information */}
-                <div className="bg-background p-4">
+                <div className="bg-grayscale-surface-white p-4">
                     <span className="text-lg font-semibold text-sidebar-primary-foreground">
                         For Professional Information
                     </span>
@@ -40,12 +40,12 @@ function Step2() {
                 </div>
 
                 {/* Screening questions */}
-                <div className="bg-background p-4">
+                <div className="bg-grayscale-surface-white p-4">
                     <span className="text-lg font-semibold text-sidebar-primary-foreground">
                         Screening Questions
                     </span>
                     <div className="flex flex-col gap-4 p-5">
-                        <p className="text-lg font-normal text-center">
+                        <p className="text-lg font-normal text-center text-grayscale-text-title">
                             No questions added yet
                         </p>
                         <div className="flex flex-col items-center">
@@ -61,7 +61,7 @@ function Step2() {
                         <div className="mx-auto">
                             <Button
                                 variant="outline"
-                                className="border-primary-border text-primary-border"
+                                className="border-primary-border-default text-primary-text-label-1"
                             >
                                 Add a New Question
                             </Button>
@@ -99,8 +99,8 @@ export function Information({
                 </div>
 
                 {/* Add new item */}
-                <div className="flex justify-between items-center p-4 bg-background">
-                    <div className="flex items-center text-base gap-4 cursor-pointer text-primary-surface">
+                <div className="flex justify-between items-center p-4 bg-grayscale-surface-white">
+                    <div className="flex items-center text-base gap-4 cursor-pointer text-primary-surface-default">
                         {expand ? (
                             <></>
                         ) : (

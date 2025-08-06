@@ -157,9 +157,9 @@ const PageHeader = ({ role }: { role?: string }) => {
     );
 };
 
-const TableHeaderCell = () => {
+export const TableHeaderCell = () => {
     return (
-        <div className="self-stretch h-12 px-3 py-1.5 bg-grayscale-surface-default shadow-[inset_0px_-1px_0px_0px_rgba(201,207,218,0.30)] flex items-center bg-grayscale-surface-default">
+        <div className="self-stretch h-12 px-3 py-1.5 bg-grayscale-surface-default shadow-[inset_0px_-1px_0px_0px_rgba(201,207,218,0.30)] flex items-center ">
             <p className="text-grayscale-text-title text-sm font-bold leading-tight">
                 Client Name
             </p>
@@ -167,7 +167,7 @@ const TableHeaderCell = () => {
     );
 };
 
-const TableFieldCell = () => {
+export const TableFieldCell = () => {
     return (
         <div className="self-stretch h-12 px-3 py-3.5 bg-grayscale-surface-white shadow-[inset_0px_-1px_0px_0px_rgba(223,226,233,0.40)] flex items-center">
             <p className="text-secondary text-sm font-normal font-sans-secondary leading-tight">

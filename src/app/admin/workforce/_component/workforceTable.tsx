@@ -12,14 +12,27 @@ import Image from "next/image";
 import profile from "@/../public/_static/profile-pic.jpg";
 import { useRouter } from "next/navigation";
 import DashboardPageHeader from "@/components/dashboard/page-header";
+import { ReusableTable } from "@/components/dashboard/reusuable-table";
+import { WorkForceUser } from "@/config/db";
+import { userColumns } from "@/lib/column";
 
 function WorkforceTable() {
+    const router = useRouter();
+
+    const handleSingleDetailsNavigation = () => {
+        router.push(`/admin/workforce/123`);
+    };
     return (
         <>
             <WorkforceHeader />
             <div className="p-4">
-                <div className="bg-grayscale-surface-white p-4">
-                    <ParticipantsTable />
+                <div className="bg-grayscale-surface-white ">
+                    {/* <ParticipantsTable /> */}
+                    <ReusableTable
+                        data={WorkForceUser}
+                        columns={userColumns}
+                        onRowClick={handleSingleDetailsNavigation}
+                    />
                 </div>
             </div>
         </>
@@ -33,26 +46,26 @@ function WorkforceHeader() {
         router.push(`/admin/workforce/addEmployee`);
     };
 
-  return (
-    <>
-      <DashboardPageHeader title="Workforce">
-        <div
-          className="flex cursor-pointer items-center gap-2 space-x-1 text-primary-text-label-1"
-          onClick={handleNavigation}
-        >
-          <Plus height={20} />
-          <span>Add New Player</span>
-        </div>
-      </DashboardPageHeader>
-    </>
-  );
+    return (
+        <>
+            <DashboardPageHeader title="Workforce">
+                <div
+                    className="space-x-1 gap-2 flex items-center text-primary-text-label-1 cursor-pointer"
+                    onClick={handleNavigation}
+                >
+                    <Plus height={20} />
+                    <span>Add New Player</span>
+                </div>
+            </DashboardPageHeader>
+        </>
+    );
 }
 
-const ParticipantsTable = () => {
+export const ParticipantsTable = () => {
     return (
         <Table className="w-full overflow-scroll">
             {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
-            <TableHeader className="bg-grayscale-surface-default">
+            <TableHeader className="t">
                 <TableRow>
                     <TableHead>Employee Name</TableHead>
                     <TableHead>Job Title</TableHead>
