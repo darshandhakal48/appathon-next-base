@@ -3,6 +3,7 @@
 import ApplicationCard from "@/components/dashboard/application-card";
 import Spacer from "@/components/shared/spacer";
 import Timeline from "@/components/shared/timeline";
+import { Typography } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
 import { candidateApplication } from "@/config/db";
 import { Application } from "@/lib/type";
@@ -32,9 +33,7 @@ export default function ApplicationTrackingClient() {
   return (
     <>
       <div className="self-stretch p-6 inline-flex flex-col  gap-4 overflow-hidden">
-        <p className="h-12 py-6 text-grayscale-text-title text-base font-normal  leading-normal">
-          Recent Applied Jobs
-        </p>
+        <Typography color="title">Recent Applied Jobs</Typography>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex-1 inline-flex flex-col  gap-5">
@@ -87,11 +86,11 @@ export default function ApplicationTrackingClient() {
                   <p className="text-xs leading-none">09/24/2024</p>
                 </div>
                 <div className="self-stretch inline-flex  items-center gap-4 text-[10px] font-normal leading-none">
-                  <p className="px-2 py-1 bg-secondary/10 rounded-sm flex justify-center items-center">
+                  <p className="px-2 py-1 bg-secondary-surface-default-10 rounded-sm flex justify-center items-center">
                     Onsite
                   </p>
 
-                  <p className="px-2 py-1 bg-secondary/10 rounded-sm flex justify-center items-center">
+                  <p className="px-2 py-1 bg-secondary-surface-default-10 rounded-sm flex justify-center items-center">
                     Full Time
                   </p>
                 </div>
@@ -144,7 +143,7 @@ export default function ApplicationTrackingClient() {
                   </div>
                 </div>
                 <div className="self-stretch px-6 py-2 inline-flex  items-center gap-4 overflow-hidden">
-                  <div className="px-6 py-3.5 bg-grayscale-surface-subtle rounded-lg outline outline-offset-[-1px] outline-Greyscale-Border-Lighter inline-flex flex-col  gap-2">
+                  <div className="px-6 py-3.5 bg-grayscale-surface-subtle rounded-lg outline outline-offset-[-1px] outline-greyscale-border-lighter inline-flex flex-col  gap-2">
                     <div className="justify-center">
                       <span className="text-sm font-normal  leading-tight">
                         Johnathan Blake 12 Evergreen Drive Brooklyn, NY 11201

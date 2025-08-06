@@ -5,6 +5,7 @@ import HiringStepsCard from "@/components/dashboard/hiring-steps-card";
 import RecentUserActivities from "@/components/dashboard/recent-user-activities";
 import BasicLayoutCard from "@/components/shared/basic-layout-card";
 import JobCard from "@/components/shared/job-card";
+import { Typography } from "@/components/shared/typography";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   candidateDashboardCards,
@@ -26,9 +27,9 @@ export default function CandidateDashboardClient({
     <div className="p-6 space-y-4 bg-grayscale-surface-subtle">
       {/* cards */}
       <BasicLayoutCard className="shadow-none space-y-4">
-        <p className="text-grayscale-text-title text-base font-normal leading-normal">
+        <Typography color="title" type="base">
           Your Application Overview
-        </p>
+        </Typography>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-2 gap-y-6 lg:gap-4">
           {candidateDashboardCards.map((card, i) => {
             return (
@@ -42,8 +43,8 @@ export default function CandidateDashboardClient({
       </BasicLayoutCard>
 
       <div className="grid grid-cols-1  lg:grid-cols-2 gap-4  place-content-start">
-        <BasicLayoutCard className="space-y-5">
-          <p>Top Job picks for you</p>
+        <BasicLayoutCard className="space-y-5 border-0 shadow-none">
+          <Typography color="title">Top Job picks for you</Typography>
           <div className="grid grid-cols-1 gap-4">
             {jobs?.map((job, i) => (
               <JobCard job={job} key={"candidate-dashboard-job-" + i} />
@@ -62,7 +63,7 @@ export default function CandidateDashboardClient({
             </Link>
           </div>
         </BasicLayoutCard>
-        <BasicLayoutCard className="h-fit">
+        <BasicLayoutCard className="space-y-5 border-0 shadow-none h-fit">
           <RecentUserActivities type="candidate" data={candidateUserActivity} />
         </BasicLayoutCard>
       </div>

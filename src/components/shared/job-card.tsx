@@ -8,6 +8,7 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { IconMapPin } from "@tabler/icons-react";
 import { Card, CardContent } from "../ui/card";
+import { Typography } from "./typography";
 
 interface JobCardProps extends React.HTMLAttributes<HTMLDivElement> {
   job?: Job;
@@ -19,19 +20,16 @@ const JobCard = (props: JobCardProps) => {
     <div
       {...attr}
       className={cn(
-        "px-6 py-4 bg-grayscale-surface-white rounded-md  outline-1 outline-offset-[-1px] outline-background-secondary inline-flex flex-col justify-start items-start gap-4 hover:bg-grayscale-surface-default/30 hover:outline-background-secondary/70 cursor-pointer transition-all",
+        "0 flex cursor-pointer flex-col items-start justify-start gap-4 rounded-md border border-grayscale-border-default bg-grayscale-surface-white px-6 py-4 transition-all",
+        "hover:border-secondary-surface-default-1 hover:bg-grayscale-surface-default/30",
         className
       )}
     >
-      <div className="self-stretch inline-flex justify-start items-start gap-2.5">
-        <div className="inline-flex flex-col justify-start items-start">
-          <div className="self-stretch justify-start text-primary-surface-default text-lg font-semibold leading-7">
-            {job?.title}
-          </div>
-        </div>
-      </div>
-      <div className="self-stretch inline-flex justify-start items-center gap-8">
-        <div className="flex justify-start items-center gap-2">
+      <Typography type="lg" color="primary" font="sans-secondary">
+        {job?.title}
+      </Typography>
+      <div className="inline-flex items-center justify-start gap-8 self-stretch">
+        <div className="flex items-center justify-start gap-2">
           <Image
             alt="placeholder"
             width={40}
@@ -40,21 +38,17 @@ const JobCard = (props: JobCardProps) => {
             src="/_static/40x40.svg"
           />
 
-          <div className="justify-center text-gray-700 text-sm font-normal font leading-tight">
-            {job?.company}
-          </div>
+          <Typography type="sm">{job?.company}</Typography>
         </div>
-        <div className="flex justify-start items-center gap-2">
-          <IconMapPin className="size-4 text-foreground" />
-          <div className="justify-center text-foreground text-sm font-normal leading-tight">
-            {job?.location}
-          </div>
+        <div className="flex items-center gap-2">
+          <IconMapPin className="size-4 text-grayscale-text-subtitle" />
+          <Typography type="sm">{job?.location}</Typography>
         </div>
       </div>
-      <div className="self-stretch inline-flex justify-start items-center gap-8">
-        <div className="justify-start text-grayscale-text-caption text-[10px] font-normal   leading-none">
+      <div className="inline-flex items-center gap-8">
+        <Typography type="xxs" color="caption">
           {job?.posted}
-        </div>
+        </Typography>
         <Badge variant="warning">{job?.expires}</Badge>
       </div>
     </div>

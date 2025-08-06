@@ -1,0 +1,65 @@
+
+{
+"superadmin-dashboard-cards":[
+
+    { "label": "Applied", "count": 0, "icon": "folderOpen" },
+    { "label": "Screening", "count": 10, "icon": "folderOpen" },
+    { "label": "Interviewing", "count": 3, "icon": "headset" },
+    { "label": "Interview Scheduled", "count": 5, "icon": "user" },
+    { "label": "Offer Received", "count": 5, "icon": "user" },
+    { "label": "Rejected", "count": 5, "icon": "user" }
+  ],
+  "superadmin-active-jobs":[
+  {
+    "id": "se001",
+    "title": "Software Engineering",
+    "noOfPositions": 2
+  },
+  {
+    "id": "js9343",
+    "title": "It Consultant",
+    "noOfPositions": 3
+  },
+  {
+    "id": "ce4442",
+    "title": "Accountant",
+    "noOfPositions": 1
+  },
+  {
+    "id": "de4444",
+    "title": "Computer Engineering",
+    "noOfPositions": 2
+  },
+  {
+    "id": "se34334",
+    "title": "Data Engineering",
+    "noOfPositions": 1
+  }
+],
+"superadmin-user-activity":[
+  {
+    "status": "Interview Scheduled",
+    "message":
+      "Your interview for [Job Title] is set for [Date & Time]. Good luck!",
+    "color": "success"
+  },
+  {
+    "status": "Application Under Review",
+    "message":
+      "Your application for [Job Title] is currently under review. We'll keep you posted.",
+    "color": "success"
+  },
+  {
+    "status": "Offer Extended",
+    "message":
+      "Congratulations! You've received an offer for [Job Title]. Check the details now!",
+    "color": "success"
+  },
+  {
+    "status": "Application Rejected",
+    "message":
+      "We appreciate your interest in [Company]. Unfortunately, we won't be moving forward with your application for [Job Title] at this time.",
+    "color": "success"
+  }
+]
+}

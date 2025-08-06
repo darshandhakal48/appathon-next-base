@@ -18,6 +18,7 @@ import { AnimatePresence, motion } from "motion/react";
 import CandidateSourcingAnimation from "../_components/candidate-sourcing-animation";
 import { Typography } from "@/components/shared/typography";
 import HeroSection from "@/components/marketing/hero-section";
+import { TypeIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -55,9 +56,7 @@ export default function Home() {
                 >
                   <CheckButton />
 
-                  <p className="text-grayscale-text-subtitle font-normal leading-normal">
-                    {item}
-                  </p>
+                  <Typography color="subtitle">{item}</Typography>
                 </div>
               ))}
             </div>
@@ -65,20 +64,22 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="space-y-4">
-            <p className="text-grayscale-text-title text-2xl font-semibold leading-loose">
+            <Typography
+              type="2xl"
+              color="title"
+              className="text-grayscale-text-title text-2xl font-semibold leading-loose"
+            >
               Applicant Tracking System
-            </p>
-            <p className="text-grayscale-text-subtitle leading-normal">
+            </Typography>
+            <Typography color="subtitle">
               {trackingService.description}
-            </p>
+            </Typography>
             <div className="self-stretch flex flex-col justify-start items-start gap-2.5">
               {trackingService.list.map((item, i) => (
                 <div className="flex items-center gap-2.5" key={i + "m-ts"}>
                   <CheckButton />
 
-                  <p className="text-grayscale-text-subtitle font-normal leading-normal">
-                    {item}
-                  </p>
+                  <Typography color="subtitle">{item}</Typography>
                 </div>
               ))}
             </div>
@@ -93,12 +94,12 @@ export default function Home() {
         </div>
         <div className="space-y-10 md:space-y-0">
           <div className="self-stretch flex flex-col justify-center items-center gap-4">
-            <div className="self-stretch text-center text-grayscale-text-title text-2xl font-semibold leading-loose">
+            <Typography type="2xl" color="title">
               AI-Powered Recruitment
-            </div>
-            <div className="max-w-[508px] w-full text-center text-grayscale-text-subtitle">
+            </Typography>
+            <Typography className="max-w-[508px] w-full text-center text-grayscale-text-subtitle">
               {aiRecruitmentService.description}
-            </div>
+            </Typography>
             <div className="flex flex-col gap-2.5">
               {aiRecruitmentService.list.map((item, i) => (
                 <div

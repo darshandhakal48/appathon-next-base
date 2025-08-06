@@ -2,24 +2,22 @@ import React from "react";
 
 import { DashboardCard } from "@/lib/type";
 import { Icons } from "../ui/icons";
+import { Typography } from "../shared/typography";
 
 function HiringStepsCard({ data }: { data: DashboardCard }) {
-    const Icon = Icons[data.icon];
-    return (
-        <div className="bg-grayscale-surface-white flex justify-center items-center gap-6 p-6 md:py-8 rounded-[6px] md:px-9 shadow-sm">
-            <div className="bg-grayscale-surface-subtle rounded-full w-[52px] h-[52px]  flex justify-center items-center">
-                <Icon className="h-[24px] w-[24px] text-primary-surface-default" />
-            </div>
-            <div className="flex flex-col">
-                <span className="text-sm text-nowrap text-grayscale-text-body">
-                    {data.label}
-                </span>
-                <span className="text-2xl font-bold text-grayscale-text-grayscale-text-title ">
-                    {data.count}
-                </span>
-            </div>
-        </div>
-    );
+  const Icon = Icons[data.icon];
+  return (
+    <div className="flex w-full max-w-[220px] flex-1 items-center justify-start gap-6 rounded-[6px] bg-grayscale-surface-white px-6 shadow-sm md:h-[100px] md:px-8">
+      <Icon className="size-6! text-primary-surface-default" />
+
+      <div className="flex flex-col">
+        <Typography type="sm" className="text-wrap">{data.label}</Typography>
+        <Typography type="2xl" weight="bold" color="title">
+          {data.count}
+        </Typography>
+      </div>
+    </div>
+  );
 }
 
 export default HiringStepsCard;

@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -12,12 +14,12 @@ const DashboardPageHeader = (props: HeaderProps) => {
     <div
       {...attr}
       className={cn(
-        "px-6 py-4 bg-grayscale-surface-white border-b border-grayscale-border-default gap-8 overflow-hidden flex flex-wrap items-center gap-y-2 gap-x-8 justify-between w-full",
+        "flex w-full flex-wrap items-center justify-between gap-8 gap-x-8 gap-y-2 overflow-hidden border-b border-grayscale-border-default bg-grayscale-surface-white px-6 py-4",
         className
       )}
     >
       {title && (
-        <p className="text-grayscale-text-title text-xl text-nowrap font-semibold leading-7">
+        <p className="text-xl leading-7 font-semibold text-nowrap text-grayscale-text-title">
           {title}
         </p>
       )}

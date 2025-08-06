@@ -22,7 +22,7 @@ export default function MarketingNavbar() {
         <Button variant="ghost" className="hidden md:block">
           View Plans
         </Button>
-        <div className="sm:hidden flex justify-start items-center gap-2.5">
+        <div className="flex justify-start items-center gap-1 md:gap-2.5">
           <Button className="bg-grayscale-surface-disabled shadow-none text-grayscale-text-title hover:bg-grayscale-surface-disabled/80 px-4 py-1.5 ">
             Get a Demo
           </Button>

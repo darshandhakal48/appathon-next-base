@@ -7,61 +7,41 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Typography } from "../shared/typography";
+import { Job } from "@/lib/type";
 
-const activeJobsOpening = [
-  {
-    "Job ID": "se001",
-    "Job Title": "Software Engineering",
-    "No. of Positions": 2,
-  },
-  {
-    "Job ID": "js9343",
-    "Job Title": "It Consultant",
-    "No. of Positions": 3,
-  },
-  {
-    "Job ID": "ce4442",
-    "Job Title": "Accountant",
-    "No. of Positions": 1,
-  },
-  {
-    "Job ID": "de4444",
-    "Job Title": "Computer Engineering",
-    "No. of Positions": 2,
-  },
-  {
-    "Job ID": "se34334",
-    "Job Title": "Data Engineering",
-    "No. of Positions": 1,
-  },
-];
 
-function ActiveJobOpenings() {
+function ActiveJobOpenings({ jobs }: { jobs: Job[] | null }) {
   return (
     <div className="space-y-4">
       <div className="flex justify-between">
-        <span className="text-base">Active Jobs Opening</span>
-        <span className="text-base text-primary-surface-default">
-          View All Jobs
-        </span>
+        <Typography color="title">Active Jobs Opening</Typography>
+        <Typography color="primary1">View All Jobs</Typography>
       </div>
-      <div>
-        <Table className="border-1">
+      <div className="rounded-md border-1">
+        <Table className="rounded-xl border-1 border-grayscale-border-lighter">
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px] font-bold">Job ID</TableHead>
+              <TableHead className="font-bold">Job ID</TableHead>
               <TableHead className="font-bold">Job Title</TableHead>
               <TableHead className="font-bold">No. of Positions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {activeJobsOpening.map((job) => (
-              <TableRow key={job["Job ID"]}>
-                <TableCell className="text-sm">{job["Job ID"]}</TableCell>
-                <TableCell>{job["Job Title"]}</TableCell>
-                <TableCell>{job["No. of Positions"]}</TableCell>
-              </TableRow>
-            ))}
+            {
+
+              jobs ? jobs.length === 0 ? <p>No JObs</p> :
+                jobs?.map((job, i) => {
+                  console.log("JOB ==== > ", job)
+                  return (
+                    job &&
+                    <TableRow key={"job-" + i}>
+                      <TableCell className="text-sm">{job.id}</TableCell>
+                      <TableCell>{job.title}</TableCell>
+                      <TableCell>{job.noOfPositions}</TableCell>
+                    </TableRow>
+                  )
+                }) : <p> No JObs </p>}
           </TableBody>
         </Table>
       </div>

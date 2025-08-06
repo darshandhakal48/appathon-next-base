@@ -4,10 +4,10 @@ import { DashboardCard } from "@/lib/type";
 import { Icons } from "../ui/icons";
 
 function HiringStepsCard({ data }: { data: DashboardCard }) {
-  const Icon = Icons[data.icon];
+  const Icon = Icons[data.icon || "user"];
   return (
-    <div className="bg-grayscale-surface-white flex justify-start items-center gap-2 md:gap-6 px-4 md:py-4 rounded-[6px] md:px-8">
-      <div className="bg-grayscale-surface-subtle rounded-full size-[52px]! min-w-[52px] flex justify-center items-center">
+    <div className="flex items-center justify-start gap-2 rounded-[6px] bg-grayscale-surface-white px-4 md:gap-6 md:px-8 md:py-4">
+      <div className="flex size-[52px]! min-w-[52px] items-center justify-center rounded-full bg-grayscale-surface-subtle">
         <Icon className="size-6! text-primary-surface-default" />
       </div>
       <div className="flex flex-col">
