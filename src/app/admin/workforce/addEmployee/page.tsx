@@ -3,7 +3,7 @@ import EmployeeForm from "@/components/forms/employee-form";
 function AddEmployee() {
     return (
         <>
-            <EmployeeForm />
+            <EmployeeForm type="employee" />
         </>
     );
 }

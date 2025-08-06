@@ -1,22 +1,25 @@
 "use client";
 import React from "react";
-import { AdminJobPostingHeader } from "../page";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { adminDashbaordCards } from "@/config/db";
+import { useParams, useRouter } from "next/navigation";
+import { adminDashbaordCards, jobPostingData } from "@/config/db";
 import HiringStepsCard from "@/components/dashboard/hiringStepsCard";
-import {
-    TableFieldCell,
-    TableHeaderCell,
-} from "@/components/dashboard/interview-info";
+import { AdminJobPostingHeader } from "../page";
 
 function SingleJobDetails() {
+    const params = useParams();
+    console.log(params);
+
+    const currentJobDetails = jobPostingData.filter(
+        (job) => job["Job Id"] === Number(params.id)
+    );
+    console.log(currentJobDetails);
     return (
         <>
             <AdminJobPostingHeader />
             <div className="p-4">
-                <div className="bg-grayscale-surface-white p-4 space-y-8">
+                <div className="bg-grayscale-surface-white p-8 space-y-8">
                     <div>
                         <SingleJobDetailsHeader />
                         <div className="space-y-4">
@@ -25,10 +28,10 @@ function SingleJobDetails() {
                             </div>
                             <div className="flex items-center gap-4">
                                 <span className="bg-grayscale-surface-subtle p-1 rounded-sm text-sm font-normal text-grayscale-text-subtitle">
-                                    Remote Job
+                                    {currentJobDetails[0]["type"]}
                                 </span>
                                 <span className="bg-success-surface-subtle-2 text-grayscale-text-negative p-1 rounded-sm text-sm font-normal ">
-                                    In-Progress
+                                    {currentJobDetails[0]["Status"]}
                                 </span>
                             </div>
                         </div>
@@ -42,18 +45,36 @@ function SingleJobDetails() {
                         ))}
                     </div>
 
-                    <div className="px-6 grid grid-cols-5">
-                        <div>
-                            <TableHeaderCell />
-                            <TableHeaderCell />
-                            <TableHeaderCell />
-                            <TableHeaderCell />
+                    <div className="space-y-4">
+                        <div className="text-grayscale-text-title font-normal text-base">
+                            Business Card
                         </div>
-                        <div>
-                            <TableFieldCell />
-                            <TableFieldCell />
-                            <TableFieldCell />
-                            <TableFieldCell />
+                        <div className="inline-flex flex-col">
+                            {Object.entries(currentJobDetails[0]).map(
+                                ([jobTitle, jobValue]) => {
+                                    if (
+                                        jobTitle == "Job Id" ||
+                                        jobTitle == "Job Title" ||
+                                        jobTitle == "Date" ||
+                                        jobTitle == "Status" ||
+                                        jobTitle == "City"
+                                    ) {
+                                        return (
+                                            <div
+                                                className="grid grid-cols-2 border-b-[1px] border-grayscale-border-lighter gap-8 py-2"
+                                                key={jobTitle}
+                                            >
+                                                <span className="text-grayscale-text-title font-bold terxt-sm">
+                                                    {jobTitle}
+                                                </span>
+                                                <span className="text-grayscale-text-body text-sm font-normal">
+                                                    {jobValue}
+                                                </span>
+                                            </div>
+                                        );
+                                    }
+                                }
+                            )}
                         </div>
                     </div>
                 </div>

@@ -10,13 +10,17 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 function JobCard({ job }: { job: JobCardProps }) {
+    const router = useRouter();
     return (
-        <div className="bg-grayscale-surface-white p-4 space-y-4 rounded-md shadow-sm">
+        <div
+            className="bg-grayscale-surface-white p-4 space-y-4 rounded-md shadow-sm cursor-pointer"
+            onClick={() => router.push(`/admin/jobposting/${job["Job Id"]}`)}
+        >
             <div className="flex justify-between items-center">
                 <div className=" bg-success-surface-subtle/10 flex items-center gap-2 p-1">
                     <span className="w-2 h-2 rounded-full bg-success-surface-subtle"></span>
                     <span className="text-[12px] font-normal">
-                        {job.status}
+                        {job["Status"]}
                     </span>
                 </div>
 
@@ -25,12 +29,12 @@ function JobCard({ job }: { job: JobCardProps }) {
 
             <div>
                 <span className="bg-primary-surface-default/10 text-primary-surface-default text-[12px] font-normal p-1">
-                    ID : {job.id}
+                    ID : {job["Job Id"]}
                 </span>
             </div>
             <div>
                 <span className=" text-primary-surface-default text-lg font-semibold">
-                    {job.role}
+                    {job["Job Title"]}
                 </span>
             </div>
 
@@ -45,13 +49,13 @@ function JobCard({ job }: { job: JobCardProps }) {
                         />
                     </div>
                     <span className="text-sm font-normal text-grayscale-text-body">
-                        {job.companyName}
+                        {job["Client Name"]}
                     </span>
                 </div>
                 <div className="flex gap-2 items-center">
                     <MapPin size={16} />
                     <span className="text-sm font-normal text-grayscale-text-body">
-                        {job.location} ({job.type})
+                        {job["City"]} ({job.type})
                     </span>
                 </div>
             </div>
@@ -61,14 +65,14 @@ function JobCard({ job }: { job: JobCardProps }) {
                     <div className="flex gap-2 items-center">
                         <Calendar size={16} />
                         <span className="text-xs text-grayscale-text-body ">
-                            {job.startDate}
+                            {job["Date"]}
                         </span>
                     </div>
                     <ArrowLeftRight size={16} />
                     <div className="flex gap-2 items-center">
                         <Calendar size={16} />
                         <span className="text-xs text-grayscale-text-body ">
-                            {job.endDate}
+                            {job["endDate"]}
                         </span>
                     </div>
                 </div>
@@ -87,7 +91,7 @@ function JobCard({ job }: { job: JobCardProps }) {
                             <span className=" text-secondary text-sm">WW</span>
                         </div>
                         <span className="text-secondary text-sm">
-                            {job.updatedBy}
+                            {job["updatedBy"]}
                         </span>
                     </div>
                 </div>
