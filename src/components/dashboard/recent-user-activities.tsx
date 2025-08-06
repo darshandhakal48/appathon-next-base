@@ -1,10 +1,11 @@
 import React from "react";
 import { Clock8, Calendar } from "lucide-react";
 import { IconArrowRight } from "@tabler/icons-react";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import { UserActivity } from "@/lib/type";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { Typography } from "../shared/typography";
 
 function RecentUserActivityCard({
   type,
@@ -14,8 +15,8 @@ function RecentUserActivityCard({
   data: UserActivity;
 }) {
   return (
-    <div className="border-1 rounded-[8px] p-4 space-y-2 h-fit">
-      <div className="bg-grayscale-surface-subtle rounded-3xl inline-flex items-center p-2 gap-2">
+    <div className="h-fit space-y-2 rounded-[8px] border-1 border-grayscale-border-lighter p-4">
+      <div className="inline-flex items-center gap-2 rounded-3xl bg-grayscale-surface-subtle p-2">
         <div
           className={cn(
             "size-2.5 rounded-full",
@@ -24,20 +25,28 @@ function RecentUserActivityCard({
               : "bg-warning-surface-subtle"
           )}
         ></div>
-        <span className="text-sm text-secondary">{data.status}</span>
+        <Typography type="sm">{data.status}</Typography>
       </div>
-      <div>{data.message}</div>
+      <Typography color="title" weight="semibold">
+        {data.message}
+      </Typography>
       {type === "admin" && (
-        <div className="grid lg:grid-cols-2 gap-1">
-          <div className="border-1 rounded-sm inline-flex items-center p-2 gap-2">
-            {/* <span className="text-secondary">icon</span> */}
-            <Clock8 className="text-secondary" size={18} />
-            <span className="text-secondary">09:00Am</span>
+        <div className="grid gap-1 lg:grid-cols-2">
+          <div className="inline-flex items-center gap-2 rounded-sm border-1 border-grayscale-border-lighter px-3 py-1.5">
+            <Clock8 className="size-4 text-grayscale-text-subtitle" />
+            <Typography type="sm" color="subtitle">
+              09:00Am
+            </Typography>
           </div>
-          <div className="border-1 rounded-sm inline-flex items-center p-2 gap-2">
-            {/* <span className="text-secondary">icon</span> */}
-            <Calendar className="text-secondary" size={18} />
-            <span className="text-secondary">14 Dec 2024</span>
+          <div className="inline-flex items-center gap-2 rounded-sm border-1 border-grayscale-border-lighter p-2">
+            <Calendar className="size-4 text-grayscale-text-subtitle" />
+            <Typography
+              type="sm"
+              color="subtitle"
+              className="text-secondary text-nowrap"
+            >
+              14 Dec 2024
+            </Typography>
           </div>
         </div>
       )}
@@ -51,22 +60,25 @@ function RecentUserActivities({
   data,
 }: {
   type: "admin" | "candidate";
-  data: UserActivity[];
+  data: UserActivity[] | null;
 }) {
   return (
     <div className="space-y-4">
       <div className="flex justify-between">
-        <span className="text-base">Recent User Activities</span>
+        <Typography color="title">Recent User Activities</Typography>
         {type === "admin" && (
-          <span className="text-base text-primary-surface-default">
-            View All Jobs
-          </span>
+          <Typography color="primary1">View All Activities</Typography>
         )}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-content-start">
-        {data.map((data) => (
-          <RecentUserActivityCard data={data} type={type} />
-        ))}
+      <div className="grid grid-cols-1 place-content-start gap-4 md:grid-cols-2">
+        {
+          data ?
+            data.map((data, i) => (
+              <RecentUserActivityCard key={i + 1} data={data} type={type} />
+
+            ))
+            : <p>No Activity</p>
+        }
       </div>
 
       {type === "candidate" && (

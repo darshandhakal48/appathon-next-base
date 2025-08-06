@@ -33,28 +33,11 @@ function WorkforceHeader() {
         router.push(`/admin/workforce/addEmployee`);
     };
 
-<<<<<<< Updated upstream
-    return (
-        <>
-            <DashboardPageHeader>
-                <span className="text-xl font-semibold">Workforce</span>
-
-                <div
-                    className="space-x-1 gap-2 flex items-center text-primary-text-label-1 cursor-pointer"
-                    onClick={handleNavigation}
-                >
-                    <Plus height={20} />
-                    <span>Add New Player</span>
-                </div>
-            </DashboardPageHeader>
-        </>
-    );
-=======
   return (
     <>
       <DashboardPageHeader title="Workforce">
         <div
-          className="space-x-1 gap-2 flex items-center text-primary-text-label-1 cursor-pointer"
+          className="flex cursor-pointer items-center gap-2 space-x-1 text-primary-text-label-1"
           onClick={handleNavigation}
         >
           <Plus height={20} />
@@ -63,7 +46,6 @@ function WorkforceHeader() {
       </DashboardPageHeader>
     </>
   );
->>>>>>> Stashed changes
 }
 
 const ParticipantsTable = () => {
@@ -81,12 +63,12 @@ const ParticipantsTable = () => {
             </TableHeader>
             <TableBody className="text-grayscale-text-body">
                 <TableRow>
-                    <TableCell className="font-medium flex items-center gap-2">
-                        <span className="h-10 w-10 ">
+                    <TableCell className="flex items-center gap-2 font-medium">
+                        <span className="h-10 w-10">
                             <Image
                                 src={profile}
                                 alt="Candidate profile picture"
-                                className="h-full w-full rounded-full object-fit"
+                                className="object-fit h-full w-full rounded-full"
                             />
                         </span>
                         <span>Walter White</span>
@@ -97,14 +79,14 @@ const ParticipantsTable = () => {
                     <TableCell>4646464646466</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell className="font-medium flex items-center gap-2">
-                        <span className="h-10 w-10 ">
+                    <TableCell className="flex items-center gap-2 font-medium">
+                        <span className="h-10 w-10">
                             <Image
                                 src={`/_static/profile-pic.jpg`}
                                 alt="Candidate profile picture"
                                 width={899}
                                 height={1300}
-                                className="h-full w-full rounded-full object-fit"
+                                className="object-fit h-full w-full rounded-full"
                             />
                         </span>
                         <span>Sakura Chan</span>
@@ -115,12 +97,12 @@ const ParticipantsTable = () => {
                     <TableCell>4646464646466</TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell className="font-medium flex items-center gap-2">
-                        <span className="h-10 w-10 ">
+                    <TableCell className="flex items-center gap-2 font-medium">
+                        <span className="h-10 w-10">
                             <Image
                                 src={profile}
                                 alt="Candidate profile picture"
-                                className="h-full w-full rounded-full object-fit"
+                                className="object-fit h-full w-full rounded-full"
                             />
                         </span>
                         <span>John Harison</span>

@@ -15,7 +15,7 @@ export function DashboardSidebar({
   children: React.ReactNode;
   links: SidebarLinkItem[];
 }) {
-  const [openSidebar, setOpen] = useState(false);
+  const [openSidebar, setOpen] = useState(true);
 
   const handleClick = () => {
     setOpen((prev) => !prev);
@@ -23,22 +23,21 @@ export function DashboardSidebar({
   return (
     <div
       className={cn(
-        "mx-auto flex w-full min-h-screen flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 md:flex-row"
+        "mx-auto flex min-h-screen w-full flex-1 flex-col overflow-hidden rounded-md border border-grayscale-border-default md:flex-row"
       )}
     >
       <Sidebar open={openSidebar} setOpen={setOpen}>
         <SidebarBody
-          className="justify-between h-screen bg-sidebar z-40 fixed gap-10 border-r-2"
+          className="fixed z-40 h-screen justify-between gap-10 border-r-2 bg-grayscale-surface-white"
           style={{ backgroundColor: "var(--sidebar-primary)" }}
         >
           <div
-            className={`flex flex-1 flex-col overflow-x-hidden ${
-              !openSidebar ? "items-center" : "items-start"
-            }`}
+            className={`flex flex-1 flex-col items-center overflow-x-hidden${!openSidebar ? "items-center" : "items-start"
+              }`}
           >
             {openSidebar ? (
               <>
-                <div className=" flex justify-between w-full items-center">
+                <div className="flex w-full items-center justify-between">
                   <Logo className="h-5" href />
                   <SidebarToggleIcon
                     handleClick={handleClick}
@@ -47,8 +46,8 @@ export function DashboardSidebar({
                 </div>
               </>
             ) : (
-              <div className="size-fit group">
-                <div className="group-hover:flex hidden">
+              <div className="group size-fit">
+                <div className="hidden group-hover:flex">
                   <SidebarToggleIcon
                     handleClick={handleClick}
                     open={openSidebar}
@@ -60,7 +59,7 @@ export function DashboardSidebar({
                 </div>
               </div>
             )}
-            <div className="mt-8 flex flex-col gap-2 ">
+            <div className="mt-8 flex w-full flex-col gap-2">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
@@ -70,7 +69,7 @@ export function DashboardSidebar({
       </Sidebar>
       <div
         className={cn(
-          "w-full bg-grayscale-surface-subtle  relative",
+          "relative w-full bg-grayscale-background-default",
           openSidebar ? "md:ml-[250px]" : "md:ml-[80px]"
         )}
       >

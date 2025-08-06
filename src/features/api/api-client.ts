@@ -66,7 +66,7 @@ export class ApiClient {
     };
   }
 
-  // Add authentication headers if needed
+  // Add authentication headers
   setAuthToken(token: string) {
     this.defaultHeaders = {
       ...this.defaultHeaders,

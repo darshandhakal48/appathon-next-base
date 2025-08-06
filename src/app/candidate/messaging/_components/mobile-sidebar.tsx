@@ -24,17 +24,17 @@ export default function MobileSidebar({
   return (
     <div
       className={cn(
-        "mx-auto flex w-full relative min-h-screen flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 md:flex-row"
+        "mx-auto flex w-full relative min-h-screen flex-1 flex-col overflow-hidden rounded-md border border-grayscale-border-default md:flex-row"
       )}
     >
       <Sidebar open={openSidebar} setOpen={setOpen}>
         <SidebarBody
-          className="justify-between h-screen bg-sidebar z-40 absolute gap-10 border-r-2 md:hidden"
+          className="justify-between h-screen bg-grayscale-background-default/10 backdrop-blur-xl z-40 absolute gap-10 border-r-2 md:hidden"
           style={{ backgroundColor: "var(--sidebar-primary)" }}
           trigger={
-            <div className="flex justify-start z-20 w-full">
+            <div className="flex justify-end z-20 w-full">
               <IconMenu2
-                className="text-neutral-800 dark:text-neutral-200"
+                className="text-grayscale-text-caption"
                 onClick={() => setOpen((prev) => !prev)}
               />
             </div>

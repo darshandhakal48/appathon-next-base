@@ -1,19 +1,19 @@
 import DashboardPageHeader from "@/components/dashboard/page-header";
 import React, { Suspense } from "react";
 import CandidateDashboardClient from "./_components/client";
-import { fetchJobs } from "@/actions/candidate-job-actions";
 import { handleApiRequest } from "@/features/api/helper";
 import { Job } from "@/lib/type";
 import { apiClient } from "@/features/api/api-client";
 import ErrorBoundary from "@/components/shared/error-boundary";
 import { candidateJobs } from "@/config/db";
+import ClientErrorFallback from "@/components/shared/error-fallback";
 
 export default function CandidateDashboard() {
   return (
     <>
       <DashboardPageHeader title="Dashboard" />
 
-      <ErrorBoundary fallback={<p>Error....</p>}>
+      <ErrorBoundary FallbackComponent={ClientErrorFallback}>
         <Suspense fallback={<p>Loading.....</p>}>
           <DashboardChild />
         </Suspense>

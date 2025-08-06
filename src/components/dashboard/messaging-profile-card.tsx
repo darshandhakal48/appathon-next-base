@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
+import { Typography } from "../shared/typography";
 
 interface ProfileProps extends React.HTMLAttributes<HTMLDivElement> {
   user: { name: string; recentMessage: string; time: string; image: string };
@@ -13,7 +14,7 @@ export default function MessagingProfileCard(props: ProfileProps) {
     <div
       {...attr}
       className={cn(
-        "max-w-[340px] w-full p-6 bg-grayscale-surface-white rounded-md outline-1 outline-offset-[-1px] outline-[#E5E7EB] inline-flex justify-between items-end",
+        "max-w-[340px]  w-full p-6 hover:backdrop-blur-3xl hover:bg-grayscale-surface-default/20 cursor-pointer bg-grayscale-surface-white rounded-md outline-1 outline-offset-[-1px] outline-grayscale-border-default inline-flex justify-between items-end",
         className
       )}
     >
@@ -23,20 +24,18 @@ export default function MessagingProfileCard(props: ProfileProps) {
           width={48}
           height={48}
           alt="user profile"
-          className="size-12 rounded-full"
+          className="size-12 rounded-full object-cover"
         />
         <div className="inline-flex flex-col justify-center items-start gap-1">
-          <div className="justify-center text-gray-700 text-base font-normal leading-normal">
-            {name}
-          </div>
-          <div className="justify-center text-grayscale-text-subtitle text-sm font-normal font-sans-secondary leading-tight">
+          <Typography>{name}</Typography>
+          <Typography color="subtitle" type="sm" font="sans-secondary">
             {recentMessage}
-          </div>
+          </Typography>
         </div>
       </div>
-      <div className="justify-start text-grayscale-text-caption text-[10px] font-normal leading-none">
+      <Typography type="xxs" color="caption">
         {time}
-      </div>
+      </Typography>
     </div>
   );
 }

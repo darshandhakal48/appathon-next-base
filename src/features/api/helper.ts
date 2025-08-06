@@ -14,6 +14,7 @@ export async function handleApiRequest<T>(
   errorMessage: string
 ): Promise<ApiResponse<T>> {
   try {
+    // throw new Error("Unexpected Error!");
     const response = await apiFn();
 
     return response;

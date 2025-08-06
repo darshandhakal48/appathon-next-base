@@ -5,71 +5,78 @@ import { z } from "zod";
 export type IconName = keyof typeof Icons;
 
 export type SidebarLinkItem = {
-    label: string;
-    icon: IconName;
-    href: string;
+  label: string;
+  icon: IconName;
+  href: string;
 };
 
 export type DashboardCard = { label: string; count: number; icon: IconName };
 export type UserActivity = { color: string; status: string; message: string };
 export type Job = {
-    id: string;
-    title: string;
-    company: string;
-    location: string;
-    type: string;
-    posted: string;
-    expires: string;
-    companyImage: string;
+  id: string;
+  title: string;
+  noOfPositions: string;
+  company: string;
+  location: string;
+  type: string;
+  posted: string;
+  expires: string;
+  companyImage: string;
 };
 export interface Application extends Job {
-    status: string;
-    appliedDate: string;
+  status: string;
+  appliedDate: string;
 }
 
 export interface WorkForceProfileInfoProps {
-    employeeName?: string;
-    jobTitle?: string;
-    under?: string;
-    companyName?: string;
-    companyField?: string;
-    location: string;
-    email: string;
-    number: string;
+  employeeName?: string;
+  jobTitle?: string;
+  under?: string;
+  companyName?: string;
+  companyField?: string;
+  location: string;
+  email: string;
+  number: string;
 }
 
 export interface JobCardProps {
-    id: number;
-    role: string;
-    startDate: string;
-    endDate: string;
-    logo: string;
-    companyName: string;
-    status: string;
-    updatedBy: string;
-    location: string;
-    expiresIn: string;
-    type: string;
+  id: number;
+  role: string;
+  startDate: string;
+  endDate: string;
+  logo: string;
+  companyName: string;
+  status: string;
+  updatedBy: string;
+  location: string;
+  expiresIn: string;
+  type: string;
 }
 
 export interface ConfirmJobDetailsProps {
-    jobDetails: JobFormType;
+  jobDetails: JobFormType;
 
-    setStep: React.Dispatch<React.SetStateAction<1 | 2 | 3>>;
+  setStep: React.Dispatch<React.SetStateAction<1 | 2 | 3>>;
 }
 
 export interface CurrencyProps {
-    code: string;
-    sign: string;
+  code: string;
+  sign: string;
 }
 
 export interface FormFieldsProps {
-    icon: IconName;
-    iconLabel: string;
+  icon: IconName;
+  iconLabel: string;
 }
 export interface PersonalInformationProps {
-    label: string;
-    formFields: FormFieldsProps[];
+  label: string;
+  formFields: FormFieldsProps[];
 }
 
 export type DefaultModalSizes = "sm" | "md" | "lg" | "xl" | "full";
+
+export interface Option {
+  value: string;
+  label: string;
+  image?: string;
+}
