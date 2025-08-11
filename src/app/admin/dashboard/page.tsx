@@ -19,11 +19,10 @@ const AdminDashboard = () => {
       <DashboardPageHeader title="Dashboard" />
       <div className="space-y-4 bg-grayscale-surface-subtle p-6">
         <ApiWrapper<DashboardCard[]>
-          fallback={<DashboardSkeleton section="overview" />}
-          route="/superadmin-dashboard-cards"
+          fallback={<DashboardSkeleton section="overview" />} // loading skeleton
+          route="/superadmin-dashboard-cards" // api route
         >
-          {(data) => <OverviewSection data={data.data} />
-          }
+          {(data) => <OverviewSection data={data.data} />}
         </ApiWrapper>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -38,11 +37,8 @@ const AdminDashboard = () => {
             fallback={<DashboardSkeleton section="activity" />}
             route="/superadmin-user-activity"
           >
-            {(data) => <UserActivitySection data={data.data} />
-            }
+            {(data) => <UserActivitySection data={data.data} />}
           </ApiWrapper>
-
-
         </div>
       </div>
     </>
@@ -94,6 +90,3 @@ function DashboardSkeleton({
 }
 
 export default AdminDashboard;
-
-
-

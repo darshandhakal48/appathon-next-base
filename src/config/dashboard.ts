@@ -54,14 +54,25 @@ export const adminDashboardSidebarLink: SidebarLinkItem[] = [
   },
   {
     label: "Timesheet",
-    href: "/timesheet",
+    href: "/admin/timesheet",
     icon: "timeSheet",
   },
   {
-    label: "Payroll",
-    href: "/payroll",
+    "label": "Payroll",
     icon: "payroll",
-  },
+    items: [
+      {
+        label: "Summary",
+        href: "/admin/payroll/summary",
+        icon: "payroll",
+      },
+      {
+        label: "Salary Structure",
+        href: "/admin/payroll/salary-strcuture",
+        icon: "payroll",
+      }
+    ]
+  }
 ];
 
 export const candidateDashboardSidebarLink: SidebarLinkItem[] = [

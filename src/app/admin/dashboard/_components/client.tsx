@@ -11,6 +11,7 @@ export const OverviewSection = async ({ data }: { data: DashboardCard[] | null }
 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+
       {data?.map((card, i) => (
         <HiringStepsCard data={card} key={i} />
       ))}

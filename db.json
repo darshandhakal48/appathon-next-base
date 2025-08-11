@@ -9,6 +9,13 @@
     { "label": "Offer Received", "count": 5, "icon": "user" },
     { "label": "Rejected", "count": 5, "icon": "user" }
   ],
+  "superadmin-payroll-cards":[
+    {"label":"Start","value":"1 Dec"},
+    {"label":"End","value":"30 Dec"},
+    {"label":"Payday","value":"1 Jan"},
+    {"label":"Total Payroll Cost","value":"$ 7,334.15"},
+    {"label":" Pending Approvals","value":"5 Employee"}
+  ],
   "superadmin-active-jobs":[
   {
     "id": "se001",
@@ -36,30 +43,5 @@
     "noOfPositions": 1
   }
 ],
-"superadmin-user-activity":[
-  {
-    "status": "Interview Scheduled",
-    "message":
-      "Your interview for [Job Title] is set for [Date & Time]. Good luck!",
-    "color": "success"
-  },
-  {
-    "status": "Application Under Review",
-    "message":
-      "Your application for [Job Title] is currently under review. We'll keep you posted.",
-    "color": "success"
-  },
-  {
-    "status": "Offer Extended",
-    "message":
-      "Congratulations! You've received an offer for [Job Title]. Check the details now!",
-    "color": "success"
-  },
-  {
-    "status": "Application Rejected",
-    "message":
-      "We appreciate your interest in [Company]. Unfortunately, we won't be moving forward with your application for [Job Title] at this time.",
-    "color": "success"
-  }
-]
+"superadmin-user-activity":null
 }

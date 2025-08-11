@@ -7,7 +7,8 @@ import { IconMenu2, IconX } from "@tabler/icons-react";
 import { Icons } from "./icons";
 import { SidebarLinkItem } from "@/lib/type";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { ChevronDown } from "lucide-react";
 
 interface SidebarContextProps {
   open: boolean;
@@ -177,10 +178,74 @@ export const SidebarLink = ({
 
   const pathname = usePathname();
 
+  const [expand, setExpand] = useState(false)
   const [hover, setHover] = useState(false);
-
+  const router = useRouter();
   return (
-    <Link
+    link.items ? <>
+      <div
+        className={cn(
+          "group/sidebar flex flex-1 items-center justify-between rounded-[6px] py-2 hover:bg-primary-surface-default/15 hover:text-primary-surface-default",
+          className,
+          !open ? "p-[12px]" : "pr-[16px] pl-[16px]",
+        )}
+        {...props}
+        onMouseEnter={() => {
+          setHover(true);
+        }}
+        onMouseLeave={() => {
+          setHover(false);
+        }}
+        onClick={() =>
+          link.items ? setExpand(prev => !prev) : router.push(link.href || "")
+        }
+
+      ><div className="flex items-center gap-2">
+
+          <Tag
+            className={cn(
+              "text-sidebar-primary-foreground",
+              hover
+                ? "text-primary-surface-default"
+                : "text-foreground"
+            )}
+            height={20}
+            width={20}
+          />
+
+          <motion.span
+            animate={{
+              display: open ? "inline-block" : "none",
+              opacity: open ? 1 : 0,
+              // display: animate
+              //     ? open
+              //         ? "inline-block"
+              //         : "none"
+              //     : "inline-block",
+              // opacity: animate ? (open ? 1 : 0) : 1,
+            }}
+            className={cn(
+              "text-sidebar-primary-foreground !m-0 inline-block !p-0 text-sm font-normal whitespace-pre transition duration-150 group-hover/sidebar:translate-x-1 dark:text-neutral-200",
+              hover
+                ? "text-primary-surface-default"
+                : "text-foreground"
+            )}
+          >
+            {link.label}
+          </motion.span>
+        </div>
+        <ChevronDown className="text-title size-4" />
+      </div>
+      <div className="pl-2">
+
+
+        {
+          expand && link.items?.map((link, idx) => (
+            <SidebarLink key={idx} link={link} />
+          ))
+        }
+      </div>
+    </> : link.href && <Link
       href={link.href}
       className={cn(
         "group/sidebar flex flex-1 items-center justify-start gap-2 rounded-[6px] py-2 hover:bg-primary-surface-default/15 hover:text-primary-surface-default",
@@ -202,8 +267,8 @@ export const SidebarLink = ({
           pathname.includes(link.href)
             ? "text-primary-surface-default"
             : hover
-            ? "text-primary-surface-default"
-            : "text-foreground"
+              ? "text-primary-surface-default"
+              : "text-foreground"
         )}
         height={20}
         width={20}
@@ -225,12 +290,13 @@ export const SidebarLink = ({
           pathname.includes(link.href)
             ? "text-primary-surface-default"
             : hover
-            ? "text-primary-surface-default"
-            : "text-foreground"
+              ? "text-primary-surface-default"
+              : "text-foreground"
         )}
       >
         {link.label}
       </motion.span>
     </Link>
+
   );
 };
