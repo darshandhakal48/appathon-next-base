@@ -275,3 +275,38 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+
+/* ===== CUSTOME ANIMATIONS ===== */
+
+@keyframes stagger-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-stagger-1 {
+  animation: stagger-fade-in 0.5s ease-out 0ms forwards;
+  opacity: 0;
+}
+
+.animate-stagger-2 {
+  animation: stagger-fade-in 0.5s ease-out 150ms forwards;
+  opacity: 0;
+}
+
+.animate-stagger-3 {
+  animation: stagger-fade-in 0.5s ease-out 300ms forwards;
+  opacity: 0;
+}
+
+.animate-stagger-4 {
+  animation: stagger-fade-in 0.5s ease-out 450ms forwards;
+  opacity: 0;
+}
+

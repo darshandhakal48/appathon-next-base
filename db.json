@@ -1,47 +1,291 @@
 
 {
-"superadmin-dashboard-cards":[
-
-    { "label": "Applied", "count": 0, "icon": "folderOpen" },
-    { "label": "Screening", "count": 10, "icon": "folderOpen" },
-    { "label": "Interviewing", "count": 3, "icon": "headset" },
-    { "label": "Interview Scheduled", "count": 5, "icon": "user" },
-    { "label": "Offer Received", "count": 5, "icon": "user" },
-    { "label": "Rejected", "count": 5, "icon": "user" }
+  "superadmin-dashboard-cards": [
+    { "label": "Applied", "count": 15, "icon": "fileCheck" },
+    { "label": "Screening", "count": 9, "icon": "userSearch" },
+    { "label": "Interviewing", "count": 4, "icon": "micVocal" },
+    { "label": "Offered", "count": 3, "icon": "handHeart" },
+    { "label": "Hired", "count": 2, "icon": "handShake" },
+    { "label": "Rejected", "count": 5, "icon": "userX" }
   ],
-  "superadmin-payroll-cards":[
-    {"label":"Start","value":"1 Dec"},
-    {"label":"End","value":"30 Dec"},
-    {"label":"Payday","value":"1 Jan"},
-    {"label":"Total Payroll Cost","value":"$ 7,334.15"},
-    {"label":" Pending Approvals","value":"5 Employee"}
+  "superadmin-payroll-cards": [
+    { "label": "Start", "value": "1 Dec" },
+    { "label": "End", "value": "30 Dec" },
+    { "label": "Payday", "value": "1 Jan" },
+    { "label": "Total Payroll Cost", "value": "$ 7,334.15" },
+    { "label": "Pending Approvals", "value": "5 Employee" }
   ],
-  "superadmin-active-jobs":[
+  "superadmin-active-jobs": [
+    { "Job Id": "se001", "Job Title": "Software Engineering", "No. of Positions": 2 },
+    { "Job Id": "js9343", "Job Title": "It Consultant", "No. of Positions": 3 },
+    { "Job Id": "ce4442", "Job Title": "Accountant", "No. of Positions": 1 },
+    { "Job Id": "de4444", "Job Title": "Computer Engineering", "No. of Positions": 2 },
+    { "Job Id": "se34334", "Job Title": "Data Engineering", "No. of Positions": 1 }
+  ],
+  "superadmin-user-activity": null,
+  "superadmin-payroll-breakdown": [
+    {
+      "id": "1",
+      "image": "/_static/woman.png",
+      "employeeName": "CN Sakara Chan",
+      "basePay": 500,
+      "bonus": 250,
+      "deductions": 50,
+      "tax": 50,
+      "netPay": 650
+    },
+    {
+      "id": "2",
+      "image": "/_static/woman.png",
+      "employeeName": "JH John Harrison",
+      "basePay": 500,
+      "bonus": 200,
+      "deductions": 50,
+      "tax": 50,
+      "netPay": 600
+    },
+    {
+      "id": "3",
+      "image": "/_static/woman.png",
+      "employeeName": "AB Alice Smith",
+      "basePay": 600,
+      "bonus": 150,
+      "deductions": 75,
+      "tax": 80,
+      "netPay": 595
+    },
+    {
+      "id": "4",
+      "image": "/_static/woman.png",
+      "employeeName": "XY Bob Johnson",
+      "basePay": 700,
+      "bonus": 250,
+      "deductions": 100,
+      "tax": 120,
+      "netPay": 730
+    }
+  ],
+  "superadmin-payroll-payment-status": [
   {
-    "id": "se001",
-    "title": "Software Engineering",
-    "noOfPositions": 2
+    "id": "1",
+      "image": "/_static/woman.png",
+    "employeeName": "CN Sakara Chan",
+    "payrollPeriod": "April 2025",
+    "netSalaryAmount": 600,
+    "paymentStatus": "Paid",
+    "dateOfPayment": "May 25, 2025",
+    "modeOfPayment": "Bank Transfer",
+    "action": "..."
   },
   {
-    "id": "js9343",
-    "title": "It Consultant",
-    "noOfPositions": 3
+    "id": "2",
+      "image": "/_static/woman.png",
+    "employeeName": "CN Sakara Chan",
+    "payrollPeriod": "April 2025",
+    "netSalaryAmount": 600,
+    "paymentStatus": "Paid",
+    "dateOfPayment": "May 25, 2025",
+    "modeOfPayment": "Bank Transfer",
+    "action": "..."
   },
   {
-    "id": "ce4442",
-    "title": "Accountant",
-    "noOfPositions": 1
+    "id": "3",
+      "image": "/_static/woman.png",
+    "employeeName": "CN Sakara Chan",
+    "payrollPeriod": "April 2025",
+    "netSalaryAmount": 600,
+    "paymentStatus": "Paid",
+    "dateOfPayment": "May 25, 2025",
+    "modeOfPayment": "Bank Transfer",
+    "action": "..."
   },
   {
-    "id": "de4444",
-    "title": "Computer Engineering",
-    "noOfPositions": 2
-  },
-  {
-    "id": "se34334",
-    "title": "Data Engineering",
-    "noOfPositions": 1
+    "id": "4",
+      "image": "/_static/woman.png",
+    "employeeName": "CN Sakara Chan",
+    "payrollPeriod": "April 2025",
+    "netSalaryAmount": 600,
+    "paymentStatus": "Paid",
+    "dateOfPayment": "May 25, 2025",
+    "modeOfPayment": "Bank Transfer",
+    "action": "..."
   }
 ],
-"superadmin-user-activity":null
+"superadmin-interviews":[
+  {
+    "id": "int001",
+    "status": "Scheduled",
+    "interviewType": "Phone",
+    "candidateName": "Alice Johnson",
+    "jobTitle": "Frontend Developer",
+    "client": "TechNova Inc.",
+    "date": "2025-09-01",
+    "timeRange": "10:00 AM - 10:30 AM",
+    "assignedTo": {
+      "initials": "MJ",
+      "fullName": "Mark Johnson"
+    }
+  },
+  {
+    "id": "int002",
+    "status": "Completed",
+    "interviewType": "Video",
+    "candidateName": "Brian Smith",
+    "jobTitle": "Backend Engineer",
+    "client": "CodeCrafters LLC",
+    "date": "2025-08-29",
+    "timeRange": "2:00 PM - 3:00 PM",
+    "assignedTo": {
+      "initials": "AS",
+      "fullName": "Anita Sharma"
+    }
+  },
+  {
+    "id": "int003",
+    "status": "Pending",
+    "interviewType": "On-site",
+    "candidateName": "Chloe Adams",
+    "jobTitle": "UX Designer",
+    "client": "Creative Minds",
+    "date": "2025-09-03",
+    "timeRange": "1:00 PM - 2:00 PM",
+    "assignedTo": {
+      "initials": "RD",
+      "fullName": "Rajiv Das"
+    }
+  },
+  {
+    "id": "int004",
+    "status": "Scheduled",
+    "interviewType": "Video",
+    "candidateName": "David Lee",
+    "jobTitle": "DevOps Engineer",
+    "client": "CloudShift",
+    "date": "2025-09-02",
+    "timeRange": "9:00 AM - 10:00 AM",
+    "assignedTo": {
+      "initials": "SP",
+      "fullName": "Sarah Patel"
+    }
+  },
+  {
+    "id": "int005",
+    "status": "Cancelled",
+    "interviewType": "Phone",
+    "candidateName": "Emma Davis",
+    "jobTitle": "Product Manager",
+    "client": "NextVision",
+    "date": "2025-08-30",
+    "timeRange": "11:00 AM - 11:30 AM",
+    "assignedTo": {
+      "initials": "KT",
+      "fullName": "Kevin Thompson"
+    }
+  },
+  {
+    "id": "int006",
+    "status": "Completed",
+    "interviewType": "On-site",
+    "candidateName": "Felix Green",
+    "jobTitle": "QA Engineer",
+    "client": "PixelSoft",
+    "date": "2025-08-28",
+    "timeRange": "3:00 PM - 4:00 PM",
+    "assignedTo": {
+      "initials": "NL",
+      "fullName": "Nina Lee"
+    }
+  },
+  {
+    "id": "int007",
+    "status": "Pending",
+    "interviewType": "Video",
+    "candidateName": "Grace Kim",
+    "jobTitle": "Data Analyst",
+    "client": "InsightWorks",
+    "date": "2025-09-05",
+    "timeRange": "12:00 PM - 1:00 PM",
+    "assignedTo": {
+      "initials": "JS",
+      "fullName": "James Singh"
+    }
+  },
+  {
+    "id": "int008",
+    "status": "Scheduled",
+    "interviewType": "Phone",
+    "candidateName": "Henry Black",
+    "jobTitle": "Security Engineer",
+    "client": "SecureSys",
+    "date": "2025-09-04",
+    "timeRange": "4:00 PM - 4:30 PM",
+    "assignedTo": {
+      "initials": "LH",
+      "fullName": "Laura Hayes"
+    }
+  },
+  {
+    "id": "int009",
+    "status": "Completed",
+    "interviewType": "On-site",
+    "candidateName": "Isabella White",
+    "jobTitle": "Machine Learning Engineer",
+    "client": "AI Edge",
+    "date": "2025-08-27",
+    "timeRange": "10:00 AM - 11:00 AM",
+    "assignedTo": {
+      "initials": "OM",
+      "fullName": "Oscar Martin"
+    }
+  }
+],
+
+"superadmin-workforce":[
+    {
+        "id": 1,
+        "employeeName": "Darshan",
+        "jobTitle": "frontend",
+        "email": "walter@gmail.com",
+        "workNumber": 657657,
+        "avatar": "/_static/profile-pic.jpg", 
+        "phone": 65765675757
+    },
+    {
+        "id": 2,
+        "employeeName": "Darshan",
+        "jobTitle": "frontend",
+        "email": "walter@gmail.com",
+        "workNumber": 657657,
+        "avatar": "/_static/profile-pic.jpg", 
+        "phone": 65765675757
+    },
+    {
+        "id": 3,
+        "employeeName": "Darshan",
+        "jobTitle": "frontend",
+        "email": "walter@gmail.com",
+        "workNumber": 657657,
+        "avatar": "/_static/profile-pic.jpg", 
+        "phone": 65765675757
+    },
+    {
+        "id": 4,
+        "employeeName": "Darshan",
+        "jobTitle": "frontend",
+        "email": "walter@gmail.com",
+        "workNumber": 657657,
+        "avatar": "/_static/profile-pic.jpg", 
+        "phone": 65765675757
+    },
+    {
+        "id": 5,
+        "employeeName": "Darshan",
+        "jobTitle": "frontend",
+        "email": "walter@gmail.com",
+        "workNumber": 657657,
+        "avatar": "/_static/profile-pic.jpg", 
+        "phone": 65765675757
+    }
+]
 }
+

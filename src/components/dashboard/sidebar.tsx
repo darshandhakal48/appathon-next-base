@@ -66,15 +66,15 @@ export function DashboardSidebar({
             </div>
           </div>
         </SidebarBody>
+        <div
+          className={cn(
+            "relative w-full bg-grayscale-background-default",
+            openSidebar ? "md:ml-[250px]" : "md:ml-[80px]"
+          )}
+        >
+          <ScrollArea>{children}</ScrollArea>
+        </div>
       </Sidebar>
-      <div
-        className={cn(
-          "relative w-full bg-grayscale-background-default",
-          openSidebar ? "md:ml-[250px]" : "md:ml-[80px]"
-        )}
-      >
-        <ScrollArea>{children}</ScrollArea>
-      </div>
     </div>
   );
 }

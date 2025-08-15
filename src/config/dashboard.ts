@@ -64,12 +64,12 @@ export const adminDashboardSidebarLink: SidebarLinkItem[] = [
       {
         label: "Summary",
         href: "/admin/payroll/summary",
-        icon: "payroll",
+        icon: "empty",
       },
       {
         label: "Salary Structure",
         href: "/admin/payroll/salary-strcuture",
-        icon: "payroll",
+        icon: "empty",
       }
     ]
   }

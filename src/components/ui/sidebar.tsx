@@ -9,6 +9,7 @@ import { SidebarLinkItem } from "@/lib/type";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react";
+import { shouldAutoRemoveFilter } from "@tanstack/react-table";
 
 interface SidebarContextProps {
   open: boolean;
@@ -173,7 +174,7 @@ export const SidebarLink = ({
   link: SidebarLinkItem;
   className?: string;
 }) => {
-  const { open, animate } = useSidebar();
+  const { open } = useSidebar();
   const Tag = Icons[link.icon];
 
   const pathname = usePathname();
@@ -181,6 +182,10 @@ export const SidebarLink = ({
   const [expand, setExpand] = useState(false)
   const [hover, setHover] = useState(false);
   const router = useRouter();
+  const shouldShowIcon = link.icon && link.icon.toLowerCase() !== "empty";
+
+  console.log("ICON NAME ==> ", link.icon)
+  console.log("SHOULD SHOW ICON ==> ", shouldShowIcon)
   return (
     link.items ? <>
       <div
@@ -202,7 +207,7 @@ export const SidebarLink = ({
 
       ><div className="flex items-center gap-2">
 
-          <Tag
+          {shouldShowIcon && <Tag
             className={cn(
               "text-sidebar-primary-foreground",
               hover
@@ -212,7 +217,7 @@ export const SidebarLink = ({
             height={20}
             width={20}
           />
-
+          }
           <motion.span
             animate={{
               display: open ? "inline-block" : "none",
@@ -240,8 +245,8 @@ export const SidebarLink = ({
 
 
         {
-          expand && link.items?.map((link, idx) => (
-            <SidebarLink key={idx} link={link} />
+          expand && link.items?.map((childLinks, idx) => (
+            <SidebarLink key={idx} link={childLinks} />
           ))
         }
       </div>

@@ -92,8 +92,37 @@ export const JobFormSchema = z.object({
     jobDescription: JobDescriptionFormSchema,
 });
 
+
+export const SalaryStructureSchema = z.object({
+  templateName: z.string().min(1, "Template name is required"),
+  level: z.string().min(1, "Level is required"),
+  department: z.string().min(1, "Please select a department"),
+  basic: z
+    .string()
+    .min(1, "Basic amount is required")
+    .regex(/^\d+(\.\d{1,2})?$/, "Enter a valid amount"),
+  hra: z
+    .string()
+    .min(1, "HRA amount is required")
+    .regex(/^\d+(\.\d{1,2})?$/, "Enter a valid amount"),
+  bonus: z.string().min(1, "Please select a bonus amount"),
+  pf: z
+    .string()
+    .min(1, "PF amount is required")
+    .regex(/^\d+(\.\d{1,2})?$/, "Enter a valid amount"),
+  tax: z
+    .string()
+    .min(1, "Tax amount is required")
+    .regex(/^\d+(\.\d{1,2})?$/, "Enter a valid amount"),
+})
+
 // export type Job
 export type JobPostInfoType = z.infer<typeof JobPostInfoFormSchema>;
 export type JobAddressInfoType = z.infer<typeof JobAddressInfoFormSchema>;
 export type JobDescriptionType = z.infer<typeof JobAddressInfoFormSchema>;
 export type JobFormType = z.infer<typeof JobFormSchema>;
+export type SalaryStructureFormType = z.infer<typeof SalaryStructureSchema>
+
+
+
+
