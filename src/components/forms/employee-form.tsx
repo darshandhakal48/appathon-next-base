@@ -10,8 +10,8 @@ import { ArrowLeft } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import EmployeeInfoForm from "./employee-info-form";
 import EmployeeAddressForm from "./employee-address-form";
-import EmployeeFormAttachment from "./employee-attachments-form";
 import { AdminFormType } from "@/lib/type";
+import AdditionalFormAttachment from "./employee-attachments-form";
 
 function EmployeeForm({ type }: { type: AdminFormType }) {
     const pathname = usePathname();
@@ -58,7 +58,7 @@ function EmployeeForm({ type }: { type: AdminFormType }) {
                             />
                             <EmployeeAddressForm control={form.control} />
                         </div>
-                        <EmployeeFormAttachment />
+                        <AdditionalFormAttachment />
                     </div>
                 </form>
             </Form>

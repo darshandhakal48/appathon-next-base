@@ -1,7 +1,12 @@
 import React from "react";
+import RoleAndPermisiion from "./_component/role-and-permission";
 
 function AdminRoleAndPermission() {
-    return <div>AdminRoleAndPermission</div>;
+    return (
+        <>
+            <RoleAndPermisiion />
+        </>
+    );
 }
 
 export default AdminRoleAndPermission;
