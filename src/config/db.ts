@@ -9,12 +9,13 @@ import {
     Job,
     JobCardProps,
     MessagingTemplateProps,
+    permissionForPageProps,
     PersonalInformationProps,
     UserActivity,
+    UserRolesProps,
     WorkForceProfileInfoProps,
     WorkForceUserProps,
 } from "@/lib/type";
-import { title } from "process";
 
 // ========== CANDIDATE - DASHBOARD ========== //
 export const candidateDashboardCards: DashboardCard[] = [
@@ -66,6 +67,7 @@ export const candidateJobs: Job[] = [
         posted: "3 weeks ago",
         expires: "Expires in 4 days",
         companyImage: "/_static/40x40.svg",
+        noOfPositions: "3",
     },
     {
         id: "2",
@@ -76,6 +78,7 @@ export const candidateJobs: Job[] = [
         posted: "3 weeks ago",
         expires: "Expires in 4 days",
         companyImage: "/_static/40x40.svg",
+        noOfPositions: "3",
     },
     {
         id: "3",
@@ -86,6 +89,7 @@ export const candidateJobs: Job[] = [
         posted: "3 weeks ago",
         expires: "Expires in 4 days",
         companyImage: "/_static/40x40.svg",
+        noOfPositions: "3",
     },
     {
         id: "4",
@@ -96,6 +100,7 @@ export const candidateJobs: Job[] = [
         posted: "3 weeks ago",
         expires: "Expires in 4 days",
         companyImage: "/_static/40x40.svg",
+        noOfPositions: "3",
     },
     {
         id: "5",
@@ -106,6 +111,7 @@ export const candidateJobs: Job[] = [
         posted: "3 weeks ago",
         expires: "Expires in 4 days",
         companyImage: "/_static/40x40.svg",
+        noOfPositions: "3",
     },
 ];
 
@@ -152,6 +158,7 @@ export const candidateApplication: Application[] = [
         companyImage: "/_static/40x40.svg",
         appliedDate: "2025-05-01",
         status: "shortlisted",
+        noOfPositions: "4",
     },
     {
         id: "2",
@@ -164,6 +171,7 @@ export const candidateApplication: Application[] = [
         companyImage: "/_static/40x40.svg",
         appliedDate: "2025-05-01",
         status: "shortlisted",
+        noOfPositions: "4",
     },
     {
         id: "3",
@@ -176,6 +184,7 @@ export const candidateApplication: Application[] = [
         companyImage: "/_static/40x40.svg",
         appliedDate: "2025-05-01",
         status: "shortlisted",
+        noOfPositions: "4",
     },
     {
         id: "4",
@@ -188,6 +197,7 @@ export const candidateApplication: Application[] = [
         companyImage: "/_static/40x40.svg",
         appliedDate: "2025-05-01",
         status: "shortlisted",
+        noOfPositions: "4",
     },
     {
         id: "5",
@@ -200,6 +210,7 @@ export const candidateApplication: Application[] = [
         companyImage: "/_static/40x40.svg",
         appliedDate: "2025-05-01",
         status: "shortlisted",
+        noOfPositions: "4",
     },
 ];
 
@@ -881,6 +892,7 @@ export const messagingTemplate: MessagingTemplateProps[] = [
         title: "Application Acknowledgment",
         description: "Confirms receipt of the candidate’s application.",
         icon: "FilePenLine",
+        link: "/admin/messaging/applicationAcknowledgement",
     },
     {
         id: 2,
@@ -888,6 +900,7 @@ export const messagingTemplate: MessagingTemplateProps[] = [
         description:
             "Schedules an interview and provides details like date, time, and location/meeting link.",
         icon: "FilePenLine",
+        link: "/admin/messaging/applicationAcknowledgement",
     },
     {
         id: 3,
@@ -895,11 +908,51 @@ export const messagingTemplate: MessagingTemplateProps[] = [
         description:
             "Informs the candidate about the progress of their application (e.g., moved to the next round, under review).",
         icon: "FilePenLine",
+        link: "/admin/messaging/applicationAcknowledgement",
     },
     {
         id: 4,
         title: "Job Offer Email",
         description: "Confirms receipt of the candidate’s application.",
+        link: "/admin/messaging/applicationAcknowledgement",
         icon: "FilePenLine",
     },
+];
+
+export const userRoles: UserRolesProps[] = [
+    {
+        id: 1,
+        role: "Hiring Manager",
+        assign: "2 users",
+    },
+    {
+        id: 2,
+        role: "IT Administrator",
+        assign: "2 users",
+    },
+    {
+        id: 3,
+        role: "Recruiter",
+        assign: "2 users",
+    },
+    {
+        id: 4,
+        role: "Interviewer",
+        assign: "2 users",
+    },
+    {
+        id: 5,
+        role: "Restricted User",
+        assign: "2 users",
+    },
+];
+
+export const permissionForPageData: permissionForPageProps[] = [
+    { pageId: "workForcePage", pageTitle: "WorkForce Page" },
+    { pageId: "jobPostingPage", pageTitle: "Job POsting Page" },
+    {
+        pageId: "interviewSchedulingPage",
+        pageTitle: "Interview Scheduling Page",
+    },
+    { pageId: "clientPage", pageTitle: "Client Page" },
 ];

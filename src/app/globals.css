@@ -96,8 +96,8 @@
     --grayscale-surface-default: #e5e7eb; /* gray-100 */
     --grayscale-surface-subtle: #f9fafb; /* gray-50 */
     --grayscale-surface-disabled: #d1d5db; /* gray-200 */
-    --grayscale-border-default: #e5e7eb; /* gray-100 */
-    --grayscale-border-disabled: oklch(0.929 0.013 255.508); /* gray-200 */
+    --grayscale-border-default: #cbd5e1; /* gray-100 */
+    --grayscale-border-disabled: #e5e7eb; /* gray-200 */
     --grayscale-border-darker: oklch(0.446 0.043 257.281); /* gray-600 */
     --grayscale-text-title: #111827; /* gray-900 */
     --grayscale-text-body: #374151; /* gray-700 */
@@ -107,7 +107,7 @@
     --grayscale-text-disabled: oklch(0.554 0.046 257.417); /* gray-500 */
     --grayscale-surface-white: #ffffff; /* gray-50 */
     --grayscale-table-default: oklch(0.984 0.003 247.858); /* gray-50 */
-    --grayscale-border-lighter: #f3f4f6; /* gray-50 */
+    --grayscale-border-lighter: #e2e8f0; /* gray-50 */
     --grayscale-surface-subtle-2: oklch(0.968 0.007 247.896); /* gray-100 */
     --grayscale-background-default: oklch(0.984 0.003 247.858); /* gray-50 */
     --grayscale-slate-200: #e2e8f0;
@@ -275,3 +275,38 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+
+/* ===== CUSTOME ANIMATIONS ===== */
+
+@keyframes stagger-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-stagger-1 {
+  animation: stagger-fade-in 0.5s ease-out 0ms forwards;
+  opacity: 0;
+}
+
+.animate-stagger-2 {
+  animation: stagger-fade-in 0.5s ease-out 150ms forwards;
+  opacity: 0;
+}
+
+.animate-stagger-3 {
+  animation: stagger-fade-in 0.5s ease-out 300ms forwards;
+  opacity: 0;
+}
+
+.animate-stagger-4 {
+  animation: stagger-fade-in 0.5s ease-out 450ms forwards;
+  opacity: 0;
+}
+

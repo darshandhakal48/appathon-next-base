@@ -1,13 +1,26 @@
+import { Icons } from "@/components/ui/icons";
+import { useGlobalModal } from "@/hooks/use-global-ui";
 import { MessagingTemplateProps } from "@/lib/type";
+import { useRouter } from "next/navigation";
 import React from "react";
-import { LuFilePenLine } from "react-icons/lu";
 
 function TemplateBox({ item }: { item: MessagingTemplateProps }) {
+    const router = useRouter();
+    const modal = useGlobalModal();
+    const Tag = Icons[item.icon];
+
+    const handleClick = () => {
+        router.push(`${item.link}`);
+        modal.closeAll();
+    };
     return (
         <>
-            <div className="bg-grayscale-surface-subtle p-6 gap-4 flex items-center rounded-xl cursor-pointer">
+            <button
+                onClick={handleClick}
+                className="bg-grayscale-surface-subtle p-6 gap-4 flex items-center rounded-xl cursor-pointer text-left"
+            >
                 <div className="h-12 w-12 bg-charts-violet-500 rounded-full flex items-center justify-center aspect-square">
-                    <LuFilePenLine className="text-grayscale-text-negative text-xl" />
+                    <Tag className="text-grayscale-text-negative text-xl" />
                 </div>
                 <div className="flex flex-col gap-2">
                     <p className="text-grayscale-text-title text-base font-normal">
@@ -17,7 +30,7 @@ function TemplateBox({ item }: { item: MessagingTemplateProps }) {
                         {item.description}
                     </p>
                 </div>
-            </div>
+            </button>
         </>
     );
 }

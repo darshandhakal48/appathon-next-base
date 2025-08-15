@@ -3,9 +3,11 @@
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { IconName } from "@/lib/type";
+import { Icons } from "../ui/icons";
 
 interface EmptyStateProps {
-  icon?: LucideIcon;
+  icon?: IconName;
   title: string;
   description: string;
   actionLabel?: string;
@@ -15,7 +17,7 @@ interface EmptyStateProps {
 }
 
 export function EmptyState({
-  icon: Icon,
+  icon,
   title,
   description,
   actionLabel,
@@ -23,17 +25,18 @@ export function EmptyState({
   variant = "default",
   className = "",
 }: EmptyStateProps) {
+  const Icon = Icons[icon || "clock4"]
   const content = (
     <div
       className={`flex flex-col items-center justify-center text-center p-8 ${className}`}
     >
-      {Icon && (
-        <div className="mb-4 p-3 rounded-full bg-grayscale-surface-subtle">
-          <Icon className="h-8 w-8 text-grayscale-text-negative-foreground" />
+      {icon && (
+        <div className="mb-4 rounded-full bg-grayscale-surface-subtle p-3">
+          <Icon className="h-8 w-8 text-grayscale-text-disabled" />
         </div>
       )}
-      <h3 className="text-lg font-semibold text-foreground mb-2">{title}</h3>
-      <p className="text-sm text-grayscale-text-negative-foreground mb-4 max-w-sm">
+      <h3 className="mb-2 text-lg font-semibold text-grayscale-text-disabled">{title}</h3>
+      <p className="mb-4 max-w-sm text-sm text-grayscale-text-disabled">
         {description}
       </p>
       {actionLabel && onAction && (
@@ -54,9 +57,9 @@ export function EmptyState({
         className={`flex flex-col items-center justify-center text-center py-12 ${className}`}
       >
         {Icon && (
-          <Icon className="h-12 w-12 text-grayscale-text-negative-foreground mb-3" />
+          <Icon className="text-grayscale-text-negative-foreground mb-3 h-12 w-12" />
         )}
-        <p className="text-sm text-grayscale-text-negative-foreground">
+        <p className="text-grayscale-text-negative-foreground text-sm">
           {title}
         </p>
       </div>
@@ -64,7 +67,7 @@ export function EmptyState({
   }
 
   return (
-    <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg">
+    <div className="border-muted-foreground/25 rounded-lg">
       {content}
     </div>
   );

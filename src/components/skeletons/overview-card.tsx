@@ -1,9 +1,17 @@
+import { ReactElement, ReactHTMLElement } from "react";
 import { Skeleton } from "../ui/skeleton";
 import { TypographySkeleton } from "./typography-skeleton";
+import { cn } from "@/lib/utils";
 
-export default function OverviewCardSkeleton() {
+
+interface ComponetProps extends React.ComponentProps<"div"> {
+
+}
+export default function OverviewCardSkeleton({ className, ...props }: ComponetProps) {
+
   return (
-    <Skeleton className="4 flex h-fit items-center gap-2 rounded-[6px] bg-slate-200 p-4 md:gap-6 md:px-8 dark:bg-slate-700">
+    <Skeleton {...props}
+      className={cn("flex h-fit items-center gap-2 rounded-[6px] bg-slate-200 p-4 md:gap-6 md:px-8 dark:bg-slate-700", className)}>
       <div className="flex size-[52px]! min-w-[52px] items-center justify-center rounded-full">
         <Skeleton className="size-6! bg-grayscale-surface-subtle" />
       </div>

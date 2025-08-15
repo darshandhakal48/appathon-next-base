@@ -6,7 +6,13 @@ export type IconName = keyof typeof Icons;
 export type SidebarLinkItem = {
     label: string;
     icon: IconName;
-    href: string;
+    href?: string;
+    items?: SidebarLinkItem[];
+};
+
+export type PayrollCard = {
+    label: string;
+    value: string;
 };
 
 export type DashboardCard = { label: string; count: number; icon: IconName };
@@ -17,9 +23,9 @@ export type UserActivity = {
     id: number;
 };
 export type Job = {
-    id: string;
-    title: string;
-    noOfPositions: string;
+    "Job Id": string;
+    "Job Title": string;
+    "No. of Positions": string;
     company: string;
     location: string;
     type: string;
@@ -114,33 +120,54 @@ export interface AddressInfoProps {
 }
 
 // ==== tabnle interfaces =====
+
+export type SortDirection = "asc" | "desc" | null;
+
+export interface SortConfig<T> {
+    key: keyof T;
+    direction: Exclude<SortDirection, null>;
+}
+
 export interface Column<T> {
     key: keyof T;
     header: string;
-    render?: (value: T[keyof T], row: T) => React.ReactNode;
-    sortable?: boolean;
     width?: string;
+    sortable?: boolean;
+    render?: (value: any, row: T) => React.ReactNode;
+    // New: Hide column from display but still accessible for custom rendering
+    hidden?: boolean;
+}
+
+export interface CustomCellConfig<T> {
+    // Target column key where the custom cell will be rendered
+    targetKey: keyof T;
+    // Source keys to combine (e.g., ['image', 'employeeName'])
+    sourceKeys: (keyof T)[];
+    // Custom render function for the combined cell
+    render: (values: any[], row: T) => React.ReactNode;
+    // Header for the custom cell
+    header: string;
+    // Width for the custom cell
+    width?: string;
+    sortable?: boolean;
 }
 
 export interface TableProps<T> {
     data: T[];
+    excludeColumns?: (keyof T)[]; // New prop to exclude specific columns
     columns?: Column<T>[];
+    customCells?: CustomCellConfig<T>[];
     autoGenerateColumns?: boolean;
+    excludeIdColumns?: boolean;
     onRowClick?: (row: T) => void;
     loading?: boolean;
     emptyMessage?: string;
     className?: string;
 }
 
-export type SortDirection = "asc" | "desc" | null;
-export type SortConfig<T> = {
-    key: keyof T;
-    direction: SortDirection;
-};
-
 export interface WorkForceUserProps {
     id: number;
-    name: string;
+    employeeName: string;
     email: string;
     workNumber: number;
     isActive?: boolean;
@@ -162,5 +189,60 @@ export interface MessagingTemplateProps {
     id: number;
     title: string;
     description: string;
-    icon: string;
+    icon: IconName;
+    link: string;
 }
+
+export interface UserRolesProps {
+    role: string;
+    assign: string;
+    id: number;
+}
+
+export type PageId =
+    | "workForcePage"
+    | "jobPostingPage"
+    | "interviewSchedulingPage"
+    | "clientPage";
+
+export interface permissionForPageProps {
+    pageId: PageId;
+    pageTitle: string;
+}
+export interface Employee {
+    id: string;
+    employeeName: string;
+    basePay: number;
+    bonus: number;
+    deductions: number;
+    tax: number;
+    image: string;
+    netPay: number;
+}
+
+export interface EmployeePayment {
+    id: string;
+    image: string;
+    employeeName: string;
+    payrollPeriod: string;
+    netSalaryAmount: number;
+    paymentStatus: string;
+    dateOfPayment: string;
+    modeOfPayment: string;
+    action: string;
+}
+
+export type Interview = {
+    id: string;
+    status: string;
+    interviewType: string;
+    candidateName: string;
+    jobTitle: string;
+    client: string;
+    date: string;
+    timeRange: string;
+    assignedTo: {
+        initials: string;
+        fullName: string;
+    };
+};

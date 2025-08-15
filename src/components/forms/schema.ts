@@ -24,18 +24,22 @@ export const EmployeeAddressFormSchema = z.object({
     country: z.string().min(1, { message: "Enter your country" }),
 });
 
-export const EmployeeAttachmentFormSchema = z.object({
-    attachment: z.string(),
+export const AdditionalFormAttachmentSchema = z.object({
+    attachment: z
+        .instanceof(FileList)
+        .refine((file) => file?.length === 1, "Attach your File"),
+    // .transform((files) => files[0]),
+    others: z.instanceof(FileList).optional(),
 });
 
 export const EmployeeFormSchema = z.object({
     info: EmployeeInfoFormSchema,
     address: EmployeeAddressFormSchema,
-    attachment: EmployeeAttachmentFormSchema,
+    // Attachment: AdditionalFormAttachmentSchema,
 });
 
-export type EmployeeAttachmentFormType = z.infer<
-    typeof EmployeeAttachmentFormSchema
+export type AdditionalFormAttachmentType = z.infer<
+    typeof AdditionalFormAttachmentSchema
 >;
 
 export type EmployeeAddressFormType = z.infer<typeof EmployeeAddressFormSchema>;
@@ -92,8 +96,95 @@ export const JobFormSchema = z.object({
     jobDescription: JobDescriptionFormSchema,
 });
 
+export const SalaryStructureSchema = z.object({
+    templateName: z.string().min(1, "Template name is required"),
+    level: z.string().min(1, "Level is required"),
+    department: z.string().min(1, "Please select a department"),
+    basic: z
+        .string()
+        .min(1, "Basic amount is required")
+        .regex(/^\d+(\.\d{1,2})?$/, "Enter a valid amount"),
+    hra: z
+        .string()
+        .min(1, "HRA amount is required")
+        .regex(/^\d+(\.\d{1,2})?$/, "Enter a valid amount"),
+    bonus: z.string().min(1, "Please select a bonus amount"),
+    pf: z
+        .string()
+        .min(1, "PF amount is required")
+        .regex(/^\d+(\.\d{1,2})?$/, "Enter a valid amount"),
+    tax: z
+        .string()
+        .min(1, "Tax amount is required")
+        .regex(/^\d+(\.\d{1,2})?$/, "Enter a valid amount"),
+});
+
 // export type Job
 export type JobPostInfoType = z.infer<typeof JobPostInfoFormSchema>;
 export type JobAddressInfoType = z.infer<typeof JobAddressInfoFormSchema>;
 export type JobDescriptionType = z.infer<typeof JobAddressInfoFormSchema>;
 export type JobFormType = z.infer<typeof JobFormSchema>;
+export type SalaryStructureFormType = z.infer<typeof SalaryStructureSchema>;
+
+// ================== messaging form schema and type ===============
+export const ApplicationAcknowledgementSchema = z.object({
+    sendTo: z.string().min(1, { message: "Enter email or job id or name" }),
+    subjectName: z.string().min(1, { message: "Enter your subject name" }),
+    message: z.string().min(1, { message: "Enter your message" }),
+    yourName: z.string().min(1, { message: "Enter your name" }),
+    position: z.string().min(1, { message: "Enter your posiiton" }),
+    companyName: z.string().min(1, { message: "Enter your company name" }),
+});
+
+export const ApplicationFormSchema = z.object({
+    ApplicationAcknowledgement: ApplicationAcknowledgementSchema,
+    // Attachment: AdditionalFormAttachmentSchema,
+});
+
+export type ApplicationAcknowledgementType = z.infer<
+    typeof ApplicationAcknowledgementSchema
+>;
+export type ApplicationFormType = z.infer<typeof ApplicationFormSchema>;
+
+export const BasicMessageSchema = z.object({
+    sendTo: z.string().min(1, { message: "Enter email or job id or name" }),
+    subjectName: z.string().min(1, { message: "Enter your subject name" }),
+    message: z.string().min(1, { message: "Enter your message" }),
+});
+export const CustomMessageSchema = z.object({
+    BasicMessage: BasicMessageSchema,
+    Attachment: AdditionalFormAttachmentSchema,
+});
+export type BasicMessageType = z.infer<typeof BasicMessageSchema>;
+export type CustomMessageType = z.infer<typeof CustomMessageSchema>;
+
+// ==> create new role schema (Role and permission)
+export const RoleSchema = z.object({
+    roleName: z.string().min(1, { message: "Role is required" }),
+});
+export const RolePermissionSchema = z.object({
+    workForcePage: z.object({
+        readonly: z.boolean().optional(),
+        write: z.boolean().optional(),
+    }),
+    jobPostingPage: z.object({
+        readonly: z.boolean().optional(),
+        write: z.boolean().optional(),
+    }),
+    interviewSchedulingPage: z.object({
+        readonly: z.boolean().optional(),
+        write: z.boolean().optional(),
+    }),
+    clientPage: z.object({
+        readonly: z.boolean().optional(),
+        write: z.boolean().optional(),
+    }),
+});
+
+export const NewRoleSchema = z.object({
+    role: RoleSchema,
+    permission: RolePermissionSchema,
+});
+export type RoleType = z.infer<typeof RoleSchema>;
+export type RolePermissionType = z.infer<typeof RolePermissionSchema>;
+export type NewRoleType = z.infer<typeof NewRoleSchema>;

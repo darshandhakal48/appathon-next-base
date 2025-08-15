@@ -1,18 +1,19 @@
 import React from "react";
 
-import HiringStepsCard from "@/components/dashboard/hiringStepsCard";
+import OverviewCard from "@/components/dashboard/overview-cards";
 import BasicLayoutCard from "@/components/shared/basic-layout-card";
 import ActiveJobOpenings from "@/components/dashboard/active-job-openings";
 import RecentUserActivities from "@/components/dashboard/recent-user-activities";
 import { apiClient } from "@/features/api/api-client";
 import { DashboardCard, Job, UserActivity } from "@/lib/type";
 
-export const OverviewSection = async ({ data }: { data: DashboardCard[] | null }) => {
+export const OverviewSection = async ({ cardsInfo }: { cardsInfo: DashboardCard[] | null }) => {
 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-      {data?.map((card, i) => (
-        <HiringStepsCard data={card} key={i} />
+
+      {cardsInfo?.map((card, i) => (
+        <OverviewCard data={card} key={i} />
       ))}
     </div>
   );
@@ -30,10 +31,10 @@ export const ActiveJobsSection = ({
   );
 };
 
-export const UserActivitySection = async ({ data }: { data: UserActivity[] | null }) => {
+export const UserActivitySection = async ({ userActivities }: { userActivities: UserActivity[] | null }) => {
   return (
     <BasicLayoutCard>
-      <RecentUserActivities data={data} type="admin" />
+      <RecentUserActivities data={userActivities} type="admin" />
     </BasicLayoutCard>
   );
 };
