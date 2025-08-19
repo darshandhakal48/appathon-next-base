@@ -111,7 +111,9 @@ const columns: ColumnDef<Candidate>[] = [
     accessorKey: "match",
     header: "Match %",
     cell: ({ row }) => (
-      <span className="font-medium text-blue-600">{row.getValue("match")}%</span>
+      <span className="font-medium text-blue-600">
+        {row.getValue("match")}%
+      </span>
     ),
   },
   {
@@ -119,7 +121,8 @@ const columns: ColumnDef<Candidate>[] = [
     header: "Skill Match",
     cell: ({ row }) => {
       const skill = row.getValue("skillMatch") as string;
-      let variant: "default" | "success" | "warning" | "destructive" = "default";
+      let variant: "default" | "success" | "warning" | "destructive" =
+        "default";
       if (skill.startsWith("Strong")) variant = "success";
       else if (skill.startsWith("Moderate")) variant = "warning";
       else variant = "destructive";
@@ -148,7 +151,9 @@ const columns: ColumnDef<Candidate>[] = [
     accessorKey: "status",
     header: "Status",
     cell: ({ row }) => (
-      <Badge className="bg-orange-100 text-orange-800">{row.getValue("status")}</Badge>
+      <Badge className="bg-orange-100 text-orange-800">
+        {row.getValue("status")}
+      </Badge>
     ),
   },
 ];

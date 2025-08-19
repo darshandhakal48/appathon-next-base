@@ -5,7 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { adminDashbaordCards, jobPostingData } from "@/config/db";
 import OverviewCards from "@/components/dashboard/overview-cards";
-import { AdminJobPostingHeader } from "../page";
+import { AdminJobPostingHeaderAction } from "../../_component/client";
+// import { AdminJobPostingHeader } from "../page";
 
 function SingleJobDetails() {
   const params = useParams();
@@ -17,7 +18,7 @@ function SingleJobDetails() {
   console.log(currentJobDetails);
   return (
     <>
-      <AdminJobPostingHeader />
+      <AdminJobPostingHeaderAction/>
       <div className="p-4">
         <div className="space-y-8 bg-grayscale-surface-white p-8">
           <div>

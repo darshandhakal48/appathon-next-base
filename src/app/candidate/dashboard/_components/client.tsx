@@ -1,17 +1,13 @@
 "use client";
 
-import HiringStepsCard from "@/components/dashboard/hiring-steps-card";
+import HiringStepsCard from "@/components/dashboard/overview-cards";
 
 import RecentUserActivities from "@/components/dashboard/recent-user-activities";
 import BasicLayoutCard from "@/components/shared/basic-layout-card";
 import JobCard from "@/components/shared/job-card";
 import { Typography } from "@/components/shared/typography";
 import { Button, buttonVariants } from "@/components/ui/button";
-import {
-  candidateDashboardCards,
-  candidateJobs,
-  candidateUserActivity,
-} from "@/config/db";
+import { candidateDashboardCards, candidateUserActivity } from "@/config/db";
 import { Job } from "@/lib/type";
 import { IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";

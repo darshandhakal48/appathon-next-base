@@ -11,40 +11,40 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 function CreateNewRole() {
-    const form = useForm<NewRoleType>({
-        resolver: zodResolver(NewRoleSchema),
-        defaultValues: {
-            role: {
-                roleName: "",
-            },
-            permission: {
-                clientPage: {
-                    readonly: false,
-                    write: false,
-                },
-                interviewSchedulingPage: {
-                    readonly: false,
-                    write: false,
-                },
-                jobPostingPage: {
-                    readonly: false,
-                    write: false,
-                },
-                workForcePage: {
-                    readonly: false,
-                    write: false,
-                },
-            },
+  const form = useForm<NewRoleType>({
+    resolver: zodResolver(NewRoleSchema),
+    defaultValues: {
+      role: {
+        roleName: "",
+      },
+      permission: {
+        clientPage: {
+          readonly: false,
+          write: false,
         },
-    });
+        interviewSchedulingPage: {
+          readonly: false,
+          write: false,
+        },
+        jobPostingPage: {
+          readonly: false,
+          write: false,
+        },
+        workForcePage: {
+          readonly: false,
+          write: false,
+        },
+      },
+    },
+  });
 
-    const onSubmit = (formData: NewRoleType) => {
-        console.log("Form Submitted ==> ", formData);
-    };
+  const onSubmit = (formData: NewRoleType) => {
+    console.log("Form Submitted ==> ", formData);
+  };
 
-    return (
-        <>
-            <Form {...form}>
+  return (
+    <>
+      {/* <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)}>
                     <CreateNewRoleHeader />
                     <div className="p-4">
@@ -53,39 +53,37 @@ function CreateNewRole() {
                         </div>
                     </div>
                 </form>
-            </Form>
-        </>
-    );
+            </Form> */}
+    </>
+  );
 }
 
 function CreateNewRoleHeader() {
-    const router = useRouter();
-    const handleNavigation = () => {
-        router.back();
-    };
-    return (
-        <>
-            <DashboardPageHeader title="">
-                <div
-                    className="flex items-center gap-2.5 cursor-pointer"
-                    onClick={handleNavigation}
-                >
-                    <ArrowLeft className="h-6 w-6" />
-                    <span className="text-xl font-semibold">
-                        Create New Role
-                    </span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                    <Button
-                        variant="default"
-                        type="submit"
-                        className="text-base font-normal"
-                    >
-                        Save
-                    </Button>
-                </div>
-            </DashboardPageHeader>
-        </>
-    );
+  const router = useRouter();
+  const handleNavigation = () => {
+    router.back();
+  };
+  return (
+    <>
+      <DashboardPageHeader title="">
+        <div
+          className="flex items-center gap-2.5 cursor-pointer"
+          onClick={handleNavigation}
+        >
+          <ArrowLeft className="h-6 w-6" />
+          <span className="text-xl font-semibold">Create New Role</span>
+        </div>
+        <div className="flex items-center gap-2.5">
+          <Button
+            variant="default"
+            type="submit"
+            className="text-base font-normal"
+          >
+            Save
+          </Button>
+        </div>
+      </DashboardPageHeader>
+    </>
+  );
 }
 export default CreateNewRole;

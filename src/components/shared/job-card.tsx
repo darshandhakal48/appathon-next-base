@@ -26,7 +26,7 @@ const JobCard = (props: JobCardProps) => {
       )}
     >
       <Typography type="lg" color="primary" font="sans-secondary">
-        {job?.title}
+        {job?.["Job Title"]}
       </Typography>
       <div className="inline-flex items-center justify-start gap-8 self-stretch">
         <div className="flex items-center justify-start gap-2">
@@ -54,39 +54,5 @@ const JobCard = (props: JobCardProps) => {
     </div>
   );
 };
-
-export function JobCardSkeleton() {
-  return (
-    <Card>
-      <CardContent className="p-4">
-        <div className="space-y-3">
-          {/* Job Title */}
-          <Skeleton className="h-5 w-48" />
-
-          {/* Company Info */}
-          <div className="flex items-center space-x-3">
-            <Skeleton className="h-8 w-8 rounded-full" />
-            <div className="space-y-1">
-              <Skeleton className="h-4 w-32" />
-              <div className="flex items-center space-x-2">
-                <Skeleton className="h-3 w-3" />
-                <Skeleton className="h-3 w-24" />
-              </div>
-            </div>
-          </div>
-
-          {/* Tags and Button */}
-          <div className="flex items-center justify-between">
-            <div className="flex space-x-2">
-              <Skeleton className="h-6 w-16 rounded-full" />
-              <Skeleton className="h-6 w-20 rounded-full" />
-            </div>
-            <Skeleton className="h-8 w-20" />
-          </div>
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
 
 export default JobCard;

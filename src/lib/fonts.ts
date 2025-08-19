@@ -6,6 +6,7 @@ export const fontSans = FontSans({
 });
 
 export const fontSecondary = Inter({
+  subsets: ["latin"],
   variable: "--font-sans-secondary",
 });
 

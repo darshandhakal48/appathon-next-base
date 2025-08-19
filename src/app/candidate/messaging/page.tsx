@@ -1,7 +1,7 @@
 import DashboardPageHeader from "@/components/dashboard/page-header";
 import MessagingClient from "./_components/client";
 import { Suspense } from "react";
-import { candidateApplication, candidateUserProfiles } from "@/config/db";
+import { candidateUserProfiles } from "@/config/db";
 
 export default function MessagingPage() {
   return (

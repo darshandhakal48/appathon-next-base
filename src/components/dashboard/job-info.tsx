@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/ui/icons";
 import { Job } from "@/lib/type";
@@ -52,7 +51,7 @@ export default function JobInfo(props: JobInfoProps) {
         </div>
         <div className="inline-flex items-center justify-start gap-1 self-stretch">
           <div className="text-Greyscale-text-grayscale-text-title justify-start text-2xl leading-loose font-semibold">
-            {job?.title}
+            {job?.["Job Title"]}
           </div>
         </div>
         <div className="inline-flex items-center justify-start gap-4 self-stretch">
@@ -329,4 +328,3 @@ export default function JobInfo(props: JobInfoProps) {
     </div>
   );
 }
-

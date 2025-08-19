@@ -5,8 +5,8 @@ import Spacer from "@/components/shared/spacer";
 import Timeline from "@/components/shared/timeline";
 import { Typography } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
-import { candidateApplication } from "@/config/db";
-import { Application } from "@/lib/type";
+// import { candidateAp/plication } from "@/config/db";
+// import { Application } from "@/lib/type";
 
 import { IconChevronDown, IconDotsVertical } from "@tabler/icons-react";
 import { Calendar } from "lucide-react";
@@ -22,12 +22,30 @@ const steps = [
   { label: "Rejected", status: "upcoming" },
 ];
 
+export interface Application {
+  id: string;
+  status: string;
+  appliedDate: string;
+  "Job Id": string;
+  "Job Title": string;
+  "No. of Positions": string;
+  company: string;
+  location: string;
+  type: string;
+  posted: string;
+  expires: string;
+  companyImage: string;
+}
+
+const candidateApplication: Application[] = [];
+
 export default function ApplicationTrackingClient() {
   const [selectedApplication, setSelectedApplication] =
     useState<Application | null>(null);
 
   useEffect(() => {
     setSelectedApplication(candidateApplication[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [candidateApplication]);
 
   return (

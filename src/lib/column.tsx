@@ -1,42 +1,14 @@
 "use client";
 import { UserAvatar } from "@/components/dashboard/user-avatar";
-import { CandidateProps, Column, WorkForceUserProps } from "./type";
-
-export const userColumns: Column<WorkForceUserProps>[] = [
-    { key: "id", header: "ID", width: "80px" },
-    {
-        key: "name",
-        header: "Employee Name",
-
-        render: (value, row) => {
-            return <UserAvatar name={row.name} avatar={row.avatar} size="md" />;
-        },
-    },
-    { key: "email", header: "Email Address" },
-    { key: "jobTitle", header: "Job Title" },
-    { key: "workNumber", header: "Work Number" },
-    { key: "phone", header: "Phone Number" },
-];
+import { CandidateProps, Column, } from "./type";
 
 export const candidateColumn: Column<CandidateProps>[] = [
-    {
-        key: "name",
-        header: "Candidate Name",
+  {
+    key: "name",
+    header: "Candidate Name",
 
-        render: (value, row) => {
-            return <UserAvatar name={row.name} avatar={row.avatar} size="md" />;
-        },
-    },
-    {
-        key: "city",
-        header: "City",
-    },
-    {
-        key: "stage",
-        header: "Stage",
-    },
-    {
-        key: "modifiedTime",
-        header: "Modified Time",
-    },
-];
+    render: (value, row) => {
+      return <UserAvatar name={value} avatar={row.avatar} size="md" />;
+    }
+  }
+]

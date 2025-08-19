@@ -9,11 +9,9 @@ export default function RecruiterDashboard() {
     <>
       <DashboardPageHeader title="Dashboard" />
 
-      <ErrorBoundary FallbackComponent={ClientErrorFallback}>
-        <Suspense fallback={<p>Loading.....</p>}>
-          <DashboardChild />
-        </Suspense>
-      </ErrorBoundary>
+      <Suspense fallback={<p>Loading.....</p>}>
+        <DashboardChild />
+      </Suspense>
     </>
   );
 }
