@@ -9,8 +9,8 @@ import { AdminJobPostingHeaderAction } from "../../_component/client";
 // import { AdminJobPostingHeader } from "../page";
 
 function SingleJobDetails() {
-  const params = useParams();
-  console.log(params);
+    const params = useParams();
+    console.log(params);
 
   const currentJobDetails = jobPostingData.filter(
     (job) => job["Job Id"] === Number(params.id)
@@ -38,85 +38,83 @@ function SingleJobDetails() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {adminDashbaordCards.map((card) => (
-              <>
-                <OverviewCards data={card} />
-              </>
-            ))}
-          </div>
+                    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+                        {adminDashbaordCards.map((card) => (
+                            <OverviewCards data={card} key={card.label} />
+                        ))}
+                    </div>
 
-          <div className="space-y-4">
-            <div className="text-base font-normal text-grayscale-text-title">
-              Business Card
+                    <div className="space-y-4">
+                        <div className="text-base font-normal text-grayscale-text-title">
+                            Business Card
+                        </div>
+                        <div className="inline-flex flex-col">
+                            {Object.entries(currentJobDetails[0]).map(
+                                ([jobTitle, jobValue]) => {
+                                    if (
+                                        jobTitle == "Job Id" ||
+                                        jobTitle == "Job Title" ||
+                                        jobTitle == "Date" ||
+                                        jobTitle == "Status" ||
+                                        jobTitle == "City"
+                                    ) {
+                                        return (
+                                            <div
+                                                className="grid grid-cols-2 gap-8 border-b-[1px] border-grayscale-border-lighter py-2"
+                                                key={jobTitle}
+                                            >
+                                                <span className="terxt-sm font-bold text-grayscale-text-title">
+                                                    {jobTitle}
+                                                </span>
+                                                <span className="text-sm font-normal text-grayscale-text-body">
+                                                    {jobValue}
+                                                </span>
+                                            </div>
+                                        );
+                                    }
+                                }
+                            )}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="inline-flex flex-col">
-              {Object.entries(currentJobDetails[0]).map(
-                ([jobTitle, jobValue]) => {
-                  if (
-                    jobTitle == "Job Id" ||
-                    jobTitle == "Job Title" ||
-                    jobTitle == "Date" ||
-                    jobTitle == "Status" ||
-                    jobTitle == "City"
-                  ) {
-                    return (
-                      <div
-                        className="grid grid-cols-2 gap-8 border-b-[1px] border-grayscale-border-lighter py-2"
-                        key={jobTitle}
-                      >
-                        <span className="terxt-sm font-bold text-grayscale-text-title">
-                          {jobTitle}
-                        </span>
-                        <span className="text-sm font-normal text-grayscale-text-body">
-                          {jobValue}
-                        </span>
-                      </div>
-                    );
-                  }
-                }
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+        </>
+    );
 }
 
 function SingleJobDetailsHeader() {
-  const router = useRouter();
+    const router = useRouter();
 
-  return (
-    <div className="flex items-center justify-between">
-      <button
-        className="flex cursor-pointer items-center gap-2.5"
-        onClick={() => {
-          router.back();
-        }}
-      >
-        <span>
-          <ArrowLeft className="text-grayscale-text-title" />
-        </span>
-        <span className="text-xl font-semibold text-primary-surface-default">
-          Software Engineering
-        </span>
-      </button>
-      <div className="flex items-center gap-2.5">
-        <Button
-          variant="outline"
-          className="font-base border-primary-text-label-1 text-primary-text-label-1"
-        >
-          View all the applications
-        </Button>
-        <Button
-          variant="outline"
-          className="font-base border-primary-text-label-1 text-primary-text-label-1"
-        >
-          Edit
-        </Button>
-      </div>
-    </div>
-  );
+    return (
+        <div className="flex items-center justify-between">
+            <button
+                className="flex cursor-pointer items-center gap-2.5"
+                onClick={() => {
+                    router.back();
+                }}
+            >
+                <span>
+                    <ArrowLeft className="text-grayscale-text-title" />
+                </span>
+                <span className="text-xl font-semibold text-primary-surface-default">
+                    Software Engineering
+                </span>
+            </button>
+            <div className="flex items-center gap-2.5">
+                <Button
+                    variant="outline"
+                    className="font-base border-primary-text-label-1 text-primary-text-label-1"
+                >
+                    View all the applications
+                </Button>
+                <Button
+                    variant="outline"
+                    className="font-base border-primary-text-label-1 text-primary-text-label-1"
+                >
+                    Edit
+                </Button>
+            </div>
+        </div>
+    );
 }
 export default SingleJobDetails;

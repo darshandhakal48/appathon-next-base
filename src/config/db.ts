@@ -943,11 +943,11 @@ export const userRoles: UserRolesProps[] = [
 ];
 
 export const permissionForPageData: permissionForPageProps[] = [
-  { pageId: "workForcePage", pageTitle: "WorkForce Page" },
-  { pageId: "jobPostingPage", pageTitle: "Job POsting Page" },
-  {
-    pageId: "interviewSchedulingPage",
-    pageTitle: "Interview Scheduling Page",
-  },
-  { pageId: "clientPage", pageTitle: "Client Page" },
+    { pageId: "workForcePage", pageTitle: "WorkForce Page" },
+    { pageId: "jobPostingPage", pageTitle: "Job Posting Page" },
+    {
+        pageId: "interviewSchedulingPage",
+        pageTitle: "Interview Scheduling Page",
+    },
+    { pageId: "clientPage", pageTitle: "Client Page" },
 ];
