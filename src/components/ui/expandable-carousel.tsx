@@ -1,6 +1,7 @@
 import { HTMLAttributes, useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: { image: string; title: string; caption: string };
@@ -26,7 +27,9 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
       )}
       {...props}
     >
-      <img
+      <Image
+        width={900}
+        height={900}
         src={item.image}
         alt={item.title}
         className={cn("h-full w-full object-cover", {

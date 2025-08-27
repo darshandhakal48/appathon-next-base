@@ -1,0 +1,40 @@
+import { EmptyState } from "@/components/shared/empty-state";
+import { Job } from "@/lib/type";
+import { Plus } from "lucide-react";
+import { useRouter } from "next/navigation";
+import JobCard from "./jobCard";
+
+
+export function AdminJobPostingClient({ jobs }: { jobs: Job[] | null }) {
+  return (
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {jobs ? jobs.map((data) => (
+        <JobCard job={data} key={data["Job Id"]} />
+      )) :
+        <EmptyState title="No Jobs Available" icon="clock4" description="User created jobs will be available here" />
+
+      }
+    </div>
+  )
+}
+
+
+export function AdminJobPostingHeaderAction() {
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push(`/admin/jobposting/createNewJob`);
+  };
+
+  return (
+    <>
+      <div
+        className="flex cursor-pointer items-center gap-2 space-x-1 text-primary-text-label-1"
+        onClick={handleNavigation}
+      >
+        <Plus height={20} />
+        <span>Create New Job Posting</span>
+      </div>
+    </>
+  );
+}

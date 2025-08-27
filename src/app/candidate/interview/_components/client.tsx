@@ -12,19 +12,19 @@ const CandidateInterviewClient = () => {
         onClick={() => router.push("/candidate/interview/123")}
         className="cursor-pointer"
       >
-        <InterviewCard status="success" />
+        {/* <InterviewCard status="success" /> */}
       </BasicLayoutCard>
 
       <BasicLayoutCard className="cursor-pointer">
-        <InterviewCard status="pending" />
+        {/* <InterviewCard status="pending" /> */}
       </BasicLayoutCard>
 
       <BasicLayoutCard className="cursor-pointer">
-        <InterviewCard status="error" />
+        {/* <InterviewCard status="error" /> */}
       </BasicLayoutCard>
 
       <BasicLayoutCard className="cursor-pointer">
-        <InterviewCard status="error" />
+        {/* <InterviewCard status="error" /> */}
       </BasicLayoutCard>
     </div>
   );

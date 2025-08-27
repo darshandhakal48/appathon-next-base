@@ -33,7 +33,7 @@ export default function MessagingInbox({
             </div>
             <div className="self-stretch justify-start text-grayscale-text-title text-sm font-normal leading-normal">
               Subject: Thank You for Your Application
-              <br /> Hi [Candidate's Name],
+              <br /> Hi [Candidate&apos;s Name],
               <br />
               <br />I came across your profile and was impressed by your
               experience in Software Development. We have an exciting opening

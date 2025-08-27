@@ -51,7 +51,7 @@ export default function JobInfo(props: JobInfoProps) {
         </div>
         <div className="self-stretch inline-flex justify-start items-center gap-1">
           <div className="justify-start text-Greyscale-text-grayscale-text-title text-2xl font-semibold leading-loose">
-            {job?.title}
+            {job?.["Job Title"]}
           </div>
         </div>
         <div className="self-stretch inline-flex justify-start items-center gap-4">

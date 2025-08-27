@@ -5,7 +5,6 @@ import { handleApiRequest } from "@/features/api/helper";
 import { Job } from "@/lib/type";
 import { apiClient } from "@/features/api/api-client";
 import ErrorBoundary from "@/components/shared/error-boundary";
-import { candidateJobs } from "@/config/db";
 import ClientErrorFallback from "@/components/shared/error-fallback";
 
 export default function CandidateDashboard() {
@@ -13,11 +12,9 @@ export default function CandidateDashboard() {
     <>
       <DashboardPageHeader title="Dashboard" />
 
-      <ErrorBoundary FallbackComponent={ClientErrorFallback}>
-        <Suspense fallback={<p>Loading.....</p>}>
-          <DashboardChild />
-        </Suspense>
-      </ErrorBoundary>
+      <Suspense fallback={<p>Loading.....</p>}>
+        <DashboardChild />
+      </Suspense>
     </>
   );
 }
@@ -34,5 +31,5 @@ async function DashboardChild() {
     ),
   ]);
 
-  return <CandidateDashboardClient jobs={candidateJobs} />;
+  return <CandidateDashboardClient jobs={[]} />;
 }

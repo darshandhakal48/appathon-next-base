@@ -37,7 +37,7 @@ export default function ApplicationCard(props: ApplicationCardProps) {
       </div>
 
       <p className="text-primary-surface-default text-lg font-semibold  leading-7">
-        {application.title}
+        {application["Job Title"]}
       </p>
       <div className="self-stretch inline-flex justify-start items-center gap-8">
         <div className="flex justify-start items-center gap-2">

@@ -6,7 +6,6 @@ import { WorkForceUserProps } from "@/lib/type";
 import { WorkForceLoadingSkeleton } from "./loading";
 
 export default async function AdminWorkForce() {
-
   // Adding delay to test loading.tsx
   await new Promise((resolve) => setTimeout(resolve, 5000));
 
@@ -16,11 +15,13 @@ export default async function AdminWorkForce() {
         <WorkforceHeaderAction />
       </DashboardPageHeader>
       <div className="p-4 md:p-6">
-        <ApiWrapper<WorkForceUserProps[]> fallback={<WorkForceLoadingSkeleton />} route="/superadmin-workforce">
+        <ApiWrapper<WorkForceUserProps[]>
+          fallback={<WorkForceLoadingSkeleton />}
+          route="/superadmin-workforce"
+        >
           {({ data }) => <WorkforceTable users={data} />}
         </ApiWrapper>
       </div>
     </>
   );
 }
-

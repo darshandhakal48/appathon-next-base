@@ -157,7 +157,7 @@ export default function CandidateLoginForm() {
       </form>
 
       <div className="text-center text-sm text-primary-text-label-1">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <a href="#" className="hover:underline">
           Create account
         </a>

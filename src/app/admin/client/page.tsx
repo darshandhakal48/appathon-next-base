@@ -1,42 +1,32 @@
-"use client";
 import DashboardPageHeader from "@/components/dashboard/page-header";
-import { adminClientData } from "@/config/db";
-import { Plus } from "lucide-react";
-import { useRouter } from "next/navigation";
-import AdminClientCard from "./_component/adminClientCard";
+import { AdminClientHeader } from "./_component/client";
+import ApiWrapper from "@/features/api/api-wrapper";
+import { ClientInfoProps } from "@/lib/type";
+import { AdminClientSkeleton } from "./loading";
+import ClientCard from "@/components/dashboard/client-card";
+import { EmptyState } from "@/components/shared/empty-state";
 
-function AdminClient() {
-    return (
-        <>
-            <AdminClientHeader />
-            <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {adminClientData.map((clientData) => (
-                    <AdminClientCard key={clientData.id} client={clientData} />
-                ))}
-            </div>
-        </>
-    );
+export default async function AdminClient() {
+  // Adding delay to test loading.tsx
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
+
+  return (
+    <>
+      <DashboardPageHeader title="Client">
+        <AdminClientHeader />
+      </DashboardPageHeader>
+      <div className="p-4 md:p-6">
+        <ApiWrapper<ClientInfoProps[]> fallback={<AdminClientSkeleton />} route="/superadmin-clients">
+          {({ data }) => <>{data ? <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {
+              data.map((client) => <ClientCard />)
+            }
+          </div>
+            : <EmptyState title="" description="" icon="clock4" />}</>}
+        </ApiWrapper>
+      </div>
+    </>
+  );
 }
 
-export function AdminClientHeader() {
-    const router = useRouter();
-
-    const handleNavigation = () => {
-        router.push(`/admin/client/addClient`);
-    };
-
-    return (
-        <>
-            <DashboardPageHeader title="Clients">
-                <div
-                    className="space-x-1  gap-2 flex items-center text-primary-text-label-1 cursor-pointer"
-                    onClick={handleNavigation}
-                >
-                    <Plus height={20} />
-                    <span>Add New Client</span>
-                </div>
-            </DashboardPageHeader>
-        </>
-    );
-}
-export default AdminClient;

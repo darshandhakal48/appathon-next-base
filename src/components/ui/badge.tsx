@@ -19,6 +19,8 @@ const badgeVariants = cva(
           "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         warning:
           "border-transparent bg-warning-surface-subtle text-white [a&]:hover:bg-warning-surface-subtle/90 focus-visible:ring-warning/20 dark:focus-visible:ring-warning/40 dark:bg-warning-surface-subtle/60",
+        success:
+          "border-transparent bg-success-surface-subtle text-white [a&]:hover:bg-success-surface-subtle/90 focus-visible:ring-success/20 dark:focus-visible:ring-warning/40 dark:bg-warning-surface-subtle/60",
       },
     },
     defaultVariants: {
@@ -28,21 +30,21 @@ const badgeVariants = cva(
 );
 
 function Badge({
-  className,
-  variant,
-  asChild = false,
-  ...props
+    className,
+    variant,
+    asChild = false,
+    ...props
 }: React.ComponentProps<"span"> &
-  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
-  const Comp = asChild ? Slot : "span";
+    VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
+    const Comp = asChild ? Slot : "span";
 
-  return (
-    <Comp
-      data-slot="badge"
-      className={cn(badgeVariants({ variant }), className)}
-      {...props}
-    />
-  );
+    return (
+        <Comp
+            data-slot="badge"
+            className={cn(badgeVariants({ variant }), className)}
+            {...props}
+        />
+    );
 }
 
 export { Badge, badgeVariants };

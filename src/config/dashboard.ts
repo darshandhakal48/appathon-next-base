@@ -29,7 +29,7 @@ export const adminDashboardSidebarLink: SidebarLinkItem[] = [
   },
   {
     label: "Clients",
-    href: "/admin/clients",
+    href: "/admin/client",
     icon: "clients",
   },
   {

@@ -36,13 +36,13 @@ function CreateNewRoleForm({ control }: { control: Control<NewRoleType> }) {
             />
             <div className="border-[1px] border-grayscale-border-default bg-grayscale-surface-subtle  rounded-md">
                 <div className="grid grid-cols-3 gap-8 border-b-[1px] border-grayscale-border-default bg-grayscale-surface-subtle px-4 py-1 mx-1">
-                    <p className="text-grayscale-text-title text-base font-normal">
+                    <p className="text-grayscale-text-title text-sm font-normal">
                         Permissions
                     </p>
-                    <p className="text-grayscale-text-title text-base font-medium">
+                    <p className="text-grayscale-text-title text-sm font-medium">
                         Read Only
                     </p>
-                    <p className="text-grayscale-text-title text-base font-medium">
+                    <p className="text-grayscale-text-title text-sm font-medium">
                         Write
                     </p>
                 </div>
@@ -52,7 +52,7 @@ function CreateNewRoleForm({ control }: { control: Control<NewRoleType> }) {
                         className="grid grid-cols-3 gap-8 border-b-[1px] border-grayscale-border-default bg-grayscale-surface-subtle px-4 py-1 mx-1"
                         key={data.pageId}
                     >
-                        <p className="text-grayscale-text-title text-base py-2 font-normal">
+                        <p className="text-grayscale-text-title text-sm py-2 font-normal">
                             {data.pageTitle}
                         </p>
                         <FormField
@@ -64,6 +64,11 @@ function CreateNewRoleForm({ control }: { control: Control<NewRoleType> }) {
                                         <Checkbox
                                             checked={field.value}
                                             onCheckedChange={field.onChange}
+                                            className={`${
+                                                field.value
+                                                    ? "border-none bg-primary-surface-default text-grayscale-surface-white"
+                                                    : "border-grayscale-text-caption bg-grayscale-surface-white "
+                                            }`}
                                         />
                                     </FormControl>
                                 </FormItem>
@@ -78,6 +83,11 @@ function CreateNewRoleForm({ control }: { control: Control<NewRoleType> }) {
                                         <Checkbox
                                             checked={field.value}
                                             onCheckedChange={field.onChange}
+                                            className={`${
+                                                field.value
+                                                    ? "border-none bg-primary-surface-default text-grayscale-surface-white"
+                                                    : "border-grayscale-text-caption bg-grayscale-surface-white "
+                                            }`}
                                         />
                                     </FormControl>
                                 </FormItem>

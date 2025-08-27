@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import JobInfo from "../_components/job-info";
 import { useRouter } from "next/navigation";
 import BasicLayoutCard from "@/components/shared/basic-layout-card";
-import { candidateJobs } from "@/config/db";
+// import { candidateJobs } from "@/config/db";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { IconArrowRight } from "@tabler/icons-react";
@@ -24,9 +24,9 @@ const CandidateJobSearchClient = () => {
         <BasicLayoutCard className="space-y-5 h-fit">
           <p>Top Job picks for you</p>
           <div className="grid grid-cols-1 gap-4">
-            {candidateJobs.map((job, i) => (
+            {/* {candidateJobs.map((job, i) => (
               <JobCard job={job} key={"candidate-dashboard-job-" + i} />
-            ))}
+            ))} */}
           </div>
           <div className="flex justify-center">
             <Link

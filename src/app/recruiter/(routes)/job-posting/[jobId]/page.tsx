@@ -1,4 +1,3 @@
-
 "use client";
 
 import JobCard from "@/components/shared/job-card";
@@ -6,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import React from "react";
 import JobInfo from "@/components/dashboard/job-info";
 import BasicLayoutCard from "@/components/shared/basic-layout-card";
-import { candidateJobs } from "@/config/db";
+// import { candidateJobs } from "@/config/db";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { IconArrowRight } from "@tabler/icons-react";
@@ -23,9 +22,9 @@ const CandidateJobSearchClient = () => {
         <div className="h-fit space-y-5">
           <p>Top Job picks for you</p>
           <div className="grid grid-cols-1 gap-4">
-            {candidateJobs.map((job, i) => (
+            {/* {candidateJobs.map((job, i) => (
               <JobCard job={job} key={"candidate-dashboard-job-" + i} />
-            ))}
+            ))} */}
           </div>
           <div className="flex justify-center">
             <Link
@@ -54,7 +53,6 @@ const Header = () => {
   return (
     <div className="flex flex-1 items-center gap-x-8">
       <Typography color="title" type="xl">
-
         Top Job Picks
       </Typography>
       <Input
