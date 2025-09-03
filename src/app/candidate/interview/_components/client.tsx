@@ -1,13 +1,15 @@
 "use client";
+
+import React from "react";
+import { useRouter } from "next/navigation";
+
 import InterviewCard from "@/components/dashboard/interview-card";
 import BasicLayoutCard from "@/components/shared/basic-layout-card";
-import { useRouter } from "next/navigation";
-import React from "react";
 
 const CandidateInterviewClient = () => {
   const router = useRouter();
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-6 gap-6">
+    <div className="grid grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
       <BasicLayoutCard
         onClick={() => router.push("/candidate/interview/123")}
         className="cursor-pointer"

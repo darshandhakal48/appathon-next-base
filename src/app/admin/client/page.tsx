@@ -1,15 +1,17 @@
-import DashboardPageHeader from "@/components/dashboard/page-header";
-import { AdminClientHeader } from "./_component/client";
 import ApiWrapper from "@/features/api/api-wrapper";
-import { ClientInfoProps } from "@/lib/type";
-import { AdminClientSkeleton } from "./loading";
+
+import { AdminClientDataProps, ClientInfoProps } from "@/lib/type";
 import ClientCard from "@/components/dashboard/client-card";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
+
+import AdminClientCard from "./_component/adminClientCard";
+import { AdminClientHeader } from "./_component/client";
+import { AdminClientSkeleton } from "./loading";
 
 export default async function AdminClient() {
   // Adding delay to test loading.tsx
   await new Promise((resolve) => setTimeout(resolve, 5000));
-
 
   return (
     <>
@@ -17,16 +19,25 @@ export default async function AdminClient() {
         <AdminClientHeader />
       </DashboardPageHeader>
       <div className="p-4 md:p-6">
-        <ApiWrapper<ClientInfoProps[]> fallback={<AdminClientSkeleton />} route="/superadmin-clients">
-          {({ data }) => <>{data ? <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {
-              data.map((client) => <ClientCard />)
-            }
-          </div>
-            : <EmptyState title="" description="" icon="clock4" />}</>}
+        <ApiWrapper<AdminClientDataProps[]>
+          fallback={<AdminClientSkeleton />}
+          route="/superadmin-client-data"
+        >
+          {({ data }) => (
+            <>
+              {data ? (
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  {data.map((client, i) => (
+                    <AdminClientCard client={client} key={i} />
+                  ))}
+                </div>
+              ) : (
+                <EmptyState title="" description="" icon="clock4" />
+              )}
+            </>
+          )}
         </ApiWrapper>
       </div>
     </>
   );
 }
-

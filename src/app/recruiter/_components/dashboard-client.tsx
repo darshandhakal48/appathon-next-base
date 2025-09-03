@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import HiringStepsCard from "@/components/dashboard/hiringStepsCard";
 import OverviewCard from "@/components/dashboard/overview-cards";
 import BasicLayoutCard from "@/components/shared/basic-layout-card";
 import ActiveJobOpenings from "@/components/dashboard/active-job-openings";

@@ -3,18 +3,19 @@
 import DashboardPageHeader from "@/components/dashboard/page-header";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
-import Steps from "../_component/steps";
 import { Form } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { JobFormSchema, JobFormType } from "@/components/forms/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useGlobalModal } from "@/hooks/use-global-ui";
-import ConfirmJobDetails from "../_component/confirmJobDetails";
 import { useRouter } from "next/navigation";
-import Step1 from "../_component/step1";
-import Step2 from "../_component/step2";
-import Step3 from "../_component/step3";
+import ConfirmJobDetails from "../../_component/confirmJobDetails";
+import Steps from "../../_component/steps";
+import Step1 from "../../_component/step1";
+import Step2 from "../../_component/step2";
+import Step3 from "../../_component/step3";
+
 
 function CreateNewJob() {
   const router = useRouter();
@@ -79,7 +80,7 @@ function CreateNewJob() {
 
   return (
     <>
-      {/* <Form {...form}>
+      <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)}>
                     <NewJobHeader handleBack={handleBack} />
                     <div className="p-6 space-y-8  ">
@@ -90,7 +91,7 @@ function CreateNewJob() {
                         {step === 3 && <Step3 />}
                     </div>
                 </form>
-            </Form> */}
+            </Form>
     </>
   );
 }

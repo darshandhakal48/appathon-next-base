@@ -1,12 +1,22 @@
 import React from "react";
-import DashboardPageHeader from "@/components/dashboard/page-header";
+import ApiWrapper from "@/features/api/api-wrapper";
+
+import { FunnelStages, JobTrendsMonthly, TrendPoint } from "@/config/db";
 import { DashboardCard, Job, UserActivity } from "@/lib/type";
+import FunnelPipeline, {
+  FunnelStage,
+} from "@/components/dashboard/FunnelPipeline";
+import JobTrendsChart from "@/components/dashboard/job-trends-chart";
+import DashboardPageHeader from "@/components/dashboard/page-header";
+import BasicLayoutCard from "@/components/shared/basic-layout-card";
+
+import { AdminAnalyticsSkeleton } from "../analytics/loading";
+import ApplicantsOverview from "./_components/applicants-overview";
 import {
   ActiveJobsSection,
   OverviewSection,
   UserActivitySection,
 } from "./_components/client";
-import ApiWrapper from "@/features/api/api-wrapper";
 import { AdminDashboardSkeleton } from "./loading";
 
 const AdminDashboard = async () => {
@@ -16,7 +26,7 @@ const AdminDashboard = async () => {
     <>
       <DashboardPageHeader title="Dashboard" />
 
-      <div className="space-y-4 bg-grayscale-surface-subtle p-6">
+      <div className="bg-grayscale-surface-subtle space-y-4 p-6">
         <ApiWrapper<DashboardCard[]>
           fallback={<AdminDashboardSkeleton.Overview />}
           route="/superadmin-dashboard-cards"
@@ -24,10 +34,36 @@ const AdminDashboard = async () => {
           {({ data }) => <OverviewSection cardsInfo={data} />}
         </ApiWrapper>
 
+        {/* charts */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <BasicLayoutCard>
+            <ApiWrapper<TrendPoint[]>
+              fallback={<AdminAnalyticsSkeleton.ApplicationOverview />}
+              route="/superadmin-application-overview"
+            >
+              {({ data }) => (
+                <JobTrendsChart
+                  // monthly={JobTrendsMonthly}
+                  monthly={data ?? []}
+                  defaultView="monthly"
+                />
+              )}
+            </ApiWrapper>
+          </BasicLayoutCard>
+          <BasicLayoutCard>
+            <ApiWrapper<FunnelStage[]>
+              fallback={<AdminAnalyticsSkeleton.FunnelChart />}
+              route="/superadmin-funnel-pipeline"
+            >
+              {({ data }) => <FunnelPipeline stages={data ?? []} />}
+            </ApiWrapper>
+          </BasicLayoutCard>
+        </div>
+
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <ApiWrapper<Job[]>
             fallback={<AdminDashboardSkeleton.ActiveJobs />}
-            route="/superadmin-active-jobs"
+            route="/superadmin-active-jobs-page-1"
           >
             {(data) => <ActiveJobsSection activeJobs={data.data} />}
           </ApiWrapper>

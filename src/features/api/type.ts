@@ -1,3 +1,5 @@
+import { DefaultLegendContentProps } from "recharts";
+
 // API Response Types
 export interface ApiResponse<T> {
   data: T | null;
@@ -50,4 +52,12 @@ export interface ApiState<T> {
   loading: boolean;
   error: string | null;
   lastFetched: Date | null;
+}
+
+// pie chart interface
+export interface IHandleCandidatePieChart {
+  amt: number;
+  fill: string;
+  name: string;
+  uv: number;
 }

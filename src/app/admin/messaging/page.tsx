@@ -1,7 +1,9 @@
 import React from "react";
-import Messaging from "./_component/client";
-import DashboardPageHeader from "@/components/dashboard/page-header";
 import ApiWrapper from "@/features/api/api-wrapper";
+
+import DashboardPageHeader from "@/components/dashboard/page-header";
+
+import Messaging from "./_component/client";
 import { AdminMessagingSkeleton } from "./loading";
 
 function AdminMessaging() {
@@ -9,9 +11,13 @@ function AdminMessaging() {
     <>
       <DashboardPageHeader title="Messaging" />
       <div className="p-4 md:p-6">
-        <ApiWrapper<[]> route="/superadmin-messaging-profiles" fallback={<AdminMessagingSkeleton.ProfileList />}>
+        {/* <ApiWrapper<[]>
+          route="/superadmin-messaging-profiles"
+          fallback={<AdminMessagingSkeleton.ProfileList />}
+        >
           {({ data }) => <MessagigProfileList profiles={data} />}
-        </ApiWrapper>
+        </ApiWrapper> */}
+        <Messaging />
       </div>
     </>
   );

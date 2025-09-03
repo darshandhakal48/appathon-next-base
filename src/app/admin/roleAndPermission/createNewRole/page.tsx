@@ -44,7 +44,7 @@ function CreateNewRole() {
 
   return (
     <>
-      {/* <Form {...form}>
+      <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)}>
                     <CreateNewRoleHeader />
                     <div className="p-4">
@@ -53,7 +53,7 @@ function CreateNewRole() {
                         </div>
                     </div>
                 </form>
-            </Form> */}
+            </Form>
     </>
   );
 }

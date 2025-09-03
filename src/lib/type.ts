@@ -1,5 +1,7 @@
-import { JobFormType } from "@/components/forms/schema";
+import { Dispatch, SetStateAction } from "react";
+
 import { Icons } from "@/components/ui/icons";
+import { JobFormType } from "@/components/forms/schema";
 
 export type IconName = keyof typeof Icons;
 
@@ -249,3 +251,16 @@ export type Interview = {
     fullName: string;
   };
 };
+
+export interface CustomPagianationProps {
+  setActivePage: Dispatch<SetStateAction<number>>;
+  activePage: number;
+  totalPages: number;
+}
+
+export interface CustomPaginationHookProps {
+  // key: (string | number)[];
+  key: string;
+  path: string;
+  totalPages: number;
+}

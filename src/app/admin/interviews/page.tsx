@@ -1,9 +1,11 @@
-import DashboardPageHeader from "@/components/dashboard/page-header";
-import HeaderAction from "./_component/header-action";
 import ApiWrapper from "@/features/api/api-wrapper";
-import AdminInterviewLoading from "./loading"
-import AdminInterviewClient from "./_component/client";
+
 import { Interview } from "@/lib/type";
+import DashboardPageHeader from "@/components/dashboard/page-header";
+
+import AdminInterviewClient from "./_component/client";
+import HeaderAction from "./_component/header-action";
+import AdminInterviewLoading from "./loading";
 
 export default async function AdminInterviews() {
   // Adding delay to test loading.tsx
@@ -15,11 +17,13 @@ export default async function AdminInterviews() {
         <HeaderAction />
       </DashboardPageHeader>
       <div className="p-6">
-        <ApiWrapper<Interview[]> fallback={<AdminInterviewLoading noHeader />} route="/superadmin-interviews">
+        <ApiWrapper<Interview[]>
+          fallback={<AdminInterviewLoading noHeader />}
+          route="/superadmin-interviews-page-1"
+        >
           {({ data }) => <AdminInterviewClient interviews={data} />}
         </ApiWrapper>
       </div>
     </>
   );
 }
-
