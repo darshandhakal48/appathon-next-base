@@ -14,7 +14,7 @@
     { "label": "Total Payroll Cost", "value": "$ 7,334.15" },
     { "label": "Pending Approvals", "value": "5 Employee" }
   ],
-  "superadmin-active-jobs": [
+  "superadmin-active-jobs-page-1": [
     {
       "Job Id": "se001",
       "Job Title": "Software Engineering",
@@ -31,6 +31,26 @@
       "Job Id": "se34334",
       "Job Title": "Data Engineering",
       "No. of Positions": 1
+    }
+  ],
+  "superadmin-active-jobs-page-2": [
+    {
+      "Job Id": "se001",
+      "Job Title": "Propsasl Writer",
+      "No. of Positions": 2
+    },
+    {
+      "Job Id": "js9343",
+      "Job Title": "UI/UX Designer",
+      "No. of Positions": 3
+    },
+    { "Job Id": "ce4442", "Job Title": "Accountant", "No. of Positions": 1 }
+  ],
+  "superadmin-active-jobs-page-3": [
+    {
+      "Job Id": "785689",
+      "Job Title": "System Admin",
+      "No. of Positions": 2
     }
   ],
   "superadmin-user-activity": null,
@@ -122,7 +142,7 @@
       "action": "..."
     }
   ],
-  "superadmin-interviews": [
+  "superadmin-interviews-page-1": [
     {
       "id": "int001",
       "status": "Scheduled",
@@ -247,6 +267,96 @@
       "assignedTo": {
         "initials": "OM",
         "fullName": "Oscar Martin"
+      }
+    }
+  ],
+  "superadmin-interviews-page-2": [
+    {
+      "id": "int007",
+      "status": "Pending",
+      "interviewType": "Video",
+      "candidateName": "Grace Kim",
+      "jobTitle": "Data Analyst",
+      "client": "InsightWorks",
+      "date": "2025-09-05",
+      "timeRange": "12:00 PM - 1:00 PM",
+      "assignedTo": {
+        "initials": "JS",
+        "fullName": "James Singh"
+      }
+    },
+    {
+      "id": "int008",
+      "status": "Scheduled",
+      "interviewType": "Phone",
+      "candidateName": "Henry Black",
+      "jobTitle": "Security Engineer",
+      "client": "SecureSys",
+      "date": "2025-09-04",
+      "timeRange": "4:00 PM - 4:30 PM",
+      "assignedTo": {
+        "initials": "LH",
+        "fullName": "Laura Hayes"
+      }
+    },
+    {
+      "id": "int009",
+      "status": "Completed",
+      "interviewType": "On-site",
+      "candidateName": "Isabella White",
+      "jobTitle": "Machine Learning Engineer",
+      "client": "AI Edge",
+      "date": "2025-08-27",
+      "timeRange": "10:00 AM - 11:00 AM",
+      "assignedTo": {
+        "initials": "OM",
+        "fullName": "Oscar Martin"
+      }
+    }
+  ],
+  "superadmin-interviews-page-3": [
+    {
+      "id": "int001",
+      "status": "Scheduled",
+      "interviewType": "Phone",
+      "candidateName": "Alice Johnson",
+      "jobTitle": "Frontend Developer",
+      "client": "TechNova Inc.",
+      "date": "2025-09-01",
+      "timeRange": "10:00 AM - 10:30 AM",
+      "assignedTo": {
+        "initials": "MJ",
+        "fullName": "Mark Johnson"
+      }
+    },
+    {
+      "id": "int002",
+      "status": "Completed",
+      "interviewType": "Video",
+      "candidateName": "Brian Smith",
+      "jobTitle": "Backend Engineer",
+      "client": "CodeCrafters LLC",
+      "date": "2025-08-29",
+      "timeRange": "2:00 PM - 3:00 PM",
+      "assignedTo": {
+        "initials": "AS",
+        "fullName": "Anita Sharma"
+      }
+    }
+  ],
+  "superadmin-interviews-page-4": [
+    {
+      "id": "int001",
+      "status": "Scheduled",
+      "interviewType": "Phone",
+      "candidateName": "Alice Johnson",
+      "jobTitle": "Frontend Developer",
+      "client": "TechNova Inc.",
+      "date": "2025-09-01",
+      "timeRange": "10:00 AM - 10:30 AM",
+      "assignedTo": {
+        "initials": "MJ",
+        "fullName": "Mark Johnson"
       }
     }
   ],
@@ -2962,112 +3072,415 @@
       "phone": 8250012382
     }
   ],
-  "superadmin-candidates":[
-  {
-    "id": 4323423,
-    "name": "Dev Poudel",
-    "city": "Pokhara , Nepal",
-    "stage": "interview ",
-    "modifiedTime": "May 17 , 11:00am",
-    "avatar": "/_static/profile-pic.jpg"
-  },
-  {
-    "id": 543453,
-    "name": "Darshan",
-    "city": "Pokhara , Nepal",
-    "stage": "interview ",
-    "modifiedTime": "May 17 , 11:00am",
-    "avatar": "/_static/profile-pic.jpg"
-  },
-  {
-    "id": 3245252,
-    "name": "Prajun",
-    "city": "Pokhara , Nepal",
-    "stage": "interview ",
-    "modifiedTime": "May 17 , 11:00am",
-    "avatar": "/_static/profile-pic.jpg"
-  },
-  {
-    "id": 879678765,
-    "name": "Ayuash",
-    "city": "Pokhara , Nepal",
-    "stage": "interview ",
-    "modifiedTime": "May 17 , 11:00am",
-    "avatar": "/_static/profile-pic.jpg"
-  },
-  {
-    "id": 87686577654,
-    "name": "Reeha",
-    "city": "Pokhara , Nepal",
-    "stage": "interview ",
-    "modifiedTime": "May 17 , 11:00am",
-    "avatar": "/_static/profile-pic.jpg"
-  },
-  {
-    "id": 543465443,
-    "name": "Sagar",
-    "city": "Pokhara , Nepal",
-    "stage": "interview ",
-    "modifiedTime": "May 17 , 11:00am",
-    "avatar": "/_static/profile-pic.jpg"
-  },
-  {
-    "id": 5634563,
-    "name": "Ashura",
-    "city": "Pokhara , Nepal",
-    "stage": "interview ",
-    "modifiedTime": "May 17 , 11:00am",
-    "avatar": "/_static/profile-pic.jpg"
-  }
-],
-"superadmin-clients":[
-  {
-    "id": 6588,
-    "Date": "09/24/2024",
-    "Company Name": "Yeti Labs",
-    "logo": "/_static/ray_it.jpg",
-    "Assigned to": "Rheea",
-    "Phone Number": "+850485048"
-  },
-  {
-    "id": 798,
-    "Date": "09/24/2024",
-    "Company Name": "Upselsa",
-    "logo": "/_static/ray_it.jpg",
-    "Assigned to": "Darshan",
-    "Phone Number": "+850485048"
-  },
-  {
-    "id": 7979,
-    "Date": "09/24/2024",
-    "Company Name": "Swoyef labs",
-    "logo": "/_static/ray_it.jpg",
-    "Assigned to": "Dev Poudel",
-    "Phone Number": "+850485048"
-  },
-  {
-    "id": 6775457,
-    "Date": "09/24/2024",
-    "Company Name": "Theta Tech",
-    "logo": "/_static/ray_it.jpg",
-    "Assigned to": "Darshan",
-    "Phone Number": "+850485048"
-  },
-  {
-    "id": 879,
-    "Date": "09/24/2024",
-    "Company Name": "Black Tech",
-    "logo": "/_static/ray_it.jpg",
-    "Assigned to": "Akash Shrestha",
-    "Phone Number": "+850485048"
-  },
-  {
-    "id": 879879,
-    "Date": "09/24/2024",
-    "Company Name": "Websoft Technology",
-    "logo": "/_static/ray_it.jpg",
-    "Assigned to": "Jasmine",
-    "Phone Number": "+850485048"
-  }
-]
+  "superadmin-candidates": [
+    {
+      "id": 4323423,
+      "name": "Dev Poudel",
+      "city": "Pokhara , Nepal",
+      "stage": "interview ",
+      "modifiedTime": "May 17 , 11:00am",
+      "avatar": "/_static/profile-pic.jpg"
+    },
+    {
+      "id": 543453,
+      "name": "Darshan",
+      "city": "Pokhara , Nepal",
+      "stage": "interview ",
+      "modifiedTime": "May 17 , 11:00am",
+      "avatar": "/_static/profile-pic.jpg"
+    },
+    {
+      "id": 3245252,
+      "name": "Prajun",
+      "city": "Pokhara , Nepal",
+      "stage": "interview ",
+      "modifiedTime": "May 17 , 11:00am",
+      "avatar": "/_static/profile-pic.jpg"
+    },
+    {
+      "id": 879678765,
+      "name": "Ayuash",
+      "city": "Pokhara , Nepal",
+      "stage": "interview ",
+      "modifiedTime": "May 17 , 11:00am",
+      "avatar": "/_static/profile-pic.jpg"
+    },
+    {
+      "id": 87686577654,
+      "name": "Reeha",
+      "city": "Pokhara , Nepal",
+      "stage": "interview ",
+      "modifiedTime": "May 17 , 11:00am",
+      "avatar": "/_static/profile-pic.jpg"
+    },
+    {
+      "id": 543465443,
+      "name": "Sagar",
+      "city": "Pokhara , Nepal",
+      "stage": "interview ",
+      "modifiedTime": "May 17 , 11:00am",
+      "avatar": "/_static/profile-pic.jpg"
+    },
+    {
+      "id": 5634563,
+      "name": "Ashura",
+      "city": "Pokhara , Nepal",
+      "stage": "interview ",
+      "modifiedTime": "May 17 , 11:00am",
+      "avatar": "/_static/profile-pic.jpg"
+    }
+  ],
+  "superadmin-clients": [
+    {
+      "id": 6588,
+      "Date": "09/24/2024",
+      "Company Name": "Yeti Labs",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Rheea",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 798,
+      "Date": "09/24/2024",
+      "Company Name": "Upselsa",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Darshan",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 7979,
+      "Date": "09/24/2024",
+      "Company Name": "Swoyef labs",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Dev Poudel",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 6775457,
+      "Date": "09/24/2024",
+      "Company Name": "Theta Tech",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Darshan",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 879,
+      "Date": "09/24/2024",
+      "Company Name": "Black Tech",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Akash Shrestha",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 879879,
+      "Date": "09/24/2024",
+      "Company Name": "Websoft Technology",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Jasmine",
+      "Phone Number": "+850485048"
+    }
+  ],
+  "recruiter-dashboard-cards": [
+    { "label": "Applied", "count": 10, "icon": "fileCheck" },
+    { "label": "Screening", "count": 9, "icon": "userSearch" },
+    { "label": "Interviewing", "count": 4, "icon": "micVocal" },
+    { "label": "Offered", "count": 3, "icon": "handHeart" },
+    { "label": "Hired", "count": 2, "icon": "handShake" },
+    { "label": "Rejected", "count": 5, "icon": "userX" }
+  ],
+  "recruiter-active-jobs": [
+    {
+      "Job Id": "se001",
+      "Job Title": "frontend Engineering",
+      "No. of Positions": 2
+    },
+    { "Job Id": "js9343", "Job Title": "It Consultant", "No. of Positions": 3 },
+    { "Job Id": "ce4442", "Job Title": "Accountant", "No. of Positions": 1 },
+    {
+      "Job Id": "de4444",
+      "Job Title": "Backend Engineering",
+      "No. of Positions": 2
+    },
+    {
+      "Job Id": "se34334",
+      "Job Title": "Network Engineering",
+      "No. of Positions": 1
+    }
+  ],
+  "superadmin-jobposting-page-1": [
+    {
+      "JobId": 2231251,
+      "JobTitle": "Software Engineering",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "Rays IT Solutions",
+      "City": "TX 4340, USA",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 4 days",
+      "Status": "close",
+      "updatedBy": "Walter White",
+      "type": "Full Time",
+      "state": "USA",
+      "zipCode": "+971",
+      "workExperience": "Senior level",
+      "industryType": "Engineering",
+      "employeeType": "Full-time",
+      "jobType": "On-site",
+      "salary": "7000"
+    },
+    {
+      "JobId": 4353343,
+      "JobTitle": "Frontend",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "Aaramba IT",
+      "City": "London , Uk",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 1 days",
+      "Status": "open",
+      "updatedBy": "John Cena",
+      "type": "Part Time",
+      "state": "Uk",
+      "zipCode": "+91",
+      "workExperience": "Mid level",
+      "industryType": "Engineering",
+      "employeeType": "Part-time",
+      "jobType": "On-site",
+      "salary": "7000"
+    },
+    {
+      "JobId": 14354,
+      "JobTitle": "Backend",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "Black Tech",
+      "City": "Delhi , India",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 3 days",
+      "Status": "open",
+      "updatedBy": "Darshan",
+      "type": "Hybrid",
+      "state": "India",
+      "zipCode": "110001",
+      "workExperience": "Mid level",
+      "industryType": "Engineering",
+      "employeeType": "Hybrid"
+    },
+    {
+      "JobId": 8769596,
+      "JobTitle": "Research Intern",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "Yeti Labs",
+      "City": "Pokhara , Nepal",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 7 days",
+      "Status": "open",
+      "updatedBy": "Prakash Gurung",
+      "type": "Onsite",
+      "state": "Nepal",
+      "zipCode": "+977",
+      "workExperience": "Senior level",
+      "industryType": "Engineering",
+      "employeeType": "Temporary Employee"
+    },
+    {
+      "JobId": 8769516,
+      "JobTitle": "Intern",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "xyz",
+      "City": "Pokhara , Nepal",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 7 days",
+      "Status": "open",
+      "updatedBy": "Prakash Gurung",
+      "type": "Onsite",
+      "state": "Nepal",
+      "zipCode": "+977",
+      "workExperience": "Intern",
+      "industryType": "Engineering",
+      "employeeType": "Intern/Trainee"
+    },
+    {
+      "JobId": 8769216,
+      "JobTitle": "dev ops",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "abc Labs",
+      "City": "Pokhara , Nepal",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 7 days",
+      "Status": "open",
+      "updatedBy": "Prakash Gurung",
+      "type": "Onsite",
+      "state": "Nepal",
+      "zipCode": "+977",
+      "industryType": "Engineering"
+    },
+    {
+      "JobId": 123,
+      "JobTitle": "dev ops",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "abc Labs",
+      "City": "Punjab , India",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 7 days",
+      "Status": "pending",
+      "updatedBy": "Prakash Gurung",
+      "type": "Onsite",
+      "state": "India",
+      "zipCode": "110001",
+      "industryType": "Engineering"
+    },
+    {
+      "JobId": 123,
+      "JobTitle": "dev ops",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "abc Labs",
+      "City": "abcd , UK",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 7 days",
+      "Status": "draft",
+      "updatedBy": "Prakash Gurung",
+      "type": "Onsite",
+      "state": "UK",
+      "zipCode": "+91",
+      "industryType": "Engineering"
+    }
+  ],
+  "superadmin-jobposting-page-2": [
+    {
+      "JobId": 5784965894,
+      "JobTitle": "backend",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "Rays IT Solutions",
+      "City": "TX 4340, USA",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 4 days",
+      "Status": "open",
+      "updatedBy": "Walter White",
+      "type": "Full Time",
+      "state": "USA",
+      "zipCode": "+971"
+    }
+  ],
+  "superadmin-jobposting-page-3": [
+    {
+      "JobId": 2231251,
+      "JobTitle": "frontend",
+      "Date": "09/24/2024",
+      "endDate": "09/24/2024",
+      "ClientName": "Rays IT Solutions",
+      "City": "TX 4340, USA",
+      "logo": "/_static/ray_it.jpg",
+      "expiresIn": "Expires in 4 days",
+      "Status": "open",
+      "updatedBy": "Walter White",
+      "type": "Full Time",
+      "state": "USA",
+      "zipCode": "+971"
+    }
+  ],
+  "superadmin-client-data": [
+    {
+      "id": 6588,
+      "Date": "09/24/2024",
+      "Company Name": "Yeti Labs",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Rheea",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 798,
+      "Date": "09/24/2024",
+      "Company Name": "Upselsa",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Darshan",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 7979,
+      "Date": "09/24/2024",
+      "Company Name": "Swoyef labs",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Dev Poudel",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 6775457,
+      "Date": "09/24/2024",
+      "Company Name": "Theta Tech",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Darshan",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 879,
+      "Date": "09/24/2024",
+      "Company Name": "Black Tech",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Akash Shrestha",
+      "Phone Number": "+850485048"
+    },
+    {
+      "id": 879879,
+      "Date": "09/24/2024",
+      "Company Name": "Websoft Technology",
+      "logo": "/_static/ray_it.jpg",
+      "Assigned to": "Jasmine",
+      "Phone Number": "+850485048"
+    }
+  ],
+  "superadmin-application-overview": [
+    { "label": "Jan", "applications": 620, "hired": 520, "rejected": 360 },
+    { "label": "Feb", "applications": 640, "hired": 560, "rejected": 400 },
+    { "label": "Mar", "applications": 780, "hired": 530, "rejected": 350 },
+    { "label": "Apr", "applications": 820, "hired": 610, "rejected": 500 },
+    { "label": "May", "applications": 760, "hired": 580, "rejected": 450 },
+    { "label": "Jun", "applications": 800, "hired": 600, "rejected": 520 },
+    { "label": "Jul", "applications": 900, "hired": 590, "rejected": 480 },
+    { "label": "Aug", "applications": 840, "hired": 610, "rejected": 430 },
+    { "label": "Sep", "applications": 860, "hired": 620, "rejected": 470 },
+    { "label": "Oct", "applications": 820, "hired": 590, "rejected": 400 },
+    { "label": "Nov", "applications": 660, "hired": 570, "rejected": 360 },
+    { "label": "Dec", "applications": 630, "hired": 560, "rejected": 380 }
+  ],
+  "superadmin-funnel-pipeline": [
+    { "label": "Applied", "value": 18, "color": "#5B21B6" },
+    { "label": "Screening", "value": 14, "color": "#1E3A8A" },
+    { "label": "Interviewing", "value": 8, "color": "#7C3AED" },
+    { "label": "Offered", "value": 7, "color": "#0E7490" },
+    { "label": "Hired", "value": 5, "color": "#6D28D9" },
+    { "label": "Rejected", "value": 10, "color": "#0B5C75" }
+  ],
+  "superadmin-candidate-performance": [
+    {
+      "amt": 1400,
+      "fill": "#3B82F6",
+      "name": "Job Portals",
+      "uv": 31.47
+    },
+    {
+      "amt": 720,
+      "fill": "#8B5CF6",
+      "name": "Employee Referrals",
+      "uv": 26.69
+    },
+    {
+      "amt": 680,
+      "fill": "#1E40AF",
+      "name": "Direct Application",
+      "uv": 15.69
+    },
+    {
+      "amt": 1700,
+      "fill": "#0EA5E9",
+      "name": "Social Media",
+      "uv": 8.22
+    }
+  ]
 }

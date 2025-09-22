@@ -9,7 +9,7 @@ import {
   Job,
   JobCardProps,
   MessagingTemplateProps,
-  permissionForPageProps,
+  PermissionForPageProps,
   PersonalInformationProps,
   UserActivity,
   UserRolesProps,
@@ -942,12 +942,33 @@ export const userRoles: UserRolesProps[] = [
   },
 ];
 
-export const permissionForPageData: permissionForPageProps[] = [
-    { pageId: "workForcePage", pageTitle: "WorkForce Page" },
-    { pageId: "jobPostingPage", pageTitle: "Job Posting Page" },
-    {
-        pageId: "interviewSchedulingPage",
-        pageTitle: "Interview Scheduling Page",
-    },
-    { pageId: "clientPage", pageTitle: "Client Page" },
+export const FunnelStages = [
+  { label: "Applied", value: 18, color: "#5B21B6" },
+  { label: "Screening", value: 14, color: "#1E3A8A" },
+  { label: "Interviewing", value: 8, color: "#7C3AED" },
+  { label: "Offered", value: 7, color: "#0E7490" },
+  { label: "Hired", value: 5, color: "#6D28D9" },
+  { label: "Rejected", value: 10, color: "#0B5C75" },
+];
+
+export type TrendPoint = {
+  label: string;
+  applications: number;
+  hired: number;
+  rejected: number;
+};
+
+export const JobTrendsMonthly: TrendPoint[] = [
+  { label: "Jan", applications: 620, hired: 520, rejected: 360 },
+  { label: "Feb", applications: 640, hired: 560, rejected: 400 },
+  { label: "Mar", applications: 780, hired: 530, rejected: 350 },
+  { label: "Apr", applications: 820, hired: 610, rejected: 500 },
+  { label: "May", applications: 760, hired: 580, rejected: 450 },
+  { label: "Jun", applications: 800, hired: 600, rejected: 520 },
+  { label: "Jul", applications: 900, hired: 590, rejected: 480 },
+  { label: "Aug", applications: 840, hired: 610, rejected: 430 },
+  { label: "Sep", applications: 860, hired: 620, rejected: 470 },
+  { label: "Oct", applications: 820, hired: 590, rejected: 400 },
+  { label: "Nov", applications: 660, hired: 570, rejected: 360 },
+  { label: "Dec", applications: 630, hired: 560, rejected: 380 },
 ];

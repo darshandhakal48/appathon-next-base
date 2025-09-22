@@ -1,7 +1,7 @@
 "use client";
 
-import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Plus } from "lucide-react";
 
 export function AdminCandidatesHeaderAction() {
   const router = useRouter();
@@ -12,7 +12,7 @@ export function AdminCandidatesHeaderAction() {
 
   return (
     <div
-      className="flex cursor-pointer items-center gap-2 space-x-1 text-primary-text-label-1"
+      className="text-primary-text-label-1 flex cursor-pointer items-center gap-2 space-x-1"
       onClick={handleNavigation}
     >
       <Plus height={20} />

@@ -17,7 +17,7 @@ export default function ClientCard() {
                   width={62}
                   height={62}
                   className="absolute top-0 left-0 h-16 w-16 rounded-full"
-                  src="https://placehold.co/62x62"
+                  src="/_static/40x40.svg"
                 />
               </div>
               <div className="justify-center font-['Roboto'] text-base leading-normal font-semibold text-gray-700">

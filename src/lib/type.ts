@@ -1,5 +1,7 @@
-import { JobFormType } from "@/components/forms/schema";
+import { Dispatch, SetStateAction } from "react";
+
 import { Icons } from "@/components/ui/icons";
+import { JobFormType } from "@/components/forms/schema";
 
 export type IconName = keyof typeof Icons;
 
@@ -52,17 +54,26 @@ export interface WorkForceProfileInfoProps {
 }
 
 export interface JobCardProps {
-  "Job Id": number;
-  "Job Title": string;
+  JobId: number;
+  JobTitle: string;
   Date: string;
   endDate: string;
   logo: string;
-  "Client Name": string;
+  ClientName: string;
   Status: string;
   updatedBy: string;
   City: string;
   expiresIn: string;
   type: string;
+  state: string;
+  zipCode: string;
+  salary?: number;
+  workExperience?: string;
+  industryType?: string;
+  employeeType?: string;
+  educationLevel?: string;
+  jobType?: string;
+  // salary? : number;
 }
 
 export type ProfileRole = "Candidate" | "Company" | "Hiring  Manager";
@@ -203,12 +214,25 @@ export interface UserRolesProps {
 }
 
 export type PageId =
-  | "workForcePage"
-  | "jobPostingPage"
-  | "interviewSchedulingPage"
-  | "clientPage";
+  | "View"
+  | "Create"
+  | "Edit"
+  | "Delete"
+  | "Change Application Status"
+  | "Add Notes"
+  | "View Profile"
+  | "Schedule Interviews"
+  | "View Public"
+  | "Add Feedback"
+  | "View Assigned"
+  | "Confirm Reschedule"
+  | "Assign Roles"
+  | "View Roles"
+  | "Advanced"
+  | "Export"
+  | "Approve";
 
-export interface permissionForPageProps {
+export interface PermissionForPageProps {
   pageId: PageId;
   pageTitle: string;
 }
@@ -248,4 +272,77 @@ export type Interview = {
     initials: string;
     fullName: string;
   };
+};
+
+export interface CustomPagianationProps {
+  setActivePage: Dispatch<SetStateAction<number>>;
+  activePage: number;
+  totalPages: number;
+}
+
+export interface CustomPaginationHookProps<T> {
+  // key: (string | number)[];
+  key: string;
+  path: string;
+  totalPages: number;
+  search_title_skil_company_id: string;
+  search_city_state: string;
+  filterFn?: (data: T[]) => T[];
+}
+
+export interface JobDetail {
+  "Job Type": string;
+  "Industry Type": string;
+  "Client Name": string;
+  "Work Experience (in years)": string;
+  "Created on": string;
+  "Updated by": string;
+  Location: string;
+  "Employment Type": string;
+  "Experience Level": string;
+  Salary: string;
+  Education: string;
+  Deadline: string;
+}
+
+export interface JobStatus {
+  Applied: number;
+  Screening: number;
+  Interviewing: number;
+  Offered: number;
+  Hired: number;
+  Rejected: number;
+}
+
+export interface JobData {
+  "job detail": JobDetail;
+  skills: string[];
+  "Job Description": string;
+  requirements: string[];
+  companyName: string;
+  companyImage: string;
+  jobType: string;
+  jobStatus: JobStatus;
+}
+
+export type JobStatusProp = "active" | "pending" | "draft" | "close";
+
+export interface DateRangeType {
+  from: Date | null;
+  to: Date | null;
+}
+
+export interface FilterState {
+  workExperience: string[];
+  industryType: string[];
+  employeeType: string[];
+  jobType: string[];
+  educationLevel: string[];
+  salaryRange: { min: number; max: number };
+  uploadedBy: string[];
+}
+
+export type SalaryRange = {
+  min: number;
+  max: number;
 };

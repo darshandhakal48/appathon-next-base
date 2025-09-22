@@ -1,14 +1,16 @@
 "use client";
+
+import React from "react";
+import { useRouter } from "next/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowLeft } from "lucide-react";
+import { useForm } from "react-hook-form";
+
+import { Button } from "@/components/ui/button";
+import { Form } from "@/components/ui/form";
 import DashboardPageHeader from "@/components/dashboard/page-header";
 import CreateNewRoleForm from "@/components/forms/roleAndPermission/create-new-role-form";
 import { NewRoleSchema, NewRoleType } from "@/components/forms/schema";
-import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowLeft } from "lucide-react";
-import { useRouter } from "next/navigation";
-import React from "react";
-import { useForm } from "react-hook-form";
 
 function CreateNewRole() {
   const form = useForm<NewRoleType>({
@@ -44,16 +46,16 @@ function CreateNewRole() {
 
   return (
     <>
-      {/* <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)}>
-                    <CreateNewRoleHeader />
-                    <div className="p-4">
-                        <div className="bg-grayscale-surface-white px-6 py-8 min-h-[85vh] shadow-sm">
-                            <CreateNewRoleForm control={form.control} />
-                        </div>
-                    </div>
-                </form>
-            </Form> */}
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <CreateNewRoleHeader />
+          <div className="p-4">
+            <div className="bg-grayscale-surface-white min-h-[85vh] px-6 py-8 shadow-sm">
+              {/* <CreateNewRoleForm control={form.control} /> */}
+            </div>
+          </div>
+        </form>
+      </Form>
     </>
   );
 }
@@ -67,7 +69,7 @@ function CreateNewRoleHeader() {
     <>
       <DashboardPageHeader title="">
         <div
-          className="flex items-center gap-2.5 cursor-pointer"
+          className="flex cursor-pointer items-center gap-2.5"
           onClick={handleNavigation}
         >
           <ArrowLeft className="h-6 w-6" />
