@@ -1,20 +1,22 @@
-import JobDescriptionForm from "@/components/forms/job-description-form";
-import { JobFormType } from "@/components/forms/schema";
-import { Button } from "@/components/ui/button";
-import { BrainCog } from "lucide-react";
 import React from "react";
+import { JobPostingFormType } from "@/schema/job-posting-form-schema";
+import { BrainCog } from "lucide-react";
 import { Control } from "react-hook-form";
 
-function JobDescription({ control }: { control: Control<JobFormType> }) {
+import { Button } from "@/components/ui/button";
+import JobDescriptionForm from "@/components/forms/job-description-form";
+import { JobFormType } from "@/components/forms/schema";
+
+function JobDescription({ control }: { control: Control<JobPostingFormType> }) {
   return (
-    <div className="p-6 grid grid-cols-1 gap-4 bg-grayscale-surface-white">
+    <div className="bg-grayscale-surface-white grid grid-cols-1 gap-4 p-6">
       <div className="flex items-center gap-7.5">
-        <span className="text-lg text-sidebar-primary-foreground font-semibold">
+        <span className="text-sidebar-primary-foreground text-lg font-semibold">
           Description
         </span>
         <Button
           variant="outline"
-          className="text-base font-normal text-primary-text-label-1 shadow-lg"
+          className="text-primary-text-label-1 text-base font-normal shadow-lg"
         >
           {" "}
           <span>
@@ -25,7 +27,7 @@ function JobDescription({ control }: { control: Control<JobFormType> }) {
       </div>
 
       {/* description and requirements */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <JobDescriptionForm control={control} />
       </div>
     </div>

@@ -26,6 +26,7 @@ export default class ErrorBoundary extends Component<Props, State> {
     const { children, ...attr } = this.props;
 
     if (hasError && error) {
+      console.log("ERROR ==> ", error)
       return <ErrorFallback {...attr} />;
     }
 

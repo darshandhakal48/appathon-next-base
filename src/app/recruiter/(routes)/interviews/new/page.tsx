@@ -1,11 +1,11 @@
 
 import React from "react";
-import CreateNewInterview from "@/components/forms/interview";
+import InterviewFormAction from "@/components/forms/interview";
 
 function CreateInterview() {
   return (
     <>
-      <CreateNewInterview />
+      <InterviewFormAction />
     </>
   );
 }

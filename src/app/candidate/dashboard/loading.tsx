@@ -1,3 +1,66 @@
-export default function CandidateDashboardLoading() {
-  return <></>;
+import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/skeleton";
+import DashboardPageHeader from "@/components/dashboard/page-header";
+import BasicLayoutCard from "@/components/shared/basic-layout-card";
+import OverviewCardSkeleton from "@/components/skeletons/overview-card";
+import { TypographySkeleton } from "@/components/skeletons/typography-skeleton";
+
+export default function DashboardLoading() {
+  return (
+    <>
+      <DashboardPageHeader title="Dashboard" />
+      <div className="space-y-4 p-6">
+        <CandidateDashboardSkeleton.Overview animate />
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <CandidateDashboardSkeleton.TopJobPicks />
+          <CandidateDashboardSkeleton.UserActivity />
+        </div>
+      </div>
+    </>
+  );
+}
+
+const OverviewSkeleton = ({ animate = false }: { animate?: boolean }) => (
+  <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+    {[1, 2, 3, 4, 5, 6].map((i) => (
+      <OverviewCardSkeleton
+        className={cn(animate && `animate-stagger-${Math.min(i, 4)}`)}
+        key={i}
+      />
+    ))}
+  </div>
+);
+
+const TopJobPickSkeleton = () => (
+  <BasicLayoutCard className="space-y-4">
+    <div className="flex w-full flex-1 justify-between">
+      <TypographySkeleton className="flex-1" width="1/2" color="default" />
+      <TypographySkeleton
+        className="flex flex-1 justify-end"
+        width="1/2"
+        color="default"
+      />
+    </div>
+    <Skeleton className="bg-grayscale-surface-default size-full h-[240px] rounded-md border" />
+  </BasicLayoutCard>
+);
+
+const UserActivitySkeleton = () => (
+  <BasicLayoutCard className="space-y-4">
+    <div className="flex w-full flex-1 justify-between">
+      <TypographySkeleton className="flex-1" width="1/2" color="default" />
+      <TypographySkeleton
+        className="flex flex-1 justify-end"
+        width="1/2"
+        color="default"
+      />
+    </div>
+    <Skeleton className="bg-grayscale-surface-default size-full h-[240px] rounded-md border" />
+  </BasicLayoutCard>
+);
+
+export namespace CandidateDashboardSkeleton {
+  export const Overview = OverviewSkeleton;
+  export const TopJobPicks = TopJobPickSkeleton;
+  export const UserActivity = UserActivitySkeleton;
 }

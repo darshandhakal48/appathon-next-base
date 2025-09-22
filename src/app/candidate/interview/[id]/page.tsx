@@ -7,7 +7,7 @@ interface PageProps {
   }>;
 }
 
-export default async function CandidateDashboardInterviewInfoPage(
+export default async function CandidateInterviewInfoPage(
   props: PageProps
 ) {
   const interviewId = (await props.params).id;

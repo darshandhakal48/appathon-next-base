@@ -17,9 +17,7 @@ import {
 import {
   DateRangeType,
   FilterState,
-  Job,
   JobCardProps,
-  JobStatus,
   JobStatusProp,
 } from "@/lib/type";
 import { filterJobs, totalPages } from "@/lib/utils";

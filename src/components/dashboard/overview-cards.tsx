@@ -3,22 +3,29 @@
 import React from "react";
 
 import { DashboardCard } from "@/lib/type";
-import { Icons } from "../ui/icons";
-import { Typography } from "../shared/typography";
-import { useSidebar } from "../ui/sidebar";
 import { cn } from "@/lib/utils";
+
+import { Typography } from "../shared/typography";
+import { Icons } from "../ui/icons";
+import { useSidebar } from "../ui/sidebar";
 
 export default function OverviewCard({ data }: { data: DashboardCard }) {
   const sidebar = useSidebar();
 
   const Icon = Icons[data.icon] || Icons.folderOpen;
   return (
-    <div className={cn("flex flex-1 items-center gap-6 rounded-md bg-grayscale-surface-white px-6 shadow-sm md:h-[100px] md:px-8",
-      { "md:px-2 justify-center": sidebar.open })}>
-      <Icon className="size-6 text-primary-surface-default" />
+    <div
+      className={cn(
+        "bg-grayscale-surface-white flex flex-1 items-center gap-6 rounded-md px-6 md:h-[100px] md:px-8",
+        { "justify-center md:px-2": sidebar.open },
+      )}
+    >
+      <Icon className="text-primary-surface-default size-6" />
 
       <div className="flex flex-col">
-        <Typography type="sm" className="text-wrap">{data.label}</Typography>
+        <Typography type="sm" className="text-wrap">
+          {data.label}
+        </Typography>
         <Typography type="2xl" weight="bold" color="title">
           {data.count}
         </Typography>

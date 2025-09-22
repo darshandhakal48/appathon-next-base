@@ -1,25 +1,17 @@
-import React, { Suspense } from "react";
+import React from "react";
 import CandidateOnlineInterview from "@/components/dashboard/candidateOnlineInterview";
-import ClientErrorFallback from "@/components/shared/error-fallback";
-import ErrorBoundary from "@/components/shared/error-boundary";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 
 function OnlineInterview() {
-    return (
-        <Suspense
-            fallback={
-                <>
-                    <p></p>
-                </>
-            }
-        >
-            <Suspensed />
-        </Suspense>
-    );
-}
-
-async function Suspensed() {
-    //   throw new Error("LOL");
-    return <CandidateOnlineInterview />;
+  return (
+    <>
+      <DashboardPageHeader title="Interviews">
+      </DashboardPageHeader>
+      <div className="p-4 md:p-6">
+        <CandidateOnlineInterview />
+      </div>
+    </>
+  );
 }
 
 export default OnlineInterview;

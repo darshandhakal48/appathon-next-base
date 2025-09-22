@@ -1,48 +1,33 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import ScheduleInterview from "./schedule-interview";
-import { useRouter } from "next/navigation";
-import DashboardPageHeader from "@/components/dashboard/page-header";
 
-function CreateNewInterview() {
-  const router = useRouter();
 
-  const handleNavigation = () => {
-    router.back();
-  };
-  return (
+import {useGlobalModal} from "@/hooks/use-global-ui";
+import {InterviewFormType} from "@/schema/interview-form-schema";
+import InterviewForm from "@/components/forms/interview/interview-form";
+import {Button} from "@/components/ui/button";
+import {IconPlus} from "@tabler/icons-react";
+
+function InterviewFormAction({initialValue}:{initialValue?:InterviewFormType|null}) {
+
+    const modal = useGlobalModal()
+    const isNew = !!initialValue;
+
+
+    return (
     <>
-      {/* title */}
-      <DashboardPageHeader title="">
-        <div
-          className="flex cursor-pointer items-center gap-2.5"
-          onClick={handleNavigation}
-        >
-          <ArrowLeft className="h-6 w-6" />
-          <span className="text-xl font-semibold">Create New Interview</span>
-        </div>
-
-        <div className="gap-2.5 space-x-1">
-          <Button variant="default">Schedule</Button>
-          <Button
-            variant="outline"
-            className="bg-grayscale-surface-disabled hover:bg-grayscale-surface-disabled"
-            onClick={handleNavigation}
-          >
-            Cancel
-          </Button>
-        </div>
-      </DashboardPageHeader>
-
-      {/* main body */}
-      <div className="my-10 flex items-center justify-center">
-        <div className="grid grid-cols-1 gap-5">
-          <ScheduleInterview />
-        </div>
-      </div>
+        <Button variant="default" onClick={()=>{return modal.custom({
+            title: isNew ? "Schedule New Interview" : "Edit Interview",
+            description: isNew ? "Create a new interview session with candidate and interviews." : "Edit interview session with candidate and interviewers",
+            size:"w-full max-w-3xl",
+            content:<InterviewForm/>,
+            closable:true
+        })
+        }}>
+            <IconPlus className="size-4"/>
+            Schedule New Interview
+        </Button>
     </>
   );
 }
 
-export default CreateNewInterview;
+export default InterviewFormAction;

@@ -16,6 +16,7 @@ export function WorkforceTable({ users }: { users: WorkForceUserProps[] | null }
           <ReusableTable
             data={users}
             excludeColumns={["avatar"]}
+            enablePagination={true}
             columns={[
               {
                 key: "employeeName",

@@ -1,13 +1,12 @@
 import DashboardPageHeader from "@/components/dashboard/page-header";
 import { ReusableTable } from "@/components/dashboard/reusuable-table";
 import { candidateColumn } from "@/lib/column";
-import { AdminCandidatesHeaderAction } from "./_components/client";
+import { AdminCandidatesHeaderAction } from "../_components/client";
 import ApiWrapper from "@/features/api/api-wrapper";
 import { CandidateProps, DashboardCard } from "@/lib/type";
-import { OverviewSection } from "../dashboard/_components/client";
-import { AdminCandidateSkeleton } from "./loading";
+import { OverviewSection } from "../../dashboard/_components/client";
+import { AdminCandidateSkeleton } from "../loading";
 import { EmptyState } from "@/components/shared/empty-state";
-import { UserAvatar } from "@/components/dashboard/user-avatar";
 
 function AdminCandidates() {
   return (

@@ -1,13 +1,14 @@
-import React from "react";
-import { apiClient } from "@/features/api/api-client";
+"use client";
 
-import { DashboardCard, Job, UserActivity } from "@/lib/type";
+import React from "react";
+
+import { DashboardCard, JobCardProps, UserActivity } from "@/lib/type";
 import ActiveJobOpenings from "@/components/dashboard/active-job-openings";
 import OverviewCard from "@/components/dashboard/overview-cards";
 import RecentUserActivities from "@/components/dashboard/recent-user-activities";
 import BasicLayoutCard from "@/components/shared/basic-layout-card";
 
-export const OverviewSection = async ({
+export const OverviewSection = ({
   cardsInfo,
 }: {
   cardsInfo: DashboardCard[] | null;
@@ -24,7 +25,7 @@ export const OverviewSection = async ({
 export const ActiveJobsSection = ({
   activeJobs,
 }: {
-  activeJobs: Job[] | null;
+  activeJobs: JobCardProps[] | null;
 }) => {
   return (
     <BasicLayoutCard>
@@ -33,7 +34,7 @@ export const ActiveJobsSection = ({
   );
 };
 
-export const UserActivitySection = async ({
+export const UserActivitySection = ({
   userActivities,
 }: {
   userActivities: UserActivity[] | null;
@@ -43,9 +44,4 @@ export const UserActivitySection = async ({
       <RecentUserActivities data={userActivities} type="admin" />
     </BasicLayoutCard>
   );
-};
-
-const delayedGetJobs = async () => {
-  await new Promise((res) => setTimeout(res, 2000)); // 2-second delay
-  return apiClient.get<Job[]>("/superadmin-active-jobs");
 };

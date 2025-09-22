@@ -1,5 +1,3 @@
-import { DefaultLegendContentProps } from "recharts";
-
 // API Response Types
 export interface ApiResponse<T> {
   data: T | null;

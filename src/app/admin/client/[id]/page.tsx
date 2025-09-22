@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-// import { AdminClientHeader } from "../page";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -9,7 +8,8 @@ import { adminClientInfo } from "@/config/db";
 import OverViewAndTimelineBtn from "@/components/dashboard/overview-timeline-btn";
 import WorkforceActiveJobOpenings from "../../workforce/_component/workforceActiveJobOpenings";
 import ClientInformation from "../_component/clientInformation";
-import { AdminClientHeader } from "../_component/client";
+import { AdminClientHeaderAction } from "./_components/client";
+import DashboardPageHeader from "@/components/dashboard/page-header";
 
 function SingleClientDetails() {
   const router = useRouter();
@@ -20,9 +20,11 @@ function SingleClientDetails() {
 
   return (
     <>
-      <AdminClientHeader />
-      <div className="p-4">
-        <div className="bg-grayscale-surface-white rounded-sm p-4 space-y-8 shadow-sm">
+      <DashboardPageHeader title="Client">
+        <AdminClientHeaderAction />
+      </DashboardPageHeader>
+      <div className="p-4 md:p-6">
+        <div className="space-y-8 rounded-sm bg-grayscale-surface-white p-4 shadow-sm">
           {/* back button */}
           <Button
             variant="ghost"

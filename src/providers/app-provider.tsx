@@ -1,7 +1,10 @@
-import React from "react";
-import { QueryProvider } from "./query-provider";
-import { GlobalUIProvider } from "./global-ui-provider";
+"use client";
 
+import React from "react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+import { GlobalUIProvider } from "./global-ui-provider";
+import { QueryProvider } from "./query-provider";
 import { ThemeProvider } from "./theme-provider";
 
 export default function AppProvider({
@@ -19,6 +22,7 @@ export default function AppProvider({
       >
         <GlobalUIProvider>{children}</GlobalUIProvider>
       </ThemeProvider>
+      <ReactQueryDevtools />
     </QueryProvider>
   );
 }

@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import {IconLayoutGrid, IconList, IconPlus} from "@tabler/icons-react";
+import InterviewFormAction from "@/components/forms/interview";
 
 export default function HeaderAction() {
   const router = useRouter()
@@ -10,11 +12,16 @@ export default function HeaderAction() {
   };
 
   return (
-    <div className="gap-2.5 space-x-1">
-      <Button variant="outline">Drafts</Button>
-      <Button variant="default" onClick={handleNavigation}>
-        Schedule New Interview
-      </Button>
+    <div className="gap-2.5 space-x-1 flex items-center">
+
+        <Button size="icon" variant="outline">
+            <IconList/>
+        </Button>
+        <Button size="icon" variant="outline">
+            <IconLayoutGrid/>
+            </Button>
+
+     <InterviewFormAction />
     </div>
 
   )

@@ -2,7 +2,7 @@ import React from "react";
 import ApiWrapper from "@/features/api/api-wrapper";
 
 import { FunnelStages, JobTrendsMonthly, TrendPoint } from "@/config/db";
-import { DashboardCard, Job, UserActivity } from "@/lib/type";
+import { DashboardCard, JobCardProps, UserActivity } from "@/lib/type";
 import FunnelPipeline, {
   FunnelStage,
 } from "@/components/dashboard/FunnelPipeline";
@@ -61,7 +61,7 @@ const AdminDashboard = async () => {
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <ApiWrapper<Job[]>
+          <ApiWrapper<JobCardProps[]>
             fallback={<AdminDashboardSkeleton.ActiveJobs />}
             route="/superadmin-active-jobs-page-1"
           >

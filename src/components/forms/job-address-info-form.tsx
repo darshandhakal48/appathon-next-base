@@ -1,32 +1,39 @@
-import { Input } from "../ui/input";
+import { JobPostingFormType } from "@/schema/job-posting-form-schema";
 import { Control } from "react-hook-form";
-import { JobFormType } from "./schema";
+
+import { Typography } from "../shared/typography";
 import {
   FormControl,
   FormField,
-  FormLabel,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "../ui/form";
+import { Input } from "../ui/input";
+import { JobFormType } from "./schema";
 
-function JobAddressInfoForm({ control }: { control: Control<JobFormType> }) {
+function JobAddressInfoForm({
+  control,
+}: {
+  control: Control<JobPostingFormType>;
+}) {
   return (
     <>
-      <div className="bg-grayscale-surface-white p-6 grid grid-cols-1 gap-4">
-        <span className="text-lg text-primary-sidebar-foreground">
+      <div className="bg-grayscale-surface-white border-grayscale-border-lighter h-fit space-y-8 rounded-md border p-6">
+        <Typography type="lg" color="title" weight="semibold">
           Address Information
-        </span>
+        </Typography>
         <div className="grid grid-cols-2 gap-2.5">
           <FormField
             control={control}
-            name="jobAddress.street"
+            name="address.street"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Street</FormLabel>
                 <FormControl>
                   <Input
                     type="text"
-                    className=" border-secondary-border focus-visible:ring-0"
+                    className="border-secondary-border focus-visible:ring-0"
                     placeholder="646 west"
                     {...field}
                   />
@@ -37,7 +44,7 @@ function JobAddressInfoForm({ control }: { control: Control<JobFormType> }) {
           />
           <FormField
             control={control}
-            name="jobAddress.state"
+            name="address.state"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>State</FormLabel>
@@ -55,14 +62,14 @@ function JobAddressInfoForm({ control }: { control: Control<JobFormType> }) {
           />
           <FormField
             control={control}
-            name="jobAddress.city"
+            name="address.city"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>City</FormLabel>
                 <FormControl>
                   <Input
                     type="text"
-                    className=" border-secondary-border focus-visible:ring-0"
+                    className="border-secondary-border focus-visible:ring-0"
                     placeholder="Hamilton"
                     {...field}
                   />
@@ -74,7 +81,7 @@ function JobAddressInfoForm({ control }: { control: Control<JobFormType> }) {
 
           <FormField
             control={control}
-            name="jobAddress.postalCode"
+            name="address.postalCode"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Postal Code</FormLabel>
@@ -93,14 +100,14 @@ function JobAddressInfoForm({ control }: { control: Control<JobFormType> }) {
 
           <FormField
             control={control}
-            name="jobAddress.country"
+            name="address.country"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Country</FormLabel>
                 <FormControl>
                   <Input
                     type="text"
-                    className=" border-secondary-border focus-visible:ring-0"
+                    className="border-secondary-border focus-visible:ring-0"
                     placeholder="USA"
                     {...field}
                   />

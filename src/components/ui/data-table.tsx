@@ -35,7 +35,7 @@ export function DataTable<TData, TValue>({
     pageIndex: 0,
     pageSize: pageSize,
   });
-  
+
   const table = useReactTable({
     data,
     columns,
@@ -47,7 +47,7 @@ export function DataTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
-  
+
 
   return (
     <div>
@@ -89,57 +89,57 @@ export function DataTable<TData, TValue>({
       </div>
 
       {/* Pagination Controls */}
-<div className="flex items-center justify-between px-2 py-4">
-    {/* The bottom of the table is divided into 2 columns. Left side has page selector and rows per page. Right side is empty for now. /}
+      <div className="flex items-center justify-between px-2 py-4">
+        {/* The bottom of the table is divided into 2 columns. Left side has page selector and rows per page. Right side is empty for now. /}
   {/* Left */}
-  <div className="flex items-center gap-4">
-    <div className="flex items-center gap-2">
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={() => table.previousPage()}
-        disabled={!table.getCanPreviousPage()}
-      >
-        <ChevronLeft className="w-4 h-4" />
-      </Button>
-      <span className="text-sm font-medium">
-        {table.getState().pagination.pageIndex + 1}
-      </span>
-      <span className="text-sm">/</span>
-      <span className="text-sm">{table.getPageCount()}</span>
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={() => table.nextPage()}
-        disabled={!table.getCanNextPage()}
-      >
-        <ChevronRight className="w-4 h-4" />
-      </Button>
-    </div>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <span className="text-sm font-medium">
+              {table.getState().pagination.pageIndex + 1}
+            </span>
+            <span className="text-sm">/</span>
+            <span className="text-sm">{table.getPageCount()}</span>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
 
-    <div className="flex items-center gap-2 text-sm">
-      <span>Rows per page</span>
-      <select
-        value={pageSize}
-        onChange={(e) => {
-          const value = Number(e.target.value);
-          setPageSize(value);
-          table.setPageSize(value);
-        }}
-        className="border rounded px-2 py-1 text-sm"
-      >
-        {[5, 10, 16, 20].map((size) => (
-          <option key={size} value={size}>
-            {size}
-          </option>
-        ))}
-      </select>
-    </div>
-  </div>
+          <div className="flex items-center gap-2 text-sm">
+            <span>Rows per page</span>
+            <select
+              value={pageSize}
+              onChange={(e) => {
+                const value = Number(e.target.value);
+                setPageSize(value);
+                table.setPageSize(value);
+              }}
+              className="rounded border px-2 py-1 text-sm"
+            >
+              {[5, 10, 16, 20].map((size) => (
+                <option key={size} value={size}>
+                  {size}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-    {/* Right */}
-    <div></div>
-    </div>
+        {/* Right */}
+        <div></div>
+      </div>
 
     </div>
   );

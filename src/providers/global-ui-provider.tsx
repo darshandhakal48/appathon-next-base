@@ -305,7 +305,7 @@ function DefaultContent({
   onClose: () => void;
 }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 max-h-[90vh] overflow-y-scroll overflow-x-hidden">
       <div className="flex items-center justify-between">
         {config.title && (
           <h2 className="text-lg font-semibold">{config.title}</h2>

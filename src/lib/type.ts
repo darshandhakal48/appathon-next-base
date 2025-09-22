@@ -24,18 +24,8 @@ export type UserActivity = {
   message: string;
   id: number;
 };
-export type Job = {
-  "Job Id": string;
-  "Job Title": string;
-  "No. of Positions": string;
-  company: string;
-  location: string;
-  type: string;
-  posted: string;
-  expires: string;
-  companyImage: string;
-};
-export interface Application extends Job {
+
+export interface Application extends JobCardProps {
   id: string;
   status: string;
   appliedDate: string;
@@ -177,6 +167,10 @@ export interface TableProps<T> {
   loading?: boolean;
   emptyMessage?: string;
   className?: string;
+  enablePagination?: boolean;
+  pageSize?: number;
+  pageSizeOptions?: number[];
+  showPageSizeSelector?: boolean;
 }
 
 export interface WorkForceUserProps {
@@ -346,3 +340,16 @@ export type SalaryRange = {
   min: number;
   max: number;
 };
+
+export interface IHandleJobPostingHeaderProps {
+  searchJobTitle: string;
+  setSearchJobTitle: React.Dispatch<React.SetStateAction<string>>;
+  searchCityState: string;
+  setSearchCityState: React.Dispatch<React.SetStateAction<string>>;
+  selectedStatus: string;
+  setSelectedStatus: React.Dispatch<React.SetStateAction<JobStatusProp>>;
+  dateRange: DateRangeType;
+  setDateRange: React.Dispatch<React.SetStateAction<DateRangeType>>;
+  filters: FilterState;
+  setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
+}
