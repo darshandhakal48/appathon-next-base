@@ -9,7 +9,7 @@ import {
   Job,
   JobCardProps,
   MessagingTemplateProps,
-  permissionForPageProps,
+  PermissionForPageProps,
   PersonalInformationProps,
   UserActivity,
   UserRolesProps,
@@ -940,16 +940,6 @@ export const userRoles: UserRolesProps[] = [
     role: "Restricted User",
     assign: "2 users",
   },
-];
-
-export const permissionForPageData: permissionForPageProps[] = [
-  { pageId: "workForcePage", pageTitle: "WorkForce Page" },
-  { pageId: "jobPostingPage", pageTitle: "Job Posting Page" },
-  {
-    pageId: "interviewSchedulingPage",
-    pageTitle: "Interview Scheduling Page",
-  },
-  { pageId: "clientPage", pageTitle: "Client Page" },
 ];
 
 export const FunnelStages = [

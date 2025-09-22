@@ -15,15 +15,18 @@ import { JobCardProps } from "@/lib/type";
 function JobCard({
   job,
   showJobDetails,
+  handleActiveJobDetails,
 }: {
   job: JobCardProps;
   showJobDetails: boolean;
+  handleActiveJobDetails: (id: number) => void;
 }) {
   const router = useRouter();
   return (
     <div
       className="bg-grayscale-surface-white cursor-pointer space-y-4 rounded-md p-4 shadow-sm"
-      onClick={() => router.push(`/admin/jobposting/${job["Job Id"]}`)}
+      // onClick={() => router.push(`/admin/jobposting/${job["Job Id"]}`)}
+      onClick={() => handleActiveJobDetails(job["JobId"])}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -32,7 +35,7 @@ function JobCard({
             <span className="text-[12px] font-normal">{job["Status"]}</span>
           </div>
           <span className="bg-primary-surface-default/10 text-primary-surface-default p-1 text-[12px] font-normal">
-            ID : {job["Job Id"]}
+            ID : {job["JobId"]}
           </span>
         </div>
 
@@ -41,7 +44,7 @@ function JobCard({
 
       <div>
         <span className="text-primary-surface-default text-lg font-semibold">
-          {job["Job Title"]}
+          {job["JobTitle"]}
         </span>
       </div>
 
@@ -56,7 +59,7 @@ function JobCard({
             />
           </div>
           <span className="text-grayscale-text-body text-sm font-normal">
-            {job["Client Name"]}
+            {job["ClientName"]}
           </span>
         </div>
         <div className="flex items-center gap-2">

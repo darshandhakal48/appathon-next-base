@@ -15,7 +15,7 @@ const DashboardPageHeader = (props: HeaderProps) => {
     <div
       {...attr}
       className={cn(
-        "border-grayscale-border-default bg-grayscale-surface-white flex w-full flex-wrap items-center justify-between gap-8 gap-x-8 gap-y-2 overflow-hidden border-b px-6 py-4",
+        "border-grayscale-border-default bg-grayscale-surface-white flex w-full flex-wrap items-center justify-between gap-8 gap-x-8 gap-y-2 border-b px-6 py-4",
         className,
       )}
     >

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 import {
   CustomPagianationProps,
@@ -15,13 +15,20 @@ function useCustomPagination<T>({
   totalPages,
   key,
   path,
-}: CustomPaginationHookProps) {
+  search_title_skil_company_id,
+  search_city_state,
+  filterFn,
+}: CustomPaginationHookProps<T>) {
   const [activePage, setActivePage] = useState<number>(1);
-  const { data, isLoading, isError } = useApiQuery<T[]>(
-    // key,
-    [key, activePage],
-    `${path}-page-${activePage}`,
-  );
+
+  const { data, isLoading, isError } = useApiQuery<T>({
+    key: key,
+    endpoint: `${path}-page-${activePage}`,
+    activePage: activePage,
+    search: search_title_skil_company_id,
+    search_city_state: search_city_state,
+  });
+
   const PaginationComponent = () => (
     <CustomPagination
       activePage={activePage}
@@ -29,6 +36,7 @@ function useCustomPagination<T>({
       totalPages={totalPages}
     />
   );
+
   return { PaginationComponent, data, isLoading, isError };
 }
 
