@@ -1,10 +1,11 @@
 
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
 import type { ApiResponse } from './type';
+import { API_URL } from '@/config/app';
 
 // API Configuration
 const API_CONFIG = {
-  baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001',
+  baseUrl: API_URL,
   timeout: 10000,
   retries: 3,
   retryDelay: 1000,
@@ -36,6 +37,8 @@ async function withRetry<T>(
   try {
     return await fn();
   } catch (error) {
+
+    console.error('API request failed:', error); // Add this line for debugging
     if (retries > 0 && shouldRetry(error)) {
       await new Promise((res) => setTimeout(res, delay));
       return withRetry(fn, retries - 1, delay * 2);
@@ -133,7 +136,6 @@ export class ApiClient {
     });
   }
 }
-
 // Singleton instance
 export const apiClient = new ApiClient();
 

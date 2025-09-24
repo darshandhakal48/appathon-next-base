@@ -11,9 +11,10 @@ import { LoginFormData, loginSchema } from "../../../schema/auth-form-schema";
 import { Icons } from "@/components/ui/icons";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { loginWithEmailAndPass } from "@/actions/login";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Alert, AlertTitle } from "@/components/ui/alert";
 import { IconX } from "@tabler/icons-react";
+import Link from "next/link";
+import { loginWithEmailAndPassword } from "@/actions/auth";
 
 export default function CandidateLoginForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,15 +37,14 @@ export default function CandidateLoginForm() {
     try {
       setIsLoading(true);
 
-      const loginPromise = loginWithEmailAndPass(data);
+      const loginPromise = loginWithEmailAndPassword(data);
 
       toast.promise(loginPromise, {
-        error: (err) => err.message || "Login Failed, Try Again!",
-        success: (res) => res.message,
+        error: (err) => err?.message || "Login Failed, Try Again!",
+        success: "Account Created Successfully!", 
         loading: "Authorizing....",
       });
 
-      await loginPromise;
     } catch (error: any) {
       setError("root", {
         message: error?.message || "Login Failed. Please try again.",
@@ -55,19 +55,19 @@ export default function CandidateLoginForm() {
   };
 
   return (
-    <div className="flex flex-col gap-10 w-[80%] md:w-64 lg:w-80">
+    <div className="flex w-[80%] flex-col gap-10 md:w-64 lg:w-80">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="text-center flex gap-6 flex-col"
+        className="flex flex-col gap-6 text-center"
       >
-        <h2 className="text-xl md:text-2xl font-semibold text-grayscale-text-grayscale-text-title">
+        <h2 className="text-grayscale-text-grayscale-text-title text-xl font-semibold md:text-2xl">
           Login
         </h2>
         {errors.root && errors.root?.message && (
-          <Alert variant="destructive" className="text-left relative">
+          <Alert variant="destructive" className="relative text-left">
             <AlertCircleIcon />
             <AlertTitle>{errors.root.message}</AlertTitle>
-            <div className="absolute right-0 top-0 z-5 px-1 grid place-content-center h-full">
+            <div className="absolute top-0 right-0 z-5 grid h-full place-content-center px-1">
               <Button
                 size="icon"
                 variant="ghost"
@@ -79,10 +79,10 @@ export default function CandidateLoginForm() {
             </div>
           </Alert>
         )}
-        <div className="space-y-2 ">
+        <div className="space-y-2">
           <Label
             htmlFor="email"
-            className="text-sm font-normal text-grayscale-text-grayscale-text-title"
+            className="text-grayscale-text-grayscale-text-title text-sm font-normal"
           >
             Email
           </Label>
@@ -91,15 +91,14 @@ export default function CandidateLoginForm() {
             type="email"
             placeholder="Enter your email"
             {...register("email")}
-            className={`w-full ${
-              errors.email
-                ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                : ""
-            }`}
+            className={`w-full${errors.email
+              ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+              : ""
+              }`}
             disabled={isLoading}
           />
           {errors.email && (
-            <p className="text-sm text-red-600 text-left w-full">
+            <p className="w-full text-left text-sm text-red-600">
               {errors.email.message}
             </p>
           )}
@@ -108,7 +107,7 @@ export default function CandidateLoginForm() {
         <div className="space-y-2">
           <Label
             htmlFor="password"
-            className="text-sm font-normal text-grayscale-text-grayscale-text-title"
+            className="text-grayscale-text-grayscale-text-title text-sm font-normal"
           >
             Password
           </Label>
@@ -117,15 +116,14 @@ export default function CandidateLoginForm() {
             type="password"
             placeholder="Enter your password"
             {...register("password")}
-            className={`w-full ${
-              errors.password
-                ? "border-red-500 focus:border-red-500 focus:ring-red-500"
-                : ""
-            }`}
+            className={`w-full${errors.password
+              ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+              : ""
+              }`}
             disabled={isLoading}
           />
           {errors.password && (
-            <p className="text-sm text-red-600 text-left">
+            <p className="text-left text-sm text-red-600">
               {errors.password.message}
             </p>
           )}
@@ -142,7 +140,7 @@ export default function CandidateLoginForm() {
 
         <Button
           type="submit"
-          className="w-full bg-primary-surface-default hover:bg-primary-surface-default/90 text-grayscale-text-negative"
+          className="w-full bg-primary-surface-default text-grayscale-text-negative hover:bg-primary-surface-default/90"
           disabled={isLoading}
         >
           {isLoading ? (
@@ -158,9 +156,9 @@ export default function CandidateLoginForm() {
 
       <div className="text-center text-sm text-primary-text-label-1">
         Don&apos;t have an account?{" "}
-        <a href="#" className="hover:underline">
+        <Link href="/auth/register" className="hover:underline">
           Create account
-        </a>
+        </Link>
       </div>
 
       <div className="flex items-center">
@@ -172,11 +170,11 @@ export default function CandidateLoginForm() {
             Or continue with
           </span>
         </div>
-        <div className="w-full mx-auto flex items-center justify-center">
+        <div className="mx-auto flex w-full items-center justify-center">
           <Button
             size="icon"
             variant="ghost"
-            className="rounded-full w-fit p-2"
+            className="w-fit rounded-full p-2"
             disabled={isLoading}
             type="button"
           >

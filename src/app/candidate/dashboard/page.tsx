@@ -7,6 +7,7 @@ import { OverviewSection } from "@/app/admin/dashboard/_components/client";
 
 import { TopJobPickSection, UserActivitySection } from "./_components/client";
 import { CandidateDashboardSkeleton } from "./loading";
+import LogOut from "@/components/dashboard/logout";
 
 export default function CandidateDashboard() {
   return (
@@ -26,16 +27,17 @@ export default function CandidateDashboard() {
             fallback={<CandidateDashboardSkeleton.TopJobPicks />}
             route="/superadmin-jobposting"
           >
-            {({data}) => <TopJobPickSection activeJobs={data} />}
+            {({ data }) => <TopJobPickSection activeJobs={data} />}
           </ApiWrapper>
 
           <ApiWrapper<UserActivity[]>
             fallback={<CandidateDashboardSkeleton.UserActivity />}
             route="/superadmin-user-activity"
           >
-            {({data}) => <UserActivitySection userActivities={data} />}
+            {({ data }) => <UserActivitySection userActivities={data} />}
           </ApiWrapper>
         </div>
+        <LogOut />
       </div>
     </>
   );

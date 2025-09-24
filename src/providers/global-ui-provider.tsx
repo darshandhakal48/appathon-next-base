@@ -89,13 +89,6 @@ export function GlobalUIProvider({ children }: { children: ReactNode }) {
         expand={true}
         richColors
         closeButton
-        toastOptions={{
-          style: {
-            background: "var(--background)",
-            border: "1px solid var(--border)",
-            color: "var(--foreground)",
-          },
-        }}
       />
       <ModalRenderer />
     </ModalContext.Provider>
@@ -177,7 +170,7 @@ function ModalContent({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
-        className="fixed inset-0 bg-black/50 "
+        className="fixed inset-0 bg-black/50"
         onClick={config.closable !== false ? onClose : undefined}
       />
       <div
@@ -220,8 +213,8 @@ function AlertContent({
   return (
     <div className="space-y-4">
       <div className="flex items-center space-x-2">
-        <div className="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center">
-          <span className="text-yellow-600 text-sm">!</span>
+        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-yellow-100">
+          <span className="text-sm text-yellow-600">!</span>
         </div>
         <h2 className="text-lg font-semibold">{config.title || "Alert"}</h2>
       </div>
@@ -234,7 +227,7 @@ function AlertContent({
       <div className="flex justify-end">
         <button
           onClick={onClose}
-          className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-4 py-2 transition-colors"
         >
           OK
         </button>
@@ -257,11 +250,10 @@ function ConfirmationContent({
     <div className="space-y-4">
       <div className="flex items-center space-x-2">
         <div
-          className={`w-6 h-6 rounded-full flex items-center justify-center ${
-            config.destructive
+          className={`flex h-6 w-6 items-center justify-center rounded-full${config.destructive
               ? "bg-red-100 text-red-600"
               : "bg-blue-100 text-blue-600"
-          }`}
+            }`}
         >
           <span className="text-sm">?</span>
         </div>
@@ -278,17 +270,16 @@ function ConfirmationContent({
       <div className="flex justify-end space-x-2">
         <button
           onClick={onCancel}
-          className="px-4 py-2 border border-input bg-grayscale-surface-white hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
+          className="border-input hover:bg-accent hover:text-accent-foreground rounded-md border bg-grayscale-surface-white px-4 py-2 transition-colors"
         >
           {config.cancelText}
         </button>
         <button
           onClick={onConfirm}
-          className={`px-4 py-2 rounded-md transition-colors ${
-            config.destructive
+          className={`rounded-md px-4 py-2 transition-colors${config.destructive
               ? "bg-red-600 text-white hover:bg-red-700"
               : "bg-primary text-primary-foreground hover:bg-primary/90"
-          }`}
+            }`}
         >
           {config.confirmText}
         </button>
@@ -305,7 +296,7 @@ function DefaultContent({
   onClose: () => void;
 }) {
   return (
-    <div className="space-y-4 max-h-[90vh] overflow-y-scroll overflow-x-hidden">
+    <div className="max-h-[90vh] space-y-4 overflow-x-hidden overflow-y-scroll">
       <div className="flex items-center justify-between">
         {config.title && (
           <h2 className="text-lg font-semibold">{config.title}</h2>
