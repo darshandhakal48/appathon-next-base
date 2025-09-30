@@ -16,7 +16,7 @@ export default async function AdminInterviews() {
       <DashboardPageHeader title="Interviews">
         <HeaderAction />
       </DashboardPageHeader>
-      <div className="p-6">
+      <div className="mt-16 p-6">
         <ApiWrapper<Interview[]>
           fallback={<AdminInterviewLoading noHeader />}
           route="/superadmin-interviews-page-1"

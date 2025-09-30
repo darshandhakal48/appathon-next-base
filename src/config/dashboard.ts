@@ -6,21 +6,11 @@ import { SidebarLinkItem } from "@/lib/type";
 //     icon: React.ComponentType;
 // }
 
-export const adminDashboardSidebarLink: SidebarLinkItem[] = [
-  {
+export const adminDashboardSidebarLink: SidebarLinkItem[][] = [
+  [{
     label: "Dashboad",
     href: "/admin/dashboard",
     icon: "dashboard",
-  },
-  {
-    label: "Interviews",
-    href: "/admin/interviews",
-    icon: "interviews",
-  },
-  {
-    label: "Workforce",
-    href: "/admin/workforce",
-    icon: "workforce",
   },
   {
     label: "Job Posting",
@@ -28,51 +18,40 @@ export const adminDashboardSidebarLink: SidebarLinkItem[] = [
     icon: "jobPosting",
   },
   {
-    label: "Clients",
-    href: "/admin/client",
-    icon: "clients",
-  },
-  {
     label: "Candidates",
     href: "/admin/candidates",
     icon: "candidates",
   },
   {
-    label: "Messaging",
-    href: "/admin/messaging",
-    icon: "messaging",
-  },
-  {
-    label: "Analytics",
-    href: "/admin/analytics",
-    icon: "analytics",
-  },
-  {
-    label: "Roles and Permissions",
-    href: "/admin/roleAndPermission",
-    icon: "rolesAndPermissions",
-  },
-  {
-    label: "Timesheet",
-    href: "/admin/timesheet",
-    icon: "timeSheet",
-  },
-  {
-    "label": "Payroll",
-    icon: "payroll",
-    items: [
-      {
-        label: "Summary",
-        href: "/admin/payroll/summary",
-        icon: "empty",
-      },
-      {
-        label: "Salary Structure",
-        href: "/admin/payroll/salary-strcuture",
-        icon: "empty",
-      }
-    ]
-  }
+    label: "Interviews",
+    href: "/admin/interviews",
+    icon: "interviews",
+  }], [
+    {
+      label: "Workforce",
+      href: "/admin/workforce",
+      icon: "workforce",
+    },
+    {
+      label: "Clients",
+      href: "/admin/client",
+      icon: "clients",
+    },
+    {
+      label: "Messaging",
+      href: "/admin/messaging",
+      icon: "messaging",
+    }], [
+    {
+      label: "Analytics",
+      href: "/admin/analytics",
+      icon: "analytics",
+    },
+    {
+      label: "Roles and Permissions",
+      href: "/admin/roleAndPermission",
+      icon: "rolesAndPermissions",
+    }],
 ];
 
 export const candidateDashboardSidebarLink: SidebarLinkItem[] = [
@@ -130,3 +109,38 @@ export const recruiterDashboardSidebarLink: SidebarLinkItem[] = [
     icon: "candidates",
   },
 ];
+
+
+export const adminSidebarBottmLinks: SidebarLinkItem[] = [
+  {
+    label: "Activities",
+    icon: "activities",
+    href: "/admin/activities"
+  }, {
+    label: "Event Log",
+    icon: "eventLog",
+    href: "/admin/event-logs"
+
+  }, {
+    label: "Security",
+    icon: "security",
+    href: "/admin/security"
+  }, {
+
+    label: "System Configuration",
+    icon: "systemConfig",
+    href: "/admin/system-config"
+  }
+]
+
+export const userProfileMenu: SidebarLinkItem[] = [
+  {
+    label: "Edit Profile",
+    icon: "penLine",
+    href: "/admin/profile/edit"
+  }, {
+    label: "Settings",
+    icon: "settings",
+    href: "/admin/settings"
+  }
+]

@@ -279,8 +279,8 @@ export interface CustomPaginationHookProps<T> {
   key: string;
   path: string;
   totalPages: number;
-  search_title_skil_company_id: string;
-  search_city_state: string;
+  search_title_skil_company_id?: string;
+  search_city_state?: string;
   filterFn?: (data: T[]) => T[];
 }
 

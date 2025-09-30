@@ -22,9 +22,9 @@ export default function AdminInterviewClient({
 
   return (
     <>
-      <div className="bg-grayscale-surface-subtle grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 bg-grayscale-surface-subtle md:grid-cols-2 lg:grid-cols-3">
         {adminInterview ? (
-          adminInterview.map((interview) => (
+          adminInterview?.map((interview) => (
             <InterviewCard
               href={`/admin/interviews/${interview.id}`}
               interview={interview}

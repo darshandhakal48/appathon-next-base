@@ -10,7 +10,7 @@ function AdminMessaging() {
   return (
     <>
       <DashboardPageHeader title="Messaging" />
-      <div className="p-4 md:p-6">
+      <div className="mt-16 p-4 md:p-6">
         {/* <ApiWrapper<[]>
           route="/superadmin-messaging-profiles"
           fallback={<AdminMessagingSkeleton.ProfileList />}

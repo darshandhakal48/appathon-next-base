@@ -64,6 +64,11 @@ import {
   FileCheck,
   HandshakeIcon,
   Clock4Icon,
+  LogsIcon,
+  Shield,
+  CalendarHeart,
+  MonitorCog,
+  PenLine,
 } from "lucide-react";
 import {
   FaFacebookF,
@@ -197,4 +202,9 @@ export const Icons = {
   youtube: FaYoutube,
   linkedin: FaLinkedinIn,
   xTwitter: FaXTwitter,
+  activities: LogsIcon,
+  security: Shield,
+  eventLog: CalendarHeart,
+  systemConfig: MonitorCog,
+  penLine: PenLine
 };

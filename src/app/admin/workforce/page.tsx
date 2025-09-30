@@ -14,7 +14,7 @@ export default async function AdminWorkForce() {
       <DashboardPageHeader title="Workforce">
         <WorkforceHeaderAction />
       </DashboardPageHeader>
-      <div className="p-4 md:p-6">
+      <div className="mt-16 p-4 md:p-6">
         <ApiWrapper<WorkForceUserProps[]>
           fallback={<WorkForceLoadingSkeleton />}
           route="/superadmin-workforce"

@@ -1,17 +1,17 @@
-"use client";
 
 import { DashboardSidebar } from "@/components/dashboard/sidebar";
-import { adminDashboardSidebarLink } from "@/config/dashboard";
+import { adminDashboardSidebarLink, adminSidebarBottmLinks } from "@/config/dashboard";
+import withAdmin from "@/hoc/withAdmin";
 import React from "react";
 
 function AdminLayout({ children }: { children: React.ReactNode }) {
-    return (
-        <>
-            <DashboardSidebar links={adminDashboardSidebarLink}>
-                {children}
-            </DashboardSidebar>
-        </>
-    );
+  return (
+    <>
+      <DashboardSidebar links={adminDashboardSidebarLink} bottomLinks={adminSidebarBottmLinks}>
+        {children}
+      </DashboardSidebar>
+    </>
+  );
 }
 
-export default AdminLayout;
+export default withAdmin(AdminLayout);

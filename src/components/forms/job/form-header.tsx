@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -14,7 +15,7 @@ export function NewJobPostingHeader() {
         <Button variant="outline" onClick={() => route.push("/")}>
           Cancel
         </Button>
-        <Button variant="outline" onClick={() => route.push("/")}>
+        <Button variant="outline" onClick={() => route.push("/candidate/jobPosting")}>
           Save as Draft
         </Button>
         <PreviewAndProceed />

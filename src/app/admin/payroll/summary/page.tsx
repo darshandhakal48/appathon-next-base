@@ -8,7 +8,7 @@ export default function PayrollSummary() {
   return (
     <>
       <DashboardPageHeader title="Payroll Summary" />
-      <div className="space-y-10 p-6">
+      <div className="mt-16 space-y-10 p-4 md:p-6">
 
         <ApiWrapper<TPayrollCard[]>
           fallback={<PayrollSummarySkeleton.Overview />}

@@ -26,7 +26,7 @@ const AdminDashboard = async () => {
     <>
       <DashboardPageHeader title="Dashboard" />
 
-      <div className="bg-grayscale-surface-subtle space-y-4 p-6">
+      <div className="mt-16 space-y-4 bg-grayscale-surface-subtle p-6">
         <ApiWrapper<DashboardCard[]>
           fallback={<AdminDashboardSkeleton.Overview />}
           route="/superadmin-dashboard-cards"

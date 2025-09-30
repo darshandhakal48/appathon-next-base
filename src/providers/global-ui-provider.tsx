@@ -168,7 +168,7 @@ function ModalContent({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="custom-scrollbar fixed inset-0 z-50 flex items-center justify-center">
       <div
         className="fixed inset-0 bg-black/50"
         onClick={config.closable !== false ? onClose : undefined}
@@ -251,8 +251,8 @@ function ConfirmationContent({
       <div className="flex items-center space-x-2">
         <div
           className={`flex h-6 w-6 items-center justify-center rounded-full${config.destructive
-              ? "bg-red-100 text-red-600"
-              : "bg-blue-100 text-blue-600"
+            ? "bg-red-100 text-red-600"
+            : "bg-blue-100 text-blue-600"
             }`}
         >
           <span className="text-sm">?</span>
@@ -277,8 +277,8 @@ function ConfirmationContent({
         <button
           onClick={onConfirm}
           className={`rounded-md px-4 py-2 transition-colors${config.destructive
-              ? "bg-red-600 text-white hover:bg-red-700"
-              : "bg-primary text-primary-foreground hover:bg-primary/90"
+            ? "bg-red-600 text-white hover:bg-red-700"
+            : "bg-primary text-primary-foreground hover:bg-primary/90"
             }`}
         >
           {config.confirmText}

@@ -110,12 +110,13 @@ export function AdminJobPostingClient({
       </DashboardPageHeader>
 
       {filteredJobs ? (
-        <div className="p-4 md:p-6">
+       
+      <div className="mt-16 p-4 md:p-6">
           <div
-            className={`no-scrollbar min-h-[76vh] overflow-y-auto ${showJobDetails ? "grid grid-cols-4 gap-4" : ""}`}
+            className={`no-scrollbar min-h-[76vh] overflow-y-auto${showJobDetails ? "grid grid-cols-4 gap-4" : ""}`}
           >
             <div
-              className={`grid grid-cols-1 gap-4 ${showJobDetails ? "" : "md:grid-cols-2 lg:grid-cols-3"}`}
+              className={`grid grid-cols-1 gap-4${showJobDetails ? "" : "md:grid-cols-2 lg:grid-cols-3"}`}
             >
               {filteredJobs.map((data) => (
                 <JobCard
@@ -145,7 +146,7 @@ export function AdminJobPostingClient({
           title="No Jobs Available"
           icon="clock4"
           description="User created jobs will be available here"
-          className="bg-grayscale-surface-white min-h-[70vh] w-full shadow-sm"
+          className="min-h-[70vh] w-full bg-grayscale-surface-white shadow-sm"
         />
       )}
       <div className="mt-6">
@@ -193,7 +194,7 @@ export function AdminJobPostingHeaderAction({
       <div className="flex w-full items-center justify-between">
         {/* left side */}
         <div className="flex items-center gap-2.5">
-          <div className="border-grayscale-border-lighter text-grayscale-text-subtitle flex items-center gap-2 rounded-full border-1 px-4 py-1.5">
+          <div className="flex items-center gap-2 rounded-full border-1 border-grayscale-border-lighter px-4 py-1.5 text-grayscale-text-subtitle">
             <Search height={16} width={16} />
             <input
               className="text-sm font-normal outline-none"
@@ -206,7 +207,7 @@ export function AdminJobPostingHeaderAction({
             />
           </div>
 
-          <div className="border-grayscale-border-lighter text-grayscale-text-subtitle flex items-center gap-2 rounded-full border-1 px-4 py-1.5">
+          <div className="flex items-center gap-2 rounded-full border-1 border-grayscale-border-lighter px-4 py-1.5 text-grayscale-text-subtitle">
             <MapPin height={16} width={16} />
             <input
               className="text-sm font-normal outline-none"
@@ -231,7 +232,7 @@ export function AdminJobPostingHeaderAction({
 
         {/* right side */}
         <div
-          className="text-primary-text-label-1 flex cursor-pointer items-center gap-2 space-x-1"
+          className="flex cursor-pointer items-center gap-2 space-x-1 text-primary-text-label-1"
           onClick={handleNavigation}
         >
           <Plus height={20} />

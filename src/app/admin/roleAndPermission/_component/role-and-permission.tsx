@@ -68,19 +68,19 @@ function RoleAndPermisiion() {
   return (
     <>
       <RoleAndPermissonHeader />
-      <div className="space-y-4 p-4">
+      <div className="mt-16 space-y-4 p-4 md:p-6">
         <div className="grid grid-cols-5 gap-4">
           {userRoles.map((data) => (
             <UserRoles key={data.id} role={data} />
           ))}
         </div>
 
-        <div className="bg-grayscale-surface-white space-y-4 rounded-sm p-4 shadow-sm">
+        <div className="space-y-4 rounded-sm bg-grayscale-surface-white p-4 shadow-sm">
           <div className="space-y-2.5">
-            <p className="text-grayscale-text-title text-lg font-semibold">
+            <p className="text-lg font-semibold text-grayscale-text-title">
               Manage Permission
             </p>
-            <p className="text-grayscale-text-caption text-sm font-normal">
+            <p className="text-sm font-normal text-grayscale-text-caption">
               Manage candidate profiles, applications, and status updates`
             </p>
           </div>
@@ -90,7 +90,7 @@ function RoleAndPermisiion() {
                 {allPermissionPages.map((page) => (
                   <span
                     key={page}
-                    className={` ${activePagePermission === page ? "text-primary-surface-default border-primary-surface-default border-b-2" : "text-grayscale-text-body"} text-sm font-normal hover:cursor-pointer`}
+                    className={`${activePagePermission === page ? "text-primary-surface-default border-primary-surface-default border-b-2" : "text-grayscale-text-body"} text-sm font-normal hover:cursor-pointer}
                     onClick={() =>
                       handleActivePermissionPage(
                         page as ActivePagePermissionType,
@@ -185,12 +185,12 @@ export function RoleAndPermissonHeader() {
   const router = useRouter();
 
   const handleNavigation = () => {
-    router.push(`/admin/roleAndPermission/createNewRole`);
+    router.push(`/ admin / roleAndPermission / createNewRole`);
   };
   return (
     <DashboardPageHeader title="Roles and Permission">
       <div
-        className="text-primary-text-label-1 flex cursor-pointer items-center gap-2 space-x-1"
+        className="flex cursor-pointer items-center gap-2 space-x-1 text-primary-text-label-1"
         onClick={handleNavigation}
       >
         <Plus height={20} />
